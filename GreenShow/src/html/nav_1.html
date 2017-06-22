@@ -23,30 +23,21 @@
 			分享
 		</li>
 	</ul>
-	<div id="wrapper" class="flex-wrap" >
-		<div id="iscroll" class="flex-con" >
-			<div class="con">
-				<ul class="scroll_ul row" id="active">
-					<li tapmode="hover" onclick="selectTag('nav1',this)" class="cur" id="col1">
-						报名
-					</li>
-					<li tapmode="hover" onclick="selectTag('nav2',this)" class="" id="col2">
-						分组
-					</li>
-					<li tapmode="hover" onclick="selectTag('nav3',this)" class="" id="col3">
-						总杆排名
-					</li>
-					<li tapmode="hover" onclick="selectTag('nav4',this)" class="" id="col4">
-						净杆排名
-					</li>
-					<li tapmode="hover" onclick="selectTag('nav5',this)" class="" id="col5">
-						获取结果
-					</li>
-					<li tapmode="hover" onclick="selectTag('nav6',this)" class="" id="col6">
-						图片
-					</li>
-				</ul>
+
+	<div id="out_div">
+		<div id="nav">
+			<div id="navBar">
+				<div class="one1"></div>
+				<div class="two1"></div>
 			</div>
+			<ul class="row" id="active">
+				<li class="col">报名</li>
+				<li class="col">分组</li>
+				<li class="col">总杆排名</li>
+				<li class="col">净杆排名</li>
+				<li class="col">获取结果</li>
+				<li class="col">图片</li>
+			</ul>
 		</div>
 	</div>
 </div>
@@ -69,7 +60,7 @@
 					开球时间
 				</li>
 				<li class="col">
-					2017.05.30 <b>10:00</b>
+					2017.05.30 <b class="font_weight">10:00</b>
 				</li>
 			</ul>
 			<ul class="row">
@@ -157,17 +148,17 @@
 		<div class="text_header">
 			<div class="header0">
 				<ul class="row">
-					<li class="">
-						<b style="padding-left:10px;">报名人数：</b>
-						<b>20人</b>
+					<li class="col" style="text-align: center;">
+						<b style="color:#555555;">报名人数：</b>
+						<b style="color:#555555;">20人</b>
 					</li>
 					<li class="col">
-						<b>球队人数：</b>
-						<b>20人</b>
+						<b style="color:#555555;">球队人数：</b>
+						<b style="color:#555555;">20人</b>
 					</li>
-					<li class="text_r">
-						<b>嘉宾：</b>
-						<b>20人</b>
+					<li class="text_r" style="width: 30%;">
+						<b style="color:#555555;">嘉宾：</b>
+						<b style="color:#555555;">20人</b>
 					</li>
 				</ul>
 			</div>
@@ -616,10 +607,10 @@
 	</div>
 	<div id="nav6" class="nav">
 		<div class="slider" id="slider">
-			<div class="slide" id="slideWidth" style="transform: translateX(0px) rotateZ(0deg) translateY(0px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+			<div class="slide" id="slideWidth" style="transform: translateX(0px) rotateZ(30deg) translateY(0px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
 				<img src="../image/bg_nav_6.png">
 				<p>
-					<b class="font_size_weight">TO:</b>
+					<b class="font_size_weight">TO1:</b>
 					<b class="font_size_weight_b">SOMEONE</b>
 				</p>
 				<P class="font_size_12">留白</P>
@@ -636,7 +627,27 @@
 					</ul>
 				</div>
 			</div>
-			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(10px) translateZ(-100px); transition: 0.137931s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(20px) translateZ(-100px); transition: 0.137931s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+				<img src="../image/bg_nav_6.png">
+				<p>
+					<b class="font_size_weight">TO2:</b>
+					<b class="font_size_weight_b">SOMEONE</b>
+				</p>
+				<P class="font_size_12">留白</P>
+				<p class="font_size_12">用白色明信片</p>
+				<p class="font_size_12">框住每一个偶遇</p>
+				<div class="row">
+					<ul class="border_width">
+						<li><b>May</b><b>25</b></li>
+						<li><b>2015</b></li>
+						<li><b>+</b></li>
+					</ul>
+					<ul class="col line_height_bottom">
+						<li><b>by:</b><b>SOMEONE</b></li>
+					</ul>
+				</div>
+			</div>
+			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(10px) translateZ(-50px); transition: 0.210526s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
 				<img src="../image/bg_nav_6.png">
 				<p>
 					<b class="font_size_weight">TO:</b>
@@ -656,27 +667,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(20px) translateZ(-50px); transition: 0.210526s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
-				<img src="../image/bg_nav_6.png">
-				<p>
-					<b class="font_size_weight">TO:</b>
-					<b class="font_size_weight_b">SOMEONE</b>
-				</p>
-				<P class="font_size_12">留白</P>
-				<p class="font_size_12">用白色明信片</p>
-				<p class="font_size_12">框住每一个偶遇</p>
-				<div class="row">
-					<ul class="border_width">
-						<li><b>May</b><b>25</b></li>
-						<li><b>2015</b></li>
-						<li><b>+</b></li>
-					</ul>
-					<ul class="col line_height_bottom">
-						<li><b>by:</b><b>SOMEONE</b></li>
-					</ul>
-				</div>
-			</div>
-			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px); transition: 0.4s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(0px); transition: 0.4s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
 				<img src="../image/bg_nav_6.png">
 				<p>
 					<b class="font_size_weight">TO:</b>
@@ -722,14 +713,47 @@
 
 			}
 		}
+		'use strict';
+		var tagNav, tagBar, tagLi, timer, i, n, m, speed, changeWidth;
+		tagNav = document.getElementById('nav');
+		tagBar = document.getElementById('navBar');
+		tagLi  = tagNav.getElementsByTagName('ul')[0].getElementsByTagName('li');
+		speed  = 0;
+
+		tagBar.style.width = tagLi[0].offsetWidth + 'px';
+
+		function sports(n, m) {
+			timer = setInterval(function () {
+				speed = (n - tagBar.offsetLeft) / 10;
+				speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+				if (tagBar.offsetLeft === n) {
+					clearInterval(timer);
+				} else {
+					tagBar.style.left = tagBar.offsetLeft + speed + 'px';
+				}
+
+				changeWidth = m - tagBar.offsetWidth;
+				changeWidth = changeWidth > 0 ? Math.ceil(speed) : Math.floor(speed);
+				tagBar.style.width = m + changeWidth  + 'px';
+			}, 20);
+		}
+
+		for (i = 0; i < tagLi.length; i += 1) {
+			tagLi[i].onmouseover = function () {
+				clearInterval(timer);
+				sports(this.offsetLeft, this.offsetWidth);
+			};
+			tagLi[i].onmouseout = function () {
+				clearInterval(timer);
+				sports(0, tagLi[0].offsetWidth);
+			};
+		}
 		var winWidth =document.body.clientWidth;
 		var winHeight =document.body.clientHeight;
 		if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 			document.getElementById('slider').style.paddingLeft=winWidth/2-360+'px';
-
-
 		} else {
-			document.getElementById('slider').style.paddingLeft=winWidth/2-360+'px';
+			document.getElementById('slider').style.paddingLeft=winWidth/2-100+'px';
 			document.getElementById('heightOne1').style.lineHeight = winHeight / 10 + 'px';
 			document.getElementById('heightTwo1').style.lineHeight = winHeight / 4 + 'px';
 			document.getElementById('heightThree1').style.paddingTop = 16 + 'px';
