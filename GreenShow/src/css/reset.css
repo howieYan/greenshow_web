@@ -150,7 +150,7 @@ b {
 	border-radius: 20px;
 	line-height: 40px;
 	color: #fff;
-	margin: 0 10%;
+	margin: 2% 10%;
 }
 #nav_1 > div {
 	display: none;
@@ -159,10 +159,9 @@ p {
 	text-align: left;
 }
 .padding_t {
-	padding-top: 10px;
 	text-align: left;
 	padding-left: 10px;
-	line-height: 30px;
+	line-height: 40px;
 	color: #1f1f1f;
 }
 .apply {
@@ -208,21 +207,22 @@ p {
 }
 .back {
 	margin-top: 5px;
-	width: 50px;
+	width: 40px;
 	height: 40px;
 	line-height: 50px;
 	background: url('../image/btn_back_normal.png') no-repeat center;
-	background-size: 45%;
+	background-size: 60%;
 }
 .share {
-	padding-right: 10px;
-	height: 40px;
+	width: 60px;
+	height: 50px;
 	line-height: 50px;
 	background: url(../image/share.png) no-repeat 0px 18px;
 	background-size: 25%;
 	color: #fff;
 	padding-left: 17px;
 	font-size: 12px;
+	padding-right: 10px;
 }
 .header > ul:nth-of-type(2) {
 	width: 100%;
@@ -404,6 +404,9 @@ header {
 #nav6 {
 	height: 85%;
 	overflow: hidden;
+	width: 100%;
+	padding: 0 5%;
+	margin-top: 10px;
 }
 .width_iamge {
 	width: 100%;

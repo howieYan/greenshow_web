@@ -98,10 +98,11 @@
 					</p>
 				</div>
 			</ul>
+			<div class="button">
+				点击报名
+			</div>
 		</div>
-		<div class="button">
-			点击报名
-		</div>
+
 		<div class="padding_t">
 			<b>已报名/10人</b>
 		</div>
@@ -172,15 +173,15 @@
 			</div>
 			<div class="module padding_t10">
 				<div class="text_center">
-					<ul class="row">
+					<ul class="row" id="heightUl">
 						<li class="width_40">
-							<div class="one">
+							<div class="one" id="heightOne1">
 								第一组
 							</div>
-							<div class="two">
+							<div class="two" id="heightTwo1">
 								1号洞
 							</div>
-							<div class="three">
+							<div class="three" id="heightThree1">
 								10:00
 							</div>
 						</li>
@@ -215,13 +216,13 @@
 				<div class="text_center">
 					<ul class="row">
 						<li class="width_40">
-							<div class="one">
+							<div class="one" id="heightOne2">
 								第一组
 							</div>
-							<div class="two">
+							<div class="two" id="heightTwo2">
 								1号洞
 							</div>
-							<div class="three">
+							<div class="three" id="heightThree2">
 								10:00
 							</div>
 						</li>
@@ -263,7 +264,7 @@
 				<li class="col">
 					姓名
 				</li>
-				<li class="">
+				<li class="col">
 					距标准杆
 				</li>
 				<li class="col">
@@ -614,8 +615,8 @@
 		</div>
 	</div>
 	<div id="nav6" class="nav">
-		<div class="slider">
-			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+		<div class="slider" id="slider">
+			<div class="slide" id="slideWidth" style="transform: translateX(0px) rotateZ(0deg) translateY(0px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
 				<img src="../image/bg_nav_6.png">
 				<p>
 					<b class="font_size_weight">TO:</b>
@@ -635,7 +636,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(20px) translateZ(-100px); transition: 0.137931s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(10px) translateZ(-100px); transition: 0.137931s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
 				<img src="../image/bg_nav_6.png">
 				<p>
 					<b class="font_size_weight">TO:</b>
@@ -655,7 +656,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(10px) translateZ(-50px); transition: 0.210526s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(20px) translateZ(-50px); transition: 0.210526s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
 				<img src="../image/bg_nav_6.png">
 				<p>
 					<b class="font_size_weight">TO:</b>
@@ -675,7 +676,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(0px); transition: 0.4s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+			<div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px); transition: 0.4s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
 				<img src="../image/bg_nav_6.png">
 				<p>
 					<b class="font_size_weight">TO:</b>
@@ -695,10 +696,6 @@
 					</ul>
 				</div>
 			</div>
-
-
-
-
 		</div>
 	</div>
 
@@ -706,37 +703,42 @@
 
 <script type="text/javascript" src="../script/swiper.min.js"></script>
 <script>
-	// 标签
-	var arrli=document.getElementById("active").getElementsByTagName("li");
-	var arrdiv=document.getElementById("nav_1").children;
-	for(var i=0;i<arrli.length;i++){
-		arrli[i].onclick=li_mouseenter;
-	}
-	function li_mouseenter() {
+	window.onload = function(){
+		//标签切换
+		var arrli=document.getElementById("active").getElementsByTagName("li");
+		var arrdiv=document.getElementById("nav_1").children;
 		for(var i=0;i<arrli.length;i++){
-			if(arrli[i]==this){
-				arrli[i].className="cur";
-				arrdiv[i].className="selected";
-			}else {
-				arrli[i].className="";
-				arrdiv[i].className="";
+			arrli[i].onclick=li_mouseenter;
+		}
+		function li_mouseenter() {
+			for(var i=0;i<arrli.length;i++){
+				if(arrli[i]==this){
+					arrli[i].className="cur";
+					arrdiv[i].className="selected";
+				}else {
+					arrli[i].className="";
+					arrdiv[i].className="";
+				}
+
 			}
+		}
+		var winWidth =document.body.clientWidth;
+		var winHeight =document.body.clientHeight;
+		if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+			document.getElementById('slider').style.paddingLeft=winWidth/2-360+'px';
+
+
+		} else {
+			document.getElementById('slider').style.paddingLeft=winWidth/2-360+'px';
+			document.getElementById('heightOne1').style.lineHeight = winHeight / 10 + 'px';
+			document.getElementById('heightTwo1').style.lineHeight = winHeight / 4 + 'px';
+			document.getElementById('heightThree1').style.paddingTop = 16 + 'px';
+			document.getElementById('heightOne2').style.lineHeight = winHeight / 10 + 'px';
+			document.getElementById('heightTwo2').style.lineHeight = winHeight / 4 + 'px';
+			document.getElementById('heightThree2').style.paddingTop = 16 + 'px';
 
 		}
-	}
-//
-//		var winWidth = document.body.clientWidth;
-//		var leftWidth = document.getElementById('leftWidth').getElementsByTagName('div');
-//
-//			for(var i = 0; i<leftWidth.length;i++){
-//				leftWidth[i].style.width=winWidth-48+'px';
-//			}
-//			for(var i = 0; i<leftWidth.length;i++){
-//				leftWidth[i].style.width=winWidth-56+'px';
-//			}
-//			for(var i = 0; i<leftWidth.length;i++){
-//				leftWidth[i].style.width=winWidth-62+'px';
-//			}
+	};
 
 
 </script>
