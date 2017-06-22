@@ -3,11 +3,12 @@
     <div id="header">
       <div class="header">
         <ul class="row">
-          <li class="back"></li>
+          <li v-if="false" class="back"></li>
         </ul>
       </div>
       <div class="box_radius" id="bg_height">
         <div class="bg_logo"></div>
+        <!-- <img :src="Logo"> -->
       </div>
     </div>
     <section id="section">
@@ -48,7 +49,7 @@
             现任队长
           </li>
           <li class="col">
-            远行
+            {{ Caption }}
           </li>
         </ul>
       </div>
@@ -75,11 +76,31 @@
 </template>
 
 <script>
+// import api from '../api'
+
 export default {
   name: 'TeamInfo',
   data () {
     return {
+      Logo: '/static/img/logo.png',
+      Caption: ''
     }
+  },
+
+  computed: {
+    id () {
+      return this.$route.params.id
+    }
+  },
+
+  created () {
+    // try {
+    //   api.getTeam(this.id).then((data) => {
+    //     console.debug(`%o`, data)
+    //   })
+    // }
+    // catch (e) {
+    // }
   },
 
   mounted () {
