@@ -104,12 +104,15 @@ export default {
   },
 
   mounted () {
-    var winHeight = window.screen.height
-    document.getElementById('header').style.height = winHeight / 3 + 'px'
-    document.getElementById('section').style.height = winHeight - winHeight / 3 + 'px'
-    document.getElementById('bgColor').style.lineHeight = (winHeight - (winHeight / 3)) / 7 + 'px'
-    document.getElementById('padding_t').style.height = (winHeight - (winHeight / 3)) / 90 + '%'
-    document.getElementById('padding_t_text').style.height = (winHeight - (winHeight / 3)) / 70 + '%'
+    setTimeout(function () {
+      var winHeight = window.screen.height
+      document.getElementById('header').style.height = winHeight / 3 + 'px'
+      document.getElementById('section').style.height = winHeight - winHeight / 3 + 'px'
+      document.getElementById('bgColor').style.lineHeight = (winHeight - (winHeight / 3)) / 7 + 'px'
+      document.getElementById('padding_t').style.height = (winHeight - (winHeight / 3)) / 90 + '%'
+      document.getElementById('padding_t_text').style.height = (winHeight - (winHeight / 3)) / 70 + '%'
+      console.debug(`WinHeight= ${winHeight}`)
+    }, 500)
   }
 }
 </script>
