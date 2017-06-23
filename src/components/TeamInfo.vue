@@ -7,9 +7,8 @@
         </ul>
       </div>
       <div class="box_radius" id="bg_height">
-        <div class="bg_logo">
-            <img src="../assets/logo.png">
-        </div>
+        <div class="bg_logo"></div>
+        <!-- <img :src="Logo"> -->
       </div>
     </div>
     <section id="section">
@@ -105,12 +104,7 @@ export default {
   },
 
   mounted () {
-    var winHeight = window.screen.height
-    document.getElementById('header').style.height = winHeight / 3 + 'px'
-    document.getElementById('section').style.height = winHeight - winHeight / 3 + 'px'
-    document.getElementById('bgColor').style.lineHeight = (winHeight - (winHeight / 3)) / 7 + 'px'
-    document.getElementById('padding_t').style.height = (winHeight - (winHeight / 3)) / 90 + '%'
-    document.getElementById('padding_t_text').style.height = (winHeight - (winHeight / 3)) / 70 + '%'
+   
   }
 }
 </script>
