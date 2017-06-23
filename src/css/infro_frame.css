@@ -92,7 +92,7 @@ b {
     width: 40px;
     height: 40px;
     line-height: 50px;
-    background: url('../image/btn_back_normal.png') no-repeat center;
+    background: url('../assets/btn_back_normal.png') no-repeat center;
     background-size: 60%;
 }
 .box_radius {
