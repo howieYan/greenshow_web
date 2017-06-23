@@ -1,3 +1,6 @@
+/**
+ * Created by GreenShow on 2017/6/23.
+ */
 
 
 window.addEventListener('load', onWndLoad, false);
