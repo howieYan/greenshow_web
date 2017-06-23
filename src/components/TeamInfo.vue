@@ -1,7 +1,6 @@
 <template>
   <div>
     <div id="header">
-<<<<<<< HEAD
       <div class="header">
         <ul class="row">
           <li v-if="false" class="back"></li>
@@ -32,12 +31,10 @@
           <li class="padding_t" id="padding_t">
             <div>
               <div></div>
-=======
             <div class="header">
                 <ul class="row">
                     <li class="back"></li>
                 </ul>
->>>>>>> 2c5417a7faa308e60b02376d75b12fa6fece4f5a
             </div>
             <div class="box_radius" id="bg_height">
                 <div class="bg_logo">
@@ -110,7 +107,6 @@
 </template>
 
 <script>
-// import api from '../api'
 
 export default {
   name: 'TeamInfo',
