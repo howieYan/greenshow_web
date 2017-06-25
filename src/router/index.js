@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '@/components/Home'
+import Home from '@/components/Home'
 import Event from '@/components/Event'
 import TeamInfo from '@/components/TeamInfo'
 
@@ -10,7 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/event'
+      name: 'Home',
+      component: Home
     },
     {
       path: '/event',
