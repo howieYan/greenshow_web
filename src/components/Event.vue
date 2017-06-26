@@ -632,7 +632,7 @@
     </div>
   </div>
   </div>
-
+</div>
 </template>
 
 <script>
@@ -645,22 +645,23 @@ export default {
     }
   },
 
+/* eslint-disable  */
   methods: {
-      sports(n, m) {
-          timer = setInterval(function () {
-              speed = (n - tagBar.offsetLeft) / 10;
-              speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-              if (tagBar.offsetLeft === n) {
-                  clearInterval(timer);
-              } else {
-                  tagBar.style.left = tagBar.offsetLeft + speed + 'px';
-              }
+    sports(n, m) {
+        timer = setInterval(function () {
+            speed = (n - tagBar.offsetLeft) / 10;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+            if (tagBar.offsetLeft === n) {
+                clearInterval(timer);
+            } else {
+                tagBar.style.left = tagBar.offsetLeft + speed + 'px';
+            }
 
-              changeWidth = m - tagBar.offsetWidth;
-              changeWidth = changeWidth > 0 ? Math.ceil(speed) : Math.floor(speed);
-              tagBar.style.width = m + changeWidth  + 'px';
-          }, 20);
-      },
+            changeWidth = m - tagBar.offsetWidth;
+            changeWidth = changeWidth > 0 ? Math.ceil(speed) : Math.floor(speed);
+            tagBar.style.width = m + changeWidth  + 'px';
+        }, 20);
+    },
 
 
     closeFrame () {
@@ -670,7 +671,6 @@ export default {
 
   mounted () {
 
-/* eslint-disable  */
     var sliderWidth= document.getElementById('slider').offsetWidth;
     var arrli=document.getElementById("active").getElementsByTagName("li");
     var arrdiv=document.getElementById("nav_1").children;
@@ -684,9 +684,8 @@ export default {
             arrli[i].className="";
             arrdiv[i].className="";
           }
-
-
         }
+      }
     }
     'use strict';
     var tagNav, tagBar, tagLi, timer, i, n, m, speed, changeWidth;
@@ -722,10 +721,9 @@ export default {
         document.getElementById('heightThree2').style.paddingTop = 16 + 'px';
 
     }
-
   }
-}
 /* eslint-enable  */
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
