@@ -1,61 +1,61 @@
 <template>
   <div>
 <!--球队header-->
-    <header class="header1">
+    <div class="header1">
       <ul class="row">
         <li class="back" @click="closeFrame"></li>
-        <li class="textCenter col">
+        <li class="textCenter textCenter0 col">
           <img :src="'static/logo_header.png'" alt="">
-          <div class="row string">
+          <div class="row string padding_Top10">
             <div class="col">
-              <p>81</p>
+              <div>81</div>
               <b>平均成绩</b>
             </div>
             <div class="col">
-              <p>40</p>
+              <div>40</div>
               <b>球队人数</b>
             </div>
           </div>
         </li>
         <li></li>
       </ul>
-    </header>
+    </div>
     <div class="clearfix"></div>
     <div class="section_title">
       <ul class="row">
         <li class="col">
           <img :src="'static/notice.png'" alt="">
-          <p>公告</p>
+          <div>公告</div>
         </li>
         <li class="col">
           <img :src="'static/schedule.png'" alt="">
-          <p>赛程</p>
+          <div>赛程</div>
         </li>
         <li class="col">
           <img :src="'static/regulations.png'" alt="">
-          <p>章程</p>
+          <div>章程</div>
         </li>
         <li class="col">
           <img :src="'static/player.png'" alt="">
-          <p>球员</p>
+          <div>球员</div>
         </li>
       </ul>
       <ul class="row">
         <li class="col">
           <img :src="'static/ranking.png'" alt="">
-          <p>排行</p>
+          <div>排行</div>
         </li>
         <li class="col">
           <img :src="'static/history.png'" alt="">
-          <p>历史</p>
+          <div>历史</div>
         </li>
         <li class="col">
           <img :src="'static/honor.png'" alt="">
-          <p>荣誉</p>
+          <div>荣誉</div>
         </li>
         <li class="col">
           <img :src="'static/photoalbum.png'" alt="">
-          <p>相册</p>
+          <div>相册</div>
         </li>
       </ul>
     </div>
