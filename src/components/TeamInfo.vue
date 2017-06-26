@@ -7,8 +7,10 @@
         </ul>
       </div>
       <div class="box_radius" id="bg_height">
-        <div class="bg_logo"></div>
-        <!-- <img :src="Logo"> -->
+        <div class="bg_logo">
+        	<img src="../assets/logo.png"> 
+        </div>
+         
       </div>
     </div>
     <section id="section">
