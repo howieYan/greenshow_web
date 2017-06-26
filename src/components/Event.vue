@@ -2,8 +2,8 @@
   <div>
     <div class="header" id="header">
     <ul class="row">
-    <li class="back" tapmode="hover" @click="closeFrame"></li>
-    <li class="col textCenter">
+    <li class="back1" tapmode="hover" @click="closeFrame"></li>
+    <li class="col textCenter5">
       活动主页
     </li>
     <li class="share">
@@ -92,13 +92,20 @@
     <div class="padding_t">
       <b>已报名/10人</b>
     </div>
-    <div class="apply">
-      <ul class="row">
-      <li class="col" v-for="n in 8">
+    <div class="apply"  >
+      <ul class="row" >
+      <li class="col" v-for="n in 4">
         <p><img :src="'static/apply_1.png'" alt="">
         </p>
         <b>远行</b>
       </li>
+      </ul>
+       <ul class="row">
+          <li class="col" v-for="n in 4">
+              <p><img :src="'static/apply_1.png'" alt="">
+              </p>
+              <b>远行</b>
+          </li>
       </ul>
     </div>
     </div>
@@ -148,7 +155,7 @@
         <ul class="row">
         <li class="width_40">
           <div class="one">
-          第一组
+          第二组
           </div>
           <div class="two">
           1号洞
@@ -157,25 +164,7 @@
           10:00
           </div>
         </li>
-        <li class="col">
-          <p><img :src="'static/apply_1.png'" alt="">
-          </p>
-          <b>远行</b>
-          <b class="border"></b>
-        </li>
-        <li class="col">
-          <p><img :src="'static/apply_1.png'" alt="">
-          </p>
-          <b>远行</b>
-          <b class="border"></b>
-        </li>
-        <li class="col">
-          <p><img :src="'static/apply_1.png'" alt="">
-          </p>
-          <b>远行</b>
-          <b class="border"></b>
-        </li>
-        <li class="col">
+        <li class="col" v-for="n in 4">
           <p><img :src="'static/apply_1.png'" alt="">
           </p>
           <b>远行</b>
@@ -211,7 +200,7 @@
         总杆
       </li>
       </ul>
-      <ul class="row">
+      <ul class="row" v-for="n in 10">
       <li class="col">
         1
       </li>
@@ -234,121 +223,7 @@
         69
       </li>
       </ul>
-      <ul class="row">
-      <li class="col">
-        2
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        F
-      </li>
-      <li class="col">
-        34
-      </li>
-      <li class="col">
-        35
-      </li>
-      <li class="col">
-        69
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        3
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        F
-      </li>
-      <li class="col">
-        34
-      </li>
-      <li class="col">
-        35
-      </li>
-      <li class="col">
-        69
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        4
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        F
-      </li>
-      <li class="col">
-        34
-      </li>
-      <li class="col">
-        35
-      </li>
-      <li class="col">
-        69
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        5
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        F
-      </li>
-      <li class="col">
-        34
-      </li>
-      <li class="col">
-        35
-      </li>
-      <li class="col">
-        69
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        7
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        F
-      </li>
-      <li class="col">
-        34
-      </li>
-      <li class="col">
-        35
-      </li>
-      <li class="col">
-        69
-      </li>
-      </ul>
+
     </div>
     </div>
     <div id="nav4" class="nav">
@@ -370,7 +245,7 @@
         净杆
       </li>
       </ul>
-      <ul class="row">
+      <ul class="row" v-for="n in 10">
       <li class="col">
         1
       </li>
@@ -387,91 +262,7 @@
         68.6
       </li>
       </ul>
-      <ul class="row">
-      <li class="col">
-        1
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        69
-      </li>
-      <li class="col">
-        68.6
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        1
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        69
-      </li>
-      <li class="col">
-        68.6
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        1
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        69
-      </li>
-      <li class="col">
-        68.6
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        1
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        69
-      </li>
-      <li class="col">
-        68.6
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        1
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col">
-        -3
-      </li>
-      <li class="col">
-        69
-      </li>
-      <li class="col">
-        68.6
-      </li>
-      </ul>
+
     </div>
     </header>
     </div>
@@ -488,7 +279,7 @@
         奖品
       </li>
       </ul>
-      <ul class="row">
+      <ul class="row" v-for="n in 10">
       <li class="col">
         总冠
       </li>
@@ -499,55 +290,11 @@
         1#木
       </li>
       </ul>
-      <ul class="row">
-      <li class="col">
-        总亚
-      </li>
-      <li class="col">
-        许韫
-      </li>
-      <li class="col red">
-        1#木
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        总亚
-      </li>
-      <li class="col">
-        许韫
-      </li>
-      <li class="col red">
-        1#木
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        总亚
-      </li>
-      <li class="col">
-        许韫
-      </li>
-      <li class="col red">
-        1#木
-      </li>
-      </ul>
-      <ul class="row">
-      <li class="col">
-        总亚
-      </li>
-      <li class="col">
-        许韫
-      </li>
-      <li class="col red">
-        1#木
-      </li>
-      </ul>
     </div>
     </div>
     <div id="nav6" class="nav">
     <div class="slider" id="slider">
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
+      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 10">
       <img :src="'static/bg_nav_6.png'">
       <p>
         <b class="font_size_weight">TO:</b>
@@ -556,7 +303,7 @@
       <P class="font_size_12">留白</P>
       <p class="font_size_12">用白色明信片</p>
       <p class="font_size_12">框住每一个偶遇</p>
-      <div class="row">
+      <div class="row margin_Top10">
         <ul class="border_width">
         <li><b>May,</b><b>25</b></li>
         <li><b>2015</b></li>
@@ -567,65 +314,7 @@
         </ul>
       </div>
       </div>
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(20px) translateZ(-100px); transition: 0.137931s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
-      <img :src="'static/bg_nav_6.png'">
-      <p>
-        <b class="font_size_weight">TO:</b>
-        <b class="font_size_weight_b">SOMEONE</b>
-      </p>
-      <P class="font_size_12">留白</P>
-      <p class="font_size_12">用白色明信片</p>
-      <p class="font_size_12">框住每一个偶遇</p>
-      <div class="row">
-        <ul class="border_width">
-        <li><b>May</b><b>25</b></li>
-        <li><b>2015</b></li>
-        <li><b>+</b></li>
-        </ul>
-        <ul class="col line_height_bottom">
-        <li><b>by:</b><b>SOMEONE</b></li>
-        </ul>
-      </div>
-      </div>
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(10px) translateZ(-50px); transition: 0.210526s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
-      <img :src="'static/bg_nav_6.png'">
-      <p>
-        <b class="font_size_weight">TO:</b>
-        <b class="font_size_weight_b">SOMEONE</b>
-      </p>
-      <P class="font_size_12">留白</P>
-      <p class="font_size_12">用白色明信片</p>
-      <p class="font_size_12">框住每一个偶遇</p>
-      <div class="row">
-        <ul class="border_width">
-        <li><b>May</b><b>25</b></li>
-        <li><b>2015</b></li>
-        <li><b>+</b></li>
-        </ul>
-        <ul class="col line_height_bottom">
-        <li><b>by:</b><b>SOMEONE</b></li>
-        </ul>
-      </div>
-      </div>
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(0px); transition: 0.4s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;">
-      <img :src="'static/bg_nav_6.png'">
-      <p>
-        <b class="font_size_weight">TO:</b>
-        <b class="font_size_weight_b">SOMEONE</b>
-      </p>
-      <P class="font_size_12">留白</P>
-      <p class="font_size_12">用白色明信片</p>
-      <p class="font_size_12">框住每一个偶遇</p>
-      <div class="row">
-        <ul class="border_width">
-        <li><b>May</b><b>25</b></li>
-        <li><b>2015</b></li>
-        <li><b>+</b></li>
-        </ul>
-        <ul class="col line_height_bottom">
-        <li><b>by:</b><b>SOMEONE</b></li>
-        </ul>
-      </div>
+
       </div>
     </div>
     </div>

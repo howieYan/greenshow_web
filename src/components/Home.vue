@@ -2,8 +2,8 @@
   <div>
     <header>
       <ul class="row">
-        <li class="back" @click="closeFrame"></li>
-        <li class="col textCenter">
+        <li class="back2" @click="closeFrame"></li>
+        <li class="col textCenter1">
           高领云
         </li>
         <li></li>
@@ -34,13 +34,15 @@
         </div>
         <!-- Swiper -->
         <div class="swipe-box_1">
-          <div class="swipe-box_1_width" id="nav" v-for="n in 13">
-            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame">
+          <div class="swipe-box_1_width" id="nav">
+
+            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame" v-for="n in 13">
               <div>
                 <img :src="'static/qiu6.jpg'" alt="">
                 <b class="b">SGCU联盟</b>
               </div>
             </div>
+
           </div>
 
         </div>
@@ -92,7 +94,7 @@
                         PAR5表现
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b text_right">
+                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
                       <p>
                         68
@@ -152,7 +154,7 @@
                         PAR5表现
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b text_right">
+                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
                       <p>
                         68
@@ -212,7 +214,7 @@
                         PAR5表现
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b text_right">
+                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
                       <p>
                         68
@@ -272,7 +274,7 @@
                         PAR5表现
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b text_right">
+                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
                       <p>
                         68
@@ -332,7 +334,7 @@
                         PAR5表现
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b text_right">
+                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
                       <p>
                         68
@@ -392,7 +394,7 @@
                         PAR5表现
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b text_right">
+                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
                       <p>
                         68
