@@ -17,7 +17,12 @@
     background: url('/static/btn_back_normal.png') no-repeat center;
     background-size: 60%;
 }
+.team_logo>img{
+    width: 60%;
+    height: 70%;
+}
 .box_radius {
+    padding-top: 50px;
     margin-top: -1px;
     width: 100%;
     background: #00990D;
@@ -40,33 +45,33 @@ section > div:nth-of-type(1) {
     font-size: 16px;
     color: #1f1f1f;
 }
-section > div > ul > li > b {
+section > div > ul > li.activer > b {
     display: -webkit-box;
     height: 2px;
     border-bottom: 2px solid #c9c9c9;
     width: 50px;
 }
-section > div > ul > li:nth-of-type(1)> b {
+section > div > ul > li.activer:nth-of-type(1)> b {
     float: right;
     padding-top: 18px;
 }
-section > div > ul > li:nth-of-type(2) {
+section > div > ul > li.activer:nth-of-type(2) {
     padding: 0 10px;
 }
-section > div > ul > li:nth-of-type(3)> b {
+section > div > ul > li.activer:nth-of-type(3)> b {
     float: left;
     padding-top: 18px;
 }
-.bgColor, .width {
+.bgColor5, .width {
     background-color: #fff;
 }
 @media all and (min-height: 560px)and (max-height:660px){
-    .bgColor> ul {
+    .bgColor5> ul {
         padding: 0 10px;
         height: 50px;
         line-height: 50px;
     }
-    .bgColor > ul > li:nth-of-type(1) {
+    .bgColor5 > ul > li.activer:nth-of-type(1) {
         padding-top: 4%;
         padding-left: 18px;
     }
@@ -92,7 +97,7 @@ section > div > ul > li:nth-of-type(3)> b {
     }
 }
 @media all and (min-height: 661px)and (max-height:750px){
-    .bgColor> ul {
+    .bgColor5> ul {
         padding: 0 20px;
         height: 80px;
         line-height: 80px;
@@ -102,9 +107,12 @@ section > div > ul > li:nth-of-type(3)> b {
         padding-left: 18px;
     }
 
-    .bgColor > ul > li:nth-of-type(1) {
+    .bgColor5 > ul > li:nth-of-type(1) {
         padding-top: 7%;
         padding-left: 18px;
+    }
+    .padding_t_text{
+        padding-top: 10px;
     }
     .width>ul{
         padding-left: 18px;
@@ -112,7 +120,7 @@ section > div > ul > li:nth-of-type(3)> b {
     .width>ul>li.padding_t_text{
         padding-top: 10px;
     }
-    .width > ul > li:nth-of-type(2) {
+    .width > ul > li.active:nth-of-type(2) {
         padding-top: 20px;
         color: #919191;
         padding-right: 20px;
@@ -127,11 +135,11 @@ section > div > ul > li:nth-of-type(3)> b {
     }
 }
 
-.bgColor > ul > li.height60 {
+.bgColor5 > ul > li.height60 {
     line-height: 0px !important;
 }
 
-.bgColor > ul > li:nth-of-type(1)> div {
+.bgColor5 > ul > li:nth-of-type(1)> div {
     height: 20px;
     width: 20px;
     border: 1px solid #000;
@@ -139,18 +147,18 @@ section > div > ul > li:nth-of-type(3)> b {
     padding-left: 6px;
     padding-top: 6px;
 }
-.bgColor > ul > li:nth-of-type(1)> div > div {
+.bgColor5 > ul > li:nth-of-type(1)> div > div {
     height: 12px;
     width: 12px;
     border: 1px solid #000;
     border-radius: 50%;
     background: #000000;
 }
-.bgColor > ul > li:nth-of-type(2) {
+.bgColor5 > ul > li:nth-of-type(2) {
     color: #919191;
     padding-right: 20px;
 }
-.bgColor > ul > li:nth-of-type(3) {
+.bgColor5 > ul > li:nth-of-type(3) {
     color: #2d2d2d;
     text-align: left;
 }
@@ -185,4 +193,73 @@ section > div > ul > li:nth-of-type(3)> b {
     -webkit-box-shadow: 0 0 10px #e7e7e7;
     -moz-box-shadow: 0 0 10px #e7e7e7;
     box-shadow: 0 0 10px #e7e7e7;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #fff;
+    color: #555;
+    font-size: 14px;
+    font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
+}
+td, th, caption {
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+a {
+    color: #555;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+img {
+    border: none;
+}
+ol, ul, li {
+    list-style: none;
+}
+input, textarea, select, button {
+    font: 14px Verdana, Helvetica, Arial, sans-serif;
+    outline: none;
+}
+table {
+    border-collapse: collapse;
+}
+html {
+    overflow-y: scroll;
+}
+/* css common */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    *zoom: 1;
+}
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.col {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+b {
+    font-weight: lighter;
 }
