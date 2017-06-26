@@ -365,5 +365,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '../css/reset.css';
-@import '../css/image.css';
 </style>
