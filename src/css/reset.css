@@ -1297,7 +1297,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         margin: 0 auto;
         height: 630px;
         padding-left: 40px;
-        padding-top: 80px;
+        padding-top: 35px;
         top: 100px;
         perspective: 1000px;
         transition: ease-in-out .2s;
@@ -1366,7 +1366,8 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         perspective: 1000px;
         transition: ease-in-out .2s;
         padding-left: 30px;
-        padding-top: 95px;
+        padding-top: 60px;
+        background: #f5f5f5;
     }
     .margin_Top10{
         margin-top: 20px;
@@ -1435,7 +1436,7 @@ article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{d
     clear: both;
 }
 #nav_1{
-    padding-top: 50px;
+    padding-top: 86px;
 }
 .font_size_weight{
     font-weight: initial;
@@ -1520,7 +1521,7 @@ b {
 .width > ul > div.color_2d2d2d > p.color_2d2d2d {
     padding-right: 10px;
 }
-.button {
+.button0 {
     border: 0;
     background-color: #f95355;
     height: 40px;
@@ -1538,11 +1539,12 @@ p {
     text-align: left;
 }
 .padding_t {
-    padding-top: 10px;
+    margin-top: 10px;
     text-align: left;
     padding-left: 10px;
-    line-height: 30px;
+    line-height: 40px;
     color: #1f1f1f;
+    background-color: #f5f5f5;
 }
 .apply {
     width: 100%;
@@ -2061,12 +2063,22 @@ section > div > ul > li.activer:nth-of-type(3)> b {
         padding-top: 5%;
         padding-left: 18px;
     }
+    .width0{
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+    .width0>ul>li:nth-of-type(1){
+        padding-right: 20px;
+        color: #919191;
+    }
     .width > ul > li:nth-of-type(2) {
         padding-top: 12px;
         color: #919191;
         padding-right: 20px;
         padding-left: 10px;
     }
+
     .width > ul > div {
         color: #2d2d2d;
         text-align: left;
@@ -2106,6 +2118,15 @@ section > div > ul > li.activer:nth-of-type(3)> b {
     }
     .width>ul>li.padding_t_text{
         padding: 20px 10px 0 10px;
+    }
+    .width0{
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+    .width0>ul>li:nth-of-type(1){
+        padding-right: 20px;
+        color: #919191;
     }
     .width > ul > li.active:nth-of-type(2) {
         padding-top: 20px;
