@@ -68,7 +68,7 @@
       </li>
       </ul>
     </div>
-    <div class="width">
+    <div class="width0">
       <ul class="row">
       <li class="">
         其他信息
@@ -86,7 +86,7 @@
       </div>
       </ul>
     </div>
-    <div class="button">
+    <div class="button0">
       点击报名
     </div>
     <div class="padding_t">
@@ -391,20 +391,7 @@ export default {
             sports(0, tagLi[0].offsetWidth);
         };
     }
-    var winWidth =document.body.clientWidth;
-    var winHeight =document.body.clientHeight;
-    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        document.getElementById('slider').style.paddingLeft=winWidth/2-360+'px';
-    } else {
-        document.getElementById('slider').style.paddingLeft=winWidth/2-100+'px';
-        document.getElementById('heightOne1').style.lineHeight = winHeight / 10 + 'px';
-        document.getElementById('heightTwo1').style.lineHeight = winHeight / 4 + 'px';
-        document.getElementById('heightThree1').style.paddingTop = 16 + 'px';
-        document.getElementById('heightOne2').style.lineHeight = winHeight / 10 + 'px';
-        document.getElementById('heightTwo2').style.lineHeight = winHeight / 4 + 'px';
-        document.getElementById('heightThree2').style.paddingTop = 16 + 'px';
-
-    }
+   
 /* eslint-enable  */
   }
 }

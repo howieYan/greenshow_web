@@ -617,9 +617,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -667,9 +667,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -717,9 +717,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -768,9 +768,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -849,9 +849,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -929,9 +929,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -979,9 +979,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -1029,9 +1029,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -1079,9 +1079,9 @@ div.swiper-slide-prev{
         text-align: center;
     }
     .swipe-box_1_width_fl>div>img{
-        width: 90%;
+        width: 100%;
         padding: 5%;
-        height:72%;
+        height:80%;
 
     }
     .swipe-box_1_width_fl>div>b{
@@ -1333,6 +1333,18 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         perspective: 1000px;
         transition: ease-in-out .2s;
     }
+    .width0{
+        margin-bottom: 10px;
+    }
+    .width0>ul>li{
+        color:#919191;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 20px;
+    }
+    .width0>ul>div{
+        padding-top: 10px;
+    }
     .slide {
         -webkit-user-select: none;
         user-select: none;
@@ -1466,7 +1478,7 @@ article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{d
     clear: both;
 }
 #nav_1{
-    padding-top: 50px;
+    padding-top: 86px;
 }
 .font_size_weight{
     font-weight: initial;
@@ -1554,7 +1566,7 @@ b {
 .width > ul > div.color_2d2d2d > p.color_2d2d2d {
     padding-right: 10px;
 }
-.button {
+.button0 {
     border: 0;
     background-color: #f95355;
     height: 40px;
@@ -1572,11 +1584,12 @@ p {
     text-align: left;
 }
 .padding_t {
-    padding-top: 10px;
+    margin-top: 10px;
     text-align: left;
     padding-left: 10px;
-    line-height: 30px;
+    line-height: 40px;
     color: #1f1f1f;
+    background: #f5f5f5;
 }
 .apply {
     width: 100%;
