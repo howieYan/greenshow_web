@@ -127,7 +127,7 @@
         </li>
       </ul>
       </div>
-      <div class="module padding_t10">
+      <div class="module padding_t10" v-for="n in 4">
       <div class="text_center">
         <ul class="row">
         <li class="width_40">
@@ -145,34 +145,12 @@
           <p><img :src="'static/apply_1.png'" alt="">
           </p>
           <b>远行</b>
-          <b class="border"></b>
+          <b class="border active_bg"></b>
         </li>
         </ul>
       </div>
       </div>
-      <div class="module">
-      <div class="text_center">
-        <ul class="row">
-        <li class="width_40">
-          <div class="one">
-          第二组
-          </div>
-          <div class="two">
-          1号洞
-          </div>
-          <div class="three">
-          10:00
-          </div>
-        </li>
-        <li class="col" v-for="n in 4">
-          <p><img :src="'static/apply_1.png'" alt="">
-          </p>
-          <b>远行</b>
-          <b class="border"></b>
-        </li>
-        </ul>
-      </div>
-      </div>
+
     </div>
     </div>
     <div id="nav3" class="nav">
@@ -184,7 +162,7 @@
       <li class="col">
         姓名
       </li>
-      <li class="col">
+      <li class="">
         距标准杆
       </li>
       <li class="col">
