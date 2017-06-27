@@ -184,7 +184,7 @@
       <li class="col">
         姓名
       </li>
-      <li class="col">
+      <li class="">
         距标准杆
       </li>
       <li class="col">
@@ -294,7 +294,7 @@
     </div>
     <div id="nav6" class="nav">
     <div class="slider" id="slider">
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 10">
+      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 5">
       <img :src="'static/bg_nav_6.png'">
       <p>
         <b class="font_size_weight">TO:</b>
@@ -353,45 +353,10 @@ export default {
             arrli[i].className="";
             arrdiv[i].className="";
           }
+
         }
-    }
-    'use strict';
-    var tagNav, tagBar, tagLi, timer, i, n, m, speed, changeWidth;
-    tagNav = document.getElementById('nav');
-    tagBar = document.getElementById('navBar');
-    tagLi  = tagNav.getElementsByTagName('ul')[0].getElementsByTagName('li');
-    speed  = 0;
-
-    tagBar.style.width = tagLi[0].offsetWidth + 'px';
-
-    function sports(n, m) {
-        timer = setInterval(function () {
-            speed = (n - tagBar.offsetLeft) / 10;
-            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-            if (tagBar.offsetLeft === n) {
-                clearInterval(timer);
-            } else {
-                tagBar.style.left = tagBar.offsetLeft + speed + 'px';
-            }
-
-            changeWidth = m - tagBar.offsetWidth;
-            changeWidth = changeWidth > 0 ? Math.ceil(speed) : Math.floor(speed);
-            tagBar.style.width = m + changeWidth  + 'px';
-        }, 20);
       }
     }
-
-    for (i = 0; i < tagLi.length; i += 1) {
-        tagLi[i].onmouseover = function () {
-            clearInterval(timer);
-            sports(this.offsetLeft, this.offsetWidth);
-        };
-        tagLi[i].onmouseout = function () {
-            clearInterval(timer);
-            sports(0, tagLi[0].offsetWidth);
-        };
-    }
-   
 /* eslint-enable  */
   }
 }

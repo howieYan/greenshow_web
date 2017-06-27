@@ -1328,7 +1328,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         margin: 0 auto;
         height: 630px;
         padding-left: 40px;
-        padding-top: 80px;
+        padding-top: 40px;
         top: 100px;
         perspective: 1000px;
         transition: ease-in-out .2s;
@@ -1373,7 +1373,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         margin: 0 auto;
         height: 740px;
         padding-left: 32px;
-        padding-top: 120px;
+        padding-top: 50px;
         top: 100px;
         perspective: 1000px;
         transition: ease-in-out .2s;
@@ -1383,7 +1383,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         user-select: none;
         -moz-user-select: none;
         position: absolute;
-        height: 380px;
+        height: 440px;
         width: 310px;
         box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.3);
         background: #fcfcfc;
@@ -1397,6 +1397,18 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         border-bottom: 55px white solid;
         border-radius: 5px;
     }
+    .width0{
+        margin-bottom: 10px;
+    }
+    .width0>ul>li{
+        color:#919191;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 20px;
+    }
+    .width0>ul>div{
+        padding-top: 10px;
+    }
 }
 @media all and (min-height: 701px)and (max-height:750px){
     .slider {
@@ -1409,10 +1421,22 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         perspective: 1000px;
         transition: ease-in-out .2s;
         padding-left: 30px;
-        padding-top: 95px;
+        padding-top:60px;
     }
     .margin_Top10{
         margin-top: 20px;
+    }
+    .width0{
+        margin-bottom: 10px;
+    }
+    .width0>ul>li{
+        color:#919191;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 20px;
+    }
+    .width0>ul>div{
+        padding-top: 10px;
     }
     .slide {
         -webkit-user-select: none;
@@ -1456,6 +1480,7 @@ article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{d
         font-size: 15px;
         line-height: 90px;
         padding-top: 5px;
+        padding-left: 5px;
     }
 }
 /* Reset */
@@ -1670,7 +1695,7 @@ p {
 #iscroll {
     overflow: hidden;
     position: relative;
-    height: 36px;
+    height: 38px;
     text-align: center;
 }
 .cur {
@@ -1741,6 +1766,7 @@ div.module > div.text_center > ul > li.width_40 > div.one {
     font-size: 15px;
     line-height: 35px;
     padding-top: 5px;
+    padding-left: 5px;
 }
 div.module > div.text_center > ul > li.width_40 > div.two {
     font-size: 14px;
@@ -1758,6 +1784,7 @@ b.border {
     height: 10px;
     background: #00a0e9;
     border-radius: 50%;
+    display: -webkit-inline-box;
 }
 .title > ul:nth-of-type(even) {
     background-color: #f2f2f2;
@@ -1847,6 +1874,7 @@ body {
 #nav6 {
     height: 100%;
     overflow: hidden;
+    background: #f5f5f5;
 }
 .width_iamge {
     width: 100%;
@@ -1979,6 +2007,7 @@ div.module > div.text_center > ul > li.width_40 > div.one {
     font-size: 15px;
     line-height: 35px;
     padding-top: 5px;
+    padding-left: 5px;
 }
 div.module > div.text_center > ul > li.width_40 > div.two {
     font-size: 14px;
@@ -2229,7 +2258,193 @@ section > div > ul > li.activer:nth-of-type(3)> b {
     -moz-box-shadow: 0 0 10px #e7e7e7;
     box-shadow: 0 0 10px #e7e7e7;
 }
+.category {
+    width: 100%;
+    margin-top: 20px;
+}
 
+.category li {
+    display: inline-block;
+    width: 23.9%;
+    text-align: center;
+    padding: 30px 0 10px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.category li a {
+    margin: 15px 10px 0 10px;
+}
+
+
+.imgs {
+    padding: 10px 0;
+    width: 100%;
+    background-color: #F0F0F0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+
+}
+
+.imgs li {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    height: 55px;
+}
+
+.imgs li:not(:last-child) {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    border-right: 1px solid #EDEDEB;
+    height: 55px;
+}
+
+.img:first-of-type {
+    padding-top: 0;
+}
+
+.img {
+    height: 124px;
+    padding-top: 10px;
+    background-color: #F4F4F4;
+    position: relative;
+}
+
+dt {
+    height: 35px;
+    line-height: 35px;
+}
+
+dt :first-child {
+    width: 80%;
+    padding-left: 10px;
+}
+
+dt :last-child {
+    color: #3ABA63;
+}
+
+.detail {
+    padding: 5px 10px;
+    color: #A4A4A4;
+    font-size: 10px;
+    line-height: 18px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.detail:first-line {
+    color: #000000;
+    font-size: 15px;
+}
+
+.price {
+    font-size: 16px;
+    padding-left: 10px;
+    border-bottom: 1px solid #EDEDED;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    line-height: 25px;
+}
+
+.newPrice {
+    color: #F67570;
+}
+
+.oldPrice {
+    color: #999999;
+    font-size: 10px;
+    margin-left: 15px;
+}
+
+.zero-buy {
+    border-bottom: 1px solid #EDEDED;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+
+}
+
+.zero-buy .price {
+    border-bottom: none;
+}
+
+.buy {
+    display: block;
+    width: 20%;
+    margin: 2px 5% 2px 0;
+    background-color: #FC7924;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 2px;
+    height: 12px;
+    font-size: 12px;
+}
+
+/*slide*/
+.swipe {
+    overflow: hidden;
+    position: relative;
+}
+
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.swipe-wrap > div {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.swipe-wrap > div {
+    overflow: hidden;
+    position: relative;
+}
+
+.swipe-wrap img {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+    min-height: 132px;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+#slide {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+#pointer0 {
+    position: absolute;
+    bottom: 0px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+#pointer0 a {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    margin-right: 4px;
+    background-color: #919191;
+}
+
+#pointer0 a.active1 {
+    background-color: red;
+}
 
 
 
