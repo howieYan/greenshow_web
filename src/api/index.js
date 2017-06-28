@@ -57,6 +57,10 @@ export default {
     return this.send('get', `/api/TeamX?option=${option}&page=${page}&size=${size}`)
   },
 
+  listPlayer (option, page = 0, size = 10) {
+    return this.send('get', `/api/PlayerX?option=${option}&page=${page}&size=${size}`)
+  },
+
   getTeam (id) {
     return this.send('get', '/api/TeamX/' + id)
   }

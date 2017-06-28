@@ -25,7 +25,7 @@ export default new Router({
       component: Event
     },
     {
-      path: '/team',
+      path: '/team/:id',
       name: 'Team',
       component: Team
     },
