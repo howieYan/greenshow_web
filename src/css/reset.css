@@ -131,7 +131,26 @@ header>ul>li.textCenter1{
 header>ul>li:nth-of-type(3){
     width: 40px;
 }
-.swipe {
+.title-box5{
+    height:20px;
+    text-align: -webkit-center;
+}
+.title-box5>ul{
+    height: 20px;
+}
+.title-box5>ul.title-box-ul_li>li{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: #f2f2f2;
+    margin: 0 2px;
+    cursor: pointer;
+}
+.title-box5>ul.title-box-ul_li>li.active{
+    background: #52c6d8;
+}
+.swipe ,.swiper_index{
     width: 100%;
     background-color: #fff;
     overflow: hidden;
@@ -419,6 +438,9 @@ div.swiper-slide-prev{
 .footer>div.section_header{
     padding-top: 10px;
     padding-left: 5px;
+}
+.nav1>ul>li>b{
+    font-size: 14px;
 }
 .footer>div.section_header>b:nth-of-type(1){
     width: 5px;
@@ -1094,7 +1116,7 @@ div.swiper-slide-prev{
 
 @media screen and (min-height:569px) {
 
-    .swiper-pagination-bullet i {
+    .swiper-pagination-bullet1 i {
         width: 20px;
         height: 20px;
         line-height: 20px;
@@ -1889,6 +1911,10 @@ body {
     position: relative;
     float: left;
 }
+.swiper-slide-header_ph{
+    width: 100%;
+}
+
 @media all and (min-height: 560px)and (max-height:660px){
     div.width_iamge > img {
         width: 88%;
@@ -1900,9 +1926,7 @@ body {
         width: 88%;
         padding-top: 5%;
     }
-    .swiper-container {
-        width: 85%;
-    }
+
 }
 .text-center{
     width: 100%;
@@ -2423,8 +2447,11 @@ dt :last-child {
     overflow: hidden;
 }
 
-
-
+.swiper_index{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
 #pointer0 {
     position: absolute;
     bottom: 0px;
@@ -2441,10 +2468,5 @@ dt :last-child {
     margin-right: 4px;
     background-color: #919191;
 }
-
-#pointer0 a.active1 {
-    background-color: red;
-}
-
 
 
