@@ -86,7 +86,7 @@
       </div>
       </ul>
     </div>
-    <div class="button">
+    <div class="button0">
       点击报名
     </div>
     <div class="padding_t">
@@ -294,7 +294,7 @@
     </div>
     <div id="nav6" class="nav">
     <div class="slider" id="slider">
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 10">
+      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 5">
       <img :src="'static/bg_nav_6.png'">
       <p>
         <b class="font_size_weight">TO:</b>

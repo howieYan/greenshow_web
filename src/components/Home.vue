@@ -164,9 +164,11 @@
               </div>
             </div>
           </div>
-          <div class="title-box">
-            <ul class="title-box-ul_li">
-              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length"></li>
+          <div class="title-box title-box_height">
+            <ul class="title-box-ul_li row">
+              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="col">
+                  {{i+1}}
+              </li>
             </ul>
           </div>
         </div>
@@ -185,7 +187,7 @@
             <div class="title_tj_img_border">
               <img :src="'static/qiu0.png'" alt="">
               <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冯珊珊，中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
             </div>
           </li>
           <li style="width: 10px"></li>
@@ -193,7 +195,7 @@
             <div class="title_tj_img_border">
               <img :src="'static/qiu1.jpg'" alt="">
               <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李昊桐，10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
             </div>
           </li>
         </ul>
