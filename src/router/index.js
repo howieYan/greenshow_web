@@ -15,12 +15,17 @@ export default new Router({
       component: Home
     },
     {
+      path: '/home',
+      name: 'HomeX',
+      component: Home
+    },
+    {
       path: '/event',
       name: 'Event',
       component: Event
     },
     {
-      path: '/team',
+      path: '/team/:id',
       name: 'Team',
       component: Team
     },

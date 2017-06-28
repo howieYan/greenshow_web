@@ -68,7 +68,7 @@
       </li>
       </ul>
     </div>
-    <div class="width0">
+    <div class="width">
       <ul class="row">
       <li class="">
         其他信息
@@ -86,7 +86,7 @@
       </div>
       </ul>
     </div>
-    <div class="button0">
+    <div class="button">
       点击报名
     </div>
     <div class="padding_t">
@@ -127,7 +127,7 @@
         </li>
       </ul>
       </div>
-      <div class="module padding_t10" v-for="n in 4">
+      <div class="module padding_t10">
       <div class="text_center">
         <ul class="row">
         <li class="width_40">
@@ -145,12 +145,34 @@
           <p><img :src="'static/apply_1.png'" alt="">
           </p>
           <b>远行</b>
-          <b class="border active_bg"></b>
+          <b class="border"></b>
         </li>
         </ul>
       </div>
       </div>
-
+      <div class="module">
+      <div class="text_center">
+        <ul class="row">
+        <li class="width_40">
+          <div class="one">
+          第二组
+          </div>
+          <div class="two">
+          1号洞
+          </div>
+          <div class="three">
+          10:00
+          </div>
+        </li>
+        <li class="col" v-for="n in 4">
+          <p><img :src="'static/apply_1.png'" alt="">
+          </p>
+          <b>远行</b>
+          <b class="border"></b>
+        </li>
+        </ul>
+      </div>
+      </div>
     </div>
     </div>
     <div id="nav3" class="nav">
@@ -162,7 +184,7 @@
       <li class="col">
         姓名
       </li>
-      <li class="">
+      <li class="col">
         距标准杆
       </li>
       <li class="col">
@@ -272,7 +294,7 @@
     </div>
     <div id="nav6" class="nav">
     <div class="slider" id="slider">
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 5">
+      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 10">
       <img :src="'static/bg_nav_6.png'">
       <p>
         <b class="font_size_weight">TO:</b>
@@ -343,4 +365,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '../css/reset.css';
+@import '../css/image.css';
 </style>
