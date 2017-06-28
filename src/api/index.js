@@ -6,8 +6,8 @@ import axios from 'axios'
  * axios configurations.
  */
 axios.defaults.timeout = 10000  // timeout in 10 seconds.
-// axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://wx.golfgreenshow.com' : 'http://devwx.golfgreenshow.com'
-axios.defaults.baseURL = 'http://www.greenshow.co'
+axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://wx.golfgreenshow.com' : 'http://devwx.golfgreenshow.com'
+// axios.defaults.baseURL = 'http://www.greenshow.co'
 
 const debugApi = process.env.NODE_ENV === 'development'
 
@@ -30,12 +30,12 @@ export default {
             resolve(response.data)
           }
           else {
-            reject('通讯失败，请检查网络或稍后重试。')
+            reject(new Error('通讯失败，请检查网络或稍后重试。'))
           }
         })
         .catch((error) => {
           console.error(error)
-          reject('通讯失败，请检查网络或稍后重试。')
+          reject(new Error('通讯失败，请检查网络或稍后重试。'))
         })
       }
       catch (e) {
@@ -51,8 +51,12 @@ export default {
 
   /**
    * 查询球队简介
-   * curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405' 'http://devwx.golfgreenshow.com/api/TeamX/GetTeamProfile?TeamGuid=172701a1-8457-4df1-891c-4fa1c78ef883'
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api/TeamX/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
+  listTeam (option, page = 0, size = 10) {
+    return this.send('get', `/api/TeamX?option=${option}&page=${page}&size=${size}`)
+  },
+
   getTeam (id) {
     return this.send('get', '/api/TeamX/' + id)
   }

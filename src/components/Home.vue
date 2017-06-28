@@ -36,10 +36,10 @@
         <div class="swipe-box_1">
           <div class="swipe-box_1_width" id="nav">
 
-            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame" v-for="n in 13">
+            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame(record)" v-for="record in teams.list">
               <div>
-                <img :src="'static/qiu6.jpg'" alt="">
-                <b class="b">SGCU联盟</b>
+                <img :src="record.Logo" alt="">
+                <b class="b">{{record.Name}}</b>
               </div>
             </div>
 
@@ -61,7 +61,7 @@
             <div class="opacity ">
               <div class="swiper-slide-header">
                 <div>
-                  1st Place
+                  No. {{ i + 1 }}
                 </div>
                 <div class="height240">
                   <ul class="row">
@@ -869,16 +869,44 @@
 
 <script>
 // import '../script/swiper.js'
+import api from '../api'
 
 export default {
   name: 'Home',
   data () {
     return {
+      teams: {
+        page: 0,
+        size: 5,
+        list: []
+      },
+      players: {
+        page: 0,
+        size: 5,
+        active: -1,
+        list: []
+      }
     }
   },
 
   methods: {
-    urlFrame () {
+    async loadData () {
+      try {
+        let result = await api.listTeam('all', this.teams.page, this.teams.size)
+        console.debug(`%o`, result)
+        if (result) {
+          this.teams.list = result
+        }
+        else {
+          this.teams.list = []
+        }
+      }
+      catch (e) {
+      }
+    },
+
+    urlFrame (team) {
+      console.debug(`%o`, team)
       this.$router.push({ path: '/team' })
     },
 
@@ -887,12 +915,18 @@ export default {
     }
   },
 
+  created () {
+    this.loadData()
+  },
+
   mounted () {
 /* eslint-disable  */
-    var nav=document.getElementById("nav");
-    var navLength=nav.children.length;
-    var offsetWidth =document.getElementById('offsetWidth').offsetWidth;
-    nav.style.width=navLength*(offsetWidth+5)+10+'px';
+    // var nav=document.getElementById("nav");
+    // var navLength=nav.children.length;
+    // var offsetWidth =document.getElementById('offsetWidth').offsetWidth;
+    // if (offsetWidth) {
+    //   nav.style.width=navLength*(offsetWidth+5)+10+'px';
+    // }
 
     /*SGCU系列赛排名*/
     var paginationOnclick =document.getElementById('pagination').getElementsByTagName("span");
@@ -911,6 +945,17 @@ export default {
       }
     }
 /* eslint-enable */
+  },
+
+  updated () {
+    console.debug(`${this.name}.updated`)
+    let nav = document.getElementById('nav')
+    let navLength = nav.children.length
+    let e = document.getElementById('offsetWidth')
+    if (e) {
+      let offsetWidth = e.offsetWidth
+      nav.style.width = navLength * (offsetWidth + 5) + 10 + 'px'
+    }
   }
 }
 </script>
