@@ -199,18 +199,24 @@
         </ul>
       </div>
     </div>
-  </div>
+
+    <div v-if="debug" style="text-align: center;background: #f5f5f5;line-height:32px;">{{ version }}</div>
+   </div>
 </template>
 
 <script>
 // import '../script/swiper.js'
 import '../script/swiper.min.js'
 import api from '../api'
+import * as lib from '../lib'
 
 export default {
   name: 'Home',
   data () {
     return {
+      version: lib.version,
+      debug: lib.debug,
+
       teams: {
         page: 0,
         size: 5,

@@ -43,27 +43,35 @@
       活动信息
     </div>
     <div class="bgColor">
-      <ul class="row" v-for="first in aplyarray">
-      <li class="">
-        {{ first.titleaply }}
-      </li>
-      <li class="col">
-        {{ first.stroke }}
-      </li>
+      <ul class="row">
+        <li class="">活动名称</li>
+        <li class="col">{{ event.Name }}</li>
+      </ul>
+      <ul class="row">
+        <li class="">开球时间</li>
+        <li class="col">{{ formatTime(event.StartDate) }}</li>
+      </ul>
+      <ul class="row">
+        <li class="">活动地点</li>
+        <li class="col">{{ event.Address }}</li>
+      </ul>
+      <ul class="row">
+        <li class="">其他信息</li>
+        <li class="col" v-html="event.Description"></li>
       </ul>
     </div>
     <div class="button0">
       点击报名
     </div>
     <div class="padding_t">
-      <b>已报名/10人</b>
+      <b>已报名/{{ event.PlayerCount }}人</b>
     </div>
     <div class="apply"  >
       <ul class="row" >
-      <li class="col" v-for="first in aplyname">
-        <p><img :src="'static/apply_1.png'" alt="">
+      <li class="col" v-for="record in event.Players">
+        <p><img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
         </p>
-        <b>{{ first.name }}</b>
+        <b>{{ record.Name }}</b>
       </li>
       </ul>
     </div>
@@ -76,7 +84,7 @@
         <b style="padding-left:10px;">{{ first.aplystring }}</b>
         <b>{{ first.string }}</b>
         </li>
-        
+
       </ul>
       </div>
       <div class="module padding_t10">
@@ -133,7 +141,7 @@
       <li class="col" v-for="title in ranking.list[0].title">
         {{ title }}
       </li>
-     
+
       </ul>
       <ul class="row" v-for="player in ranking.list[0].list">
       <li class="col">{{ player.Number }}</li>
@@ -210,29 +218,16 @@
 </template>
 
 <script>
+import api from '../api'
+import * as lib from '../lib'
 import '../script/swiper.min.js'
 
 export default {
   name: 'Event',
   data () {
     return {
-      teams: {
-        page: 0,
-        size: 5,
-        list: []
-      },
-      players: {
-        page: 0,
-        size: 5,
-        index: -1,
-        list: []
-      },
-      aplyarray: [
-        { titleaply: '活动名称', stroke: '优仕队5月例赛' },
-        { titleaply: '开球时间', stroke: '2017.05.30 10:00' },
-        { titleaply: '活动地点', stroke: '汤臣高尔夫俱乐部' },
-        { titleaply: '其他信息', stroke: '击球费用：￥1200元（含午餐） 签到时间：9:00，开球仪式：9:40，请大家准时在1号T台集合进行开球仪式。着装要求：绿色队服 晚宴地点：农家菜' }
-      ],
+      name: 'EventV',
+      event: {},
       aplyname: [
         { name: '远行0' },
         { name: '远行1' },
@@ -282,7 +277,31 @@ export default {
     }
   },
 
+  computed: {
+    id () {
+      return this.$route.params.id
+    }
+  },
+
+  created () {
+    this.loadData()
+  },
+
   methods: {
+    formatTime: lib.formatTime,
+
+    async loadData () {
+      try {
+        // this.team = this.blank
+        let result = await api.getEvent(this.id, 'all')
+        console.debug(`%o`, result)
+        this.event = api.isValid(result) ? result.data : {}
+      }
+      catch (e) {
+        console.error(e)
+      }
+    },
+
     closeFrame () {
       this.$router.go(-1)
     }

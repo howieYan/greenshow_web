@@ -85,6 +85,7 @@ export default {
   name: 'Team',
   data () {
     return {
+      name: 'TeamV',
       blank: {
         Logo: '../static/img/logo.png',
         Name: '',
@@ -128,7 +129,7 @@ export default {
     },
 
     urlFrame (event) {
-      console.debug(`Click to open: %o`, event)
+      console.debug(`${this.Name}.click to open: %o`, event)
       this.$router.push({ path: `/event/${event.Id}` })
     },
 
