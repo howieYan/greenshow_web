@@ -294,17 +294,18 @@ export default {
     var arrli=document.getElementById("active").getElementsByTagName("li");
     var arrdiv=document.getElementById("nav_1").children;
     for(var i=0;i<arrli.length;i++){
-      arrli[i].onclick =   function () {
-        for(var i=0;i<arrli.length;i++){
-          if(arrli[i]==this){
-            arrli[i].className="cur";
-            arrdiv[i].className="selected";
-          }else {
-            arrli[i].className="";
-            arrdiv[i].className="";
-          }
-
+      arrli[i].onclick=li_mouseenter;
+    }
+    function li_mouseenter() {
+      for(var i=0;i<arrli.length;i++){
+        if(arrli[i]==this){
+          arrli[i].className="cur";
+          arrdiv[i].className="selected";
+        }else {
+          arrli[i].className="";
+          arrdiv[i].className="";
         }
+
       }
     }
 /* eslint-enable  */
