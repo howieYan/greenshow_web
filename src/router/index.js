@@ -20,7 +20,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/event',
+      path: '/event/:id',
       name: 'Event',
       component: Event
     },

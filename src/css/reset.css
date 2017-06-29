@@ -1153,7 +1153,7 @@ div.swiper-slide-prev{
         padding-top: 30px;
     }
     section>ul.signup_text>li:nth-of-type(2){
-        padding-left: 15px;
+        padding-left: 25px;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
@@ -1250,16 +1250,16 @@ div.swiper-slide-prev{
     text-align: center;
 }
 .section_title>ul{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .section_title>ul>li{
     text-align: center;
     padding: 2%;
 }
 .section_title>ul>li>img{
-    width: 30px;
-    height: 25px
+    width: 20px;
+    height: 20px
 }
 .section_title>ul>li>div{
     color:#111111;
@@ -1279,7 +1279,6 @@ section>div.title_image>img{
     width: 70px;
 }
 section>ul.signup_text{
-    text-align: center;
     height: 40px;
     line-height: 40px;
     color:#373737;
@@ -1329,11 +1328,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         margin: 0 auto;
         height: 630px;
         padding-left: 40px;
-<<<<<<< HEAD
-        padding-top: 35px;
-=======
-        padding-top: 80px;
->>>>>>> 9911c78357301e4a0086015a8aaa5925e861b102
+        padding-top: 40px;
         top: 100px;
         perspective: 1000px;
         transition: ease-in-out .2s;
@@ -1366,11 +1361,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         margin: 0 auto;
         height: 740px;
         padding-left: 32px;
-<<<<<<< HEAD
         padding-top: 50px;
-=======
-        padding-top: 120px;
->>>>>>> 9911c78357301e4a0086015a8aaa5925e861b102
         top: 100px;
         perspective: 1000px;
         transition: ease-in-out .2s;
@@ -1380,11 +1371,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         user-select: none;
         -moz-user-select: none;
         position: absolute;
-<<<<<<< HEAD
-        height: 440px;
-=======
-        height: 380px;
->>>>>>> 9911c78357301e4a0086015a8aaa5925e861b102
+        height: 450px;
         width: 310px;
         box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.3);
         background: #fcfcfc;
@@ -1410,6 +1397,7 @@ section>ul.signup_text>li:nth-of-type(3)>img{
         perspective: 1000px;
         transition: ease-in-out .2s;
         padding-top: 60px;
+        padding-left:33px;
         background: #f5f5f5;
     }
     .margin_Top10{
@@ -1531,12 +1519,19 @@ article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{d
 .bgColor, .width {
     background-color: #fff;
 }
-.bgColor {
-    line-height: 60px;
-}
 .bgColor > ul {
     padding: 0 10px;
     height: auto;
+    line-height: 60px;
+}
+.bgColor > ul:last-child{
+    line-height: 23px!important;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color:#2d2d2d;
+}
+.bgColor > ul:last-child>li{
+    border: 0!important;
 }
 .bgColor > ul > li:nth-of-type(1) {
     color: #919191;
@@ -1551,10 +1546,6 @@ article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{d
 .width {
     padding: 0 0 10px 0;
     margin-bottom: 10px;
-}
-.width > ul {
-    padding: 15px 0 0 10px;
-    height: auto;
 }
 .width > ul > li {
     color: #919191;
@@ -1666,7 +1657,7 @@ p {
 #iscroll {
     overflow: hidden;
     position: relative;
-    height: 36px;
+    height: 38px;
     text-align: center;
 }
 .cur {
@@ -1845,6 +1836,7 @@ body {
 #nav6 {
     height: 100%;
     overflow: hidden;
+    background:#f5f5f5;
 }
 .width_iamge {
     width: 100%;
@@ -2115,9 +2107,7 @@ section > div > ul > li.activer:nth-of-type(3)> b {
         color: #2d2d2d;
         text-align: left;
         padding-top: 20px;
-    }
-    .width>ul{
-        padding-left: 18px;
+        padding-left:20px;
     }
     .width > ul > li:nth-of-type(1) {
         padding-top: 6%;
@@ -2135,7 +2125,7 @@ section > div > ul > li.activer:nth-of-type(3)> b {
     }
     .width > ul > li:nth-of-type(1) {
         padding-top: 5%;
-        padding-left:20px;
+        padding-left:10px;
     }
 
     .bgColor5 > ul > li:nth-of-type(1) {
@@ -2144,9 +2134,6 @@ section > div > ul > li.activer:nth-of-type(3)> b {
     }
     .padding_t_text{
         padding-top: 10px;
-    }
-    .width>ul{
-        padding-left: 18px;
     }
     .width>ul>li.padding_t_text{
         padding: 20px 10px 0 10px;
@@ -2165,13 +2152,10 @@ section > div > ul > li.activer:nth-of-type(3)> b {
         color: #919191;
         padding-right: 20px;
     }
-    .width > ul > div {
+    .width > ul > div {    
         color: #2d2d2d;
-        text-align: left;
         padding-top: 20px;
-    }
-    .width {
-        padding-bottom: 15%;
+        padding-left: 20px;
     }
 }
 
