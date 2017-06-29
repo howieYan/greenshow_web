@@ -12,6 +12,13 @@ axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://wx.go
 const debugApi = process.env.NODE_ENV === 'development'
 
 export default {
+  /**
+   * Check whether specified response is valid and contains data.
+   */
+  isValid (result) {
+    return result && typeof (result.ret) !== 'undefined' && result.ret === 0
+  },
+
   send (method, uri, data = null, token = null) {
     return new Promise((resolve, reject) => {
       try {
@@ -49,6 +56,10 @@ export default {
     return Object.keys(data).map((i) => i + '=' + data[i]).join('&')
   },
 
+  listEvent (id, option, page = 0, size = 10) {
+    return this.send('get', `/api/EventX?id=${id}&option=${option}&page=${page}&size=${size}`)
+  },
+
   /**
    * 查询球队简介
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/TeamX/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
@@ -61,7 +72,7 @@ export default {
     return this.send('get', `/api/PlayerX?option=${option}&page=${page}&size=${size}`)
   },
 
-  getTeam (id) {
-    return this.send('get', '/api/TeamX/' + id)
+  getTeam (id, option = '') {
+    return this.send('get', `/api/TeamX/${id}?option=${option}`)
   }
 }
