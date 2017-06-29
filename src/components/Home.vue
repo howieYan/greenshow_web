@@ -293,11 +293,11 @@ export default {
       try {
         let result = await api.listTeam('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        this.teams.list = result || []
+        this.teams.list = api.isValid(result) ? result.data : []
         result = await api.listPlayer('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        if (result && result.length > 0) {
-          this.players.list = result || []
+        if (api.isValid(result) && result.data.length > 0) {
+          this.players.list = api.isValid(result) ? result.data : []
           this.players.index = 0
         }
         else {
@@ -311,7 +311,7 @@ export default {
     },
 
     urlFrame (team) {
-      console.debug(`%o`, team)
+      console.debug(`Click to open: %o`, team)
       this.$router.push({ path: `/team/${team.Id}` })
     },
 
