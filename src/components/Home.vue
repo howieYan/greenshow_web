@@ -96,22 +96,20 @@
                     </li>
                     <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
+                      <p>{{ scores[players.index].stroke }}</p>
                       <div class="border_bottom"></div>
                       <p>数据</p>
                       <div class="line_height">
-                        2
+                        {{ scores[players.index].putt }}
                       </div>
                       <div class="line_height">
-                        2
+                        {{ scores[players.index].par3 }}
                       </div>
                       <div class="line_height">
-                        2
+                        {{ scores[players.index].par4 }}
                       </div>
                       <div class="line_height">
-                        2
+                        {{ scores[players.index].par5 }}
                       </div>
                     </li>
                   </ul>
@@ -232,6 +230,13 @@ export default {
         index: -1,
         list: []
       },
+      scores: [
+        { stroke: 68, putt: 1, par3: 2, par4: 3, par5: 4 },
+        { stroke: 69, putt: 2, par3: 2, par4: 3, par5: 4 },
+        { stroke: 70, putt: 2, par3: 2, par4: 4, par5: 5 },
+        { stroke: 71, putt: 2, par3: 3, par4: 4, par5: 5 },
+        { stroke: 72, putt: 2, par3: 3, par4: 4, par5: 5 }
+      ],
       ranking: {
         index: 0,
         list: [
@@ -309,6 +314,7 @@ export default {
         }
       }
       catch (e) {
+        console.error(e)
       }
     },
 
