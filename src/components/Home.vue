@@ -83,7 +83,7 @@
                     <li class="col color_0a0b1b_b color_0a0b1b_b0">
                       <p>ＳＧＣＵ系列赛</p>
                       <p>
-                        冠军
+                         {{ scores[players.index].title }}
                       </p>
                       <div class="border_bottom"></div>
                       <p>技术指标</p>
@@ -102,22 +102,20 @@
                     </li>
                     <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
+                      <p>{{ scores[players.index].stroke }}</p>
                       <div class="border_bottom"></div>
                       <p>数据</p>
-                      <div class="line_height" >
-                        2
+                      <div class="line_height">
+                        {{ scores[players.index].putt }}
                       </div>
                       <div class="line_height">
-                        3.4
+                        {{ scores[players.index].par3 }}
                       </div>
                       <div class="line_height">
-                        4.3
+                        {{ scores[players.index].par4 }}
                       </div>
                       <div class="line_height">
-                        4.8
+                        {{ scores[players.index].par5 }}
                       </div>
                     </li>
                   </ul>
@@ -224,6 +222,13 @@ export default {
         index: -1,
         list: []
       },
+      scores: [
+        { title: '冠军', stroke: 68, putt: 2, par3: 3.1, par4: 4.3, par5: 4.8 },
+        { title: '季军', stroke: 69, putt: 2, par3: 3.5, par4: 4.2, par5: 5 },
+        { title: '亚军', stroke: 70, putt: 2.2, par3: 3.1, par4: 4, par5: 4.8 },
+        { title: 4, stroke: 71, putt: 2, par3: 2.9, par4: 3.9, par5: 4.7 },
+        { title: 5, stroke: 72, putt: 2, par3: 2.7, par4: 3.8, par5: 4.5 }
+      ],
       ranking: {
         index: 0,
         list: [
@@ -301,6 +306,7 @@ export default {
         }
       }
       catch (e) {
+        console.error(e)
       }
     },
 
@@ -337,5 +343,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '../css/reset.css';
-@import '../css/index.css';
 </style>

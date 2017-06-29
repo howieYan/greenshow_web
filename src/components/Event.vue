@@ -340,22 +340,21 @@ export default {
 
   mounted () {
 /* eslint-disable  */
-   //标签切换
+    var sliderWidth= document.getElementById('slider').offsetWidth;
     var arrli=document.getElementById("active").getElementsByTagName("li");
     var arrdiv=document.getElementById("nav_1").children;
     for(var i=0;i<arrli.length;i++){
-      arrli[i].onclick=li_mouseenter;
-    }
-    function li_mouseenter() {
-      for(var i=0;i<arrli.length;i++){
-        if(arrli[i]==this){
-          arrli[i].className="cur";
-          arrdiv[i].className="selected";
-        }else {
-          arrli[i].className="";
-          arrdiv[i].className="";
-        }
+      arrli[i].onclick =   function () {
+        for(var i=0;i<arrli.length;i++){
+          if(arrli[i]==this){
+            arrli[i].className="cur";
+            arrdiv[i].className="selected";
+          }else {
+            arrli[i].className="";
+            arrdiv[i].className="";
+          }
 
+        }
       }
     }
 /* eslint-enable  */
