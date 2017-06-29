@@ -107,7 +107,7 @@
                       </p>
                       <div class="border_bottom"></div>
                       <p>数据</p>
-                      <div class="line_height">
+                      <div class="line_height" >
                         2
                       </div>
                       <div class="line_height">
@@ -186,16 +186,16 @@
           <li class="col title_tj_img">
             <div class="title_tj_img_border">
               <img :src="'static/qiu0.png'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冯珊珊，中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
+              <p>冯珊珊</p>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
             </div>
           </li>
           <li style="width: 10px"></li>
           <li class="col title_tj_img">
             <div class="title_tj_img_border">
               <img :src="'static/qiu1.jpg'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李昊桐，10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
+              <p>李昊桐</p>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
             </div>
           </li>
         </ul>
@@ -205,7 +205,6 @@
 </template>
 
 <script>
-// import '../script/swiper.js'
 import '../script/swiper.min.js'
 import api from '../api'
 
