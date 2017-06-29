@@ -6,20 +6,26 @@
         <li class="col textCenter1">
           高领云
         </li>
-        <li></li>
       </ul>
     </header>
     <div id="swipe" class="swipe">
       <div class="swipe-wrap" id="swipe_banner">
-        <div class="swipe-box" v-for="n in 4">
-          <img :src="'static/automobile.png'" alt="">
-          <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party0</p>
+        <div class="swipe-box">
+          <img :src="'static/automobile0.jpg'" alt="">
+          <p class="p">高尔夫，一个幸福快乐的大家庭</p>
+        </div>
+        <div class="swipe-box">
+          <img :src="'static/automobile1.jpg'" alt="">
+          <p class="p">九龙山争霸赛，谁将夺冠？</p>
+        </div>
+        <div class="swipe-box">
+          <img :src="'static/automobile2.jpg'" alt="">
+          <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party</p>
         </div>
       </div>
       <div class="title-box">
         <ul class="title-box-ul">
           <li class="active"></li>
-          <li></li>
           <li></li>
           <li></li>
         </ul>
@@ -68,7 +74,7 @@
                     <li class="col padding_left" id="padding_left">
                       <div class="width_image">
                         <img :src="players.list[players.index].Avatar" alt="" id="Image">
-                        <p>{{ players.list[players.index].Name }}</p>
+                        <p class="texe_image_title_all">{{ players.list[players.index].Name }}</p>
                         <div class="bg_logo" id="bg_logo">
                           <img :src="'static/logo.png'" alt="">
                         </div>
@@ -77,7 +83,7 @@
                     <li class="col color_0a0b1b_b color_0a0b1b_b0">
                       <p>ＳＧＣＵ系列赛</p>
                       <p>
-                        冠军
+                         {{ scores[players.index].title }}
                       </p>
                       <div class="border_bottom"></div>
                       <p>技术指标</p>
@@ -131,7 +137,7 @@
         <!--排行榜-->
         <div class="section_header row margin_Top">
           <b class=""></b>
-          <b class="col">排行榜</b>
+          <b class="col">排行榜(2017)</b>
         </div>
         <div id="swipelb" class="swipe">
           <div class="swipe-wrap">
@@ -156,9 +162,11 @@
               </div>
             </div>
           </div>
-          <div class="title-box">
-            <ul class="title-box-ul_li">
-              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length"></li>
+          <div class="title-box title-box_height">
+            <ul class="title-box-ul_li row">
+              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="col">
+                  {{i+1}}
+              </li>
             </ul>
           </div>
         </div>
@@ -175,34 +183,17 @@
         <ul class="row">
           <li class="col title_tj_img">
             <div class="title_tj_img_border">
-              <img :src="'static/qiu1.jpg'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
+              <img :src="'static/qiu0.png'" alt="">
+              <p>冯珊珊</p>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
             </div>
           </li>
           <li style="width: 10px"></li>
           <li class="col title_tj_img">
             <div class="title_tj_img_border">
               <img :src="'static/qiu1.jpg'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
-            </div>
-          </li>
-        </ul>
-        <ul class="row">
-          <li class="col title_tj_img">
-            <div class="title_tj_img_border">
-              <img :src="'static/qiu1.jpg'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
-            </div>
-          </li>
-          <li style="width: 10px"></li>
-          <li class="col title_tj_img">
-            <div class="title_tj_img_border">
-              <img :src="'static/qiu1.jpg'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
+              <p>李昊桐</p>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
             </div>
           </li>
         </ul>
@@ -213,6 +204,7 @@
 
 <script>
 // import '../script/swiper.js'
+import '../script/swiper.min.js'
 import api from '../api'
 
 export default {
@@ -231,11 +223,11 @@ export default {
         list: []
       },
       scores: [
-        { stroke: 68, putt: 1, par3: 2, par4: 3, par5: 4 },
-        { stroke: 69, putt: 2, par3: 2, par4: 3, par5: 4 },
-        { stroke: 70, putt: 2, par3: 2, par4: 4, par5: 5 },
-        { stroke: 71, putt: 2, par3: 3, par4: 4, par5: 5 },
-        { stroke: 72, putt: 2, par3: 3, par4: 4, par5: 5 }
+        { title: '冠军', stroke: 68, putt: 2, par3: 3.1, par4: 4.3, par5: 4.8 },
+        { title: '季军', stroke: 69, putt: 2, par3: 3.5, par4: 4.2, par5: 5 },
+        { title: '亚军', stroke: 70, putt: 2.2, par3: 3.1, par4: 4, par5: 4.8 },
+        { title: 4, stroke: 71, putt: 2, par3: 2.9, par4: 3.9, par5: 4.7 },
+        { title: 5, stroke: 72, putt: 2, par3: 2.7, par4: 3.8, par5: 4.5 }
       ],
       ranking: {
         index: 0,
@@ -245,8 +237,8 @@ export default {
             title: ['名次', '姓名', '球队', '杆数'],
             list: [
               { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 69 },
-              { Number: 2, Name: '蔡苏刚', Team: '鹰之队', Score: 70 },
-              { Number: 3, Name: 'Afei', Team: '复旦队', Score: 71 }
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 71 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 70 }
             ]
           },
           {
@@ -254,8 +246,8 @@ export default {
             title: ['名次', '姓名', '球队', '差点'],
             list: [
               { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 7.1 },
-              { Number: 2, Name: '蔡苏刚', Team: '鹰之队', Score: 7.5 },
-              { Number: 3, Name: 'Afei', Team: '复旦队', Score: 7.9 }
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 7.5 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 7.9 }
             ]
           },
           {
@@ -263,8 +255,8 @@ export default {
             title: ['名次', '姓名', '球队', '杆数'],
             list: [
               { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 69 },
-              { Number: 2, Name: '蔡苏刚', Team: '鹰之队', Score: 70 },
-              { Number: 3, Name: 'Afei', Team: '复旦队', Score: 71 }
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 71 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 70 }
             ]
           },
           {
@@ -272,8 +264,8 @@ export default {
             title: ['名次', '姓名', '球队', '数量'],
             list: [
               { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 20 },
-              { Number: 2, Name: '蔡苏刚', Team: '鹰之队', Score: 15 },
-              { Number: 3, Name: 'Afei', Team: '复旦队', Score: 10 }
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 10 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 15 }
             ]
           },
           {
@@ -281,8 +273,8 @@ export default {
             title: ['名次', '姓名', '球队', '数量'],
             list: [
               { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 20 },
-              { Number: 2, Name: '蔡苏刚', Team: '鹰之队', Score: 15 },
-              { Number: 3, Name: 'Afei', Team: '复旦队', Score: 10 }
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 10 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 15 }
             ]
           }
         ]
@@ -351,5 +343,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '../css/reset.css';
-@import '../css/index.css';
 </style>
