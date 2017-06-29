@@ -6,20 +6,26 @@
         <li class="col textCenter1">
           高领云
         </li>
-        <li></li>
       </ul>
     </header>
     <div id="swipe" class="swipe">
       <div class="swipe-wrap" id="swipe_banner">
-        <div class="swipe-box" v-for="n in 4">
-          <img :src="'static/automobile.png'" alt="">
-          <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party0</p>
+        <div class="swipe-box">
+          <img :src="'static/automobile0.jpg'" alt="">
+          <p class="p">高尔夫，一个幸福快乐的大家庭</p>
+        </div>
+        <div class="swipe-box">
+          <img :src="'static/automobile1.jpg'" alt="">
+          <p class="p">九龙山争霸赛，谁将夺冠？</p>
+        </div>
+        <div class="swipe-box">
+          <img :src="'static/automobile2.jpg'" alt="">
+          <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party</p>
         </div>
       </div>
       <div class="title-box">
         <ul class="title-box-ul">
           <li class="active"></li>
-          <li></li>
           <li></li>
           <li></li>
         </ul>
@@ -36,10 +42,10 @@
         <div class="swipe-box_1">
           <div class="swipe-box_1_width" id="nav">
 
-            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame" v-for="n in 13">
+            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame(record)" v-for="record in teams.list">
               <div>
-                <img :src="'static/qiu6.jpg'" alt="">
-                <b class="b">SGCU联盟</b>
+                <img :src="record.Logo" alt="">
+                <b class="b">{{record.Name}}</b>
               </div>
             </div>
 
@@ -58,17 +64,17 @@
         </div>
         <div class="swiper-container">
           <div class="swiper-wrapper" id="opacity">
-            <div class="opacity ">
+            <div v-if="players.index>=0" class="opacity ">
               <div class="swiper-slide-header">
                 <div>
-                  1st Place
+                  {{ players.index + 1 }}st Place
                 </div>
                 <div class="height240">
                   <ul class="row">
                     <li class="col padding_left" id="padding_left">
                       <div class="width_image">
-                        <img :src="'static/timg.jpg'" alt="" id="Image">
-                        <p>小皇帝</p>
+                        <img :src="players.list[players.index].Avatar" alt="" id="Image">
+                        <p class="texe_image_title_all">{{ players.list[players.index].Name }}</p>
                         <div class="bg_logo" id="bg_logo">
                           <img :src="'static/logo.png'" alt="">
                         </div>
@@ -77,7 +83,7 @@
                     <li class="col color_0a0b1b_b color_0a0b1b_b0">
                       <p>ＳＧＣＵ系列赛</p>
                       <p>
-                        冠军
+                         {{ scores[players.index].title }}
                       </p>
                       <div class="border_bottom"></div>
                       <p>技术指标</p>
@@ -96,322 +102,20 @@
                     </li>
                     <li class="col color_0a0b1b_b text_right text_align_right_paiming">
                       <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
+                      <p>{{ scores[players.index].stroke }}</p>
                       <div class="border_bottom"></div>
                       <p>数据</p>
                       <div class="line_height">
-                        2
+                        {{ scores[players.index].putt }}
                       </div>
                       <div class="line_height">
-                        2
+                        {{ scores[players.index].par3 }}
                       </div>
                       <div class="line_height">
-                        2
+                        {{ scores[players.index].par4 }}
                       </div>
                       <div class="line_height">
-                        2
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide_opacity ">
-              <div class="swiper-slide-header">
-                <div>
-                  2st Place
-                </div>
-                <div class="height240">
-                  <ul class="row">
-                    <li class="col padding_left">
-                      <div class="width_image">
-                        <img :src="'static/timg.jpg'" alt="">
-                        <p>小皇帝</p>
-                        <div class="bg_logo">
-                          <img :src="'static/logo.png'" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b color_0a0b1b_b0">
-                      <p>ＳＧＣＵ系列赛</p>
-                      <p>
-                        冠军
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>技术指标</p>
-                      <div class="line_height">
-                        平均推杆数
-                      </div>
-                      <div class="line_height">
-                        PAR3表现
-                      </div>
-                      <div class="line_height">
-                        PAR4表现
-                      </div>
-                      <div class="line_height">
-                        PAR5表现
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
-                      <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>数据</p>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide_opacity ">
-              <div class="swiper-slide-header">
-                <div>
-                  3st Place
-                </div>
-                <div class="height240">
-                  <ul class="row">
-                    <li class="col padding_left">
-                      <div class="width_image">
-                        <img :src="'static/timg.jpg'" alt="">
-                        <p>小皇帝</p>
-                        <div class="bg_logo">
-                          <img :src="'static/logo.png'" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b color_0a0b1b_b0">
-                      <p>ＳＧＣＵ系列赛</p>
-                      <p>
-                        冠军
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>技术指标</p>
-                      <div class="line_height">
-                        平均推杆数
-                      </div>
-                      <div class="line_height">
-                        PAR3表现
-                      </div>
-                      <div class="line_height">
-                        PAR4表现
-                      </div>
-                      <div class="line_height">
-                        PAR5表现
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
-                      <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>数据</p>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide_opacity ">
-              <div class="swiper-slide-header">
-                <div>
-                  4st Place
-                </div>
-                <div class="height240">
-                  <ul class="row">
-                    <li class="col padding_left">
-                      <div class="width_image">
-                        <img :src="'static/timg.jpg'" alt="">
-                        <p>小皇帝</p>
-                        <div class="bg_logo">
-                          <img :src="'static/logo.png'" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b color_0a0b1b_b0">
-                      <p>ＳＧＣＵ系列赛</p>
-                      <p>
-                        冠军
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>技术指标</p>
-                      <div class="line_height">
-                        平均推杆数
-                      </div>
-                      <div class="line_height">
-                        PAR3表现
-                      </div>
-                      <div class="line_height">
-                        PAR4表现
-                      </div>
-                      <div class="line_height">
-                        PAR5表现
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
-                      <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>数据</p>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide_opacity ">
-              <div class="swiper-slide-header">
-                <div>
-                  5st Place
-                </div>
-                <div class="height240">
-                  <ul class="row">
-                    <li class="col padding_left">
-                      <div class="width_image">
-                        <img :src="'static/timg.jpg'" alt="">
-                        <p>小皇帝</p>
-                        <div class="bg_logo">
-                          <img :src="'static/logo.png'" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b color_0a0b1b_b0">
-                      <p>ＳＧＣＵ系列赛</p>
-                      <p>
-                        冠军
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>技术指标</p>
-                      <div class="line_height">
-                        平均推杆数
-                      </div>
-                      <div class="line_height">
-                        PAR3表现
-                      </div>
-                      <div class="line_height">
-                        PAR4表现
-                      </div>
-                      <div class="line_height">
-                        PAR5表现
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
-                      <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>数据</p>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide_opacity ">
-              <div class="swiper-slide-header">
-                <div>
-                  6st Place
-                </div>
-                <div class="height240">
-                  <ul class="row">
-                    <li class="col padding_left">
-                      <div class="width_image">
-                        <img :src="'static/timg.jpg'" alt="">
-                        <b>小皇帝</b>
-                        <div class="bg_logo">
-                          <img :src="'static/logo.png'" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b color_0a0b1b_b0">
-                      <p>ＳＧＣＵ系列赛</p>
-                      <p>
-                        冠军
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>技术指标</p>
-                      <div class="line_height">
-                        平均推杆数
-                      </div>
-                      <div class="line_height">
-                        PAR3表现
-                      </div>
-                      <div class="line_height">
-                        PAR4表现
-                      </div>
-                      <div class="line_height">
-                        PAR5表现
-                      </div>
-                    </li>
-                    <li class="col color_0a0b1b_b text_right text_align_right_paiming">
-                      <p>Total pole</p>
-                      <p>
-                        68
-                      </p>
-                      <div class="border_bottom"></div>
-                      <p>数据</p>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
-                      </div>
-                      <div class="line_height">
-                        2
+                        {{ scores[players.index].par5 }}
                       </div>
                     </li>
                   </ul>
@@ -421,23 +125,8 @@
           </div>
         </div>
         <div class="swiper-pagination swiper-pagination-clickable " id="pagination">
-          <span class="swiper-pagination-bullet swiper-pagination-bullet-active ">
-            <i>1</i>
-          </span>
-          <span class="swiper-pagination-bullet ">
-            <i>2</i>
-          </span>
-          <span class="swiper-pagination-bullet ">
-            <i>3</i>
-          </span>
-          <span class="swiper-pagination-bullet ">
-            <i>4</i>
-          </span>
-          <span class="swiper-pagination-bullet ">
-            <i>5</i>
-          </span>
-          <span class="swiper-pagination-bullet ">
-            <i>6</i>
+          <span class="swiper-pagination-bullet" @click="players.index = i" v-bind:class="{ 'swiper-pagination-bullet-active': i === players.index }" v-for="(record, i) in players.list">
+            <i>{{ i + 1 }}</i>
           </span>
         </div>
       </div>
@@ -448,376 +137,40 @@
         <!--排行榜-->
         <div class="section_header row margin_Top">
           <b class=""></b>
-          <b class="col">排行榜</b>
+          <b class="col">排行榜(2017)</b>
         </div>
-          <div id="swipelb" class="swiper_index">
-                <div class="swipe-wrap" id="swiperWidth">
-                    <div class="swipe-box">
-                        <div class="swiper-slide-header_ph">
-                            <div class="bestResult">
-                                <p>最好成绩</p>
-                            </div>
-                            <div class="nav1">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>名次</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>名字</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>球队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>杆数</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>1</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>扫荡腿</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>优仕队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>68</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>2</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>蔡苏刚</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>鹰之队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>70</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>3</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>afei</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>复旦队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>71</b>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swipe-box">
-                        <div class="swiper-slide-header_ph">
-                            <div class="bestResult">
-                                <p>差点排名</p>
-                            </div>
-                            <div class="nav1">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>名次</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>名字</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>球队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>差点</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>1</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>扫荡腿</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>优仕队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>7.1</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>2</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>扫荡腿</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>鹰之队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>7.5</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>3</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>afei</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>天马队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>7.8</b>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swipe-box">
-                        <div class="swiper-slide-header_ph">
-                            <div class="bestResult">
-                                <p>平均成绩</p>
-                            </div>
-                            <div class="nav1">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>名次</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>名字</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>球队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>成绩</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>1</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>扫荡腿</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>优仕队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>74</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>2</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>扫荡腿</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>鹰之队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>77</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>3</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>afei</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>天马队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>79</b>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swipe-box">
-                        <div class="swiper-slide-header_ph">
-                            <div class="bestResult">
-                                <p>小鸟数</p>
-                            </div>
-                            <div class="nav1">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>名次</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>名字</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>球队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>成绩</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>1</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>扫荡腿</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>优仕队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>59</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>2</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>扫荡腿</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>鹰之队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>55</b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="nav_2">
-                                <ul class="row">
-                                    <li class="col">
-                                        <b>3</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>afei</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>天马队</b>
-                                    </li>
-                                    <li class="col">
-                                        <b>50</b>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swipe-box">
-                        <div class="swiper-slide-header_ph">
-                        <div class="bestResult">
-                            <p>老鹰数</p>
-                        </div>
-                        <div class="nav1">
-                            <ul class="row">
-                                <li class="col">
-                                    <b>名次</b>
-                                </li>
-                                <li class="col">
-                                    <b>名字</b>
-                                </li>
-                                <li class="col">
-                                    <b>球队</b>
-                                </li>
-                                <li class="col">
-                                    <b>成绩</b>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="nav_2">
-                            <ul class="row">
-                                <li class="col">
-                                    <b>1</b>
-                                </li>
-                                <li class="col">
-                                    <b>扫荡腿</b>
-                                </li>
-                                <li class="col">
-                                    <b>优仕队</b>
-                                </li>
-                                <li class="col">
-                                    <b>19</b>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="nav_2">
-                            <ul class="row">
-                                <li class="col">
-                                    <b>2</b>
-                                </li>
-                                <li class="col">
-                                    <b>扫荡腿</b>
-                                </li>
-                                <li class="col">
-                                    <b>鹰之队</b>
-                                </li>
-                                <li class="col">
-                                    <b>15</b>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="nav_2">
-                            <ul class="row">
-                                <li class="col">
-                                    <b>3</b>
-                                </li>
-                                <li class="col">
-                                    <b>afei</b>
-                                </li>
-                                <li class="col">
-                                    <b>天马队</b>
-                                </li>
-                                <li class="col">
-                                    <b>10</b>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
+        <div id="swipelb" class="swipe">
+          <div class="swipe-wrap">
+            <div v-if="ranking.index >= 0" class="swipe-box">
+              <div class="swiper-slide-header_ph">
+                <div class="bestResult">
+                  <p>{{ ranking.list[ranking.index].category }}</p>
                 </div>
-                <div class="title-box title-box5">
-                    <ul class="title-box-ul_li">
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                <div class="nav1">
+                  <ul class="row">
+                    <li class="col" v-for="title in ranking.list[ranking.index].title"><b>{{ title }}</b></li>
+                  </ul>
                 </div>
+                <div class="nav_2">
+                  <ul class="row" v-for="player in ranking.list[ranking.index].list">
+                    <li class="col"><b>{{ player.Number }}</b></li>
+                    <li class="col"><b>{{ player.Name }}</b></li>
+                    <li class="col"><b>{{ player.Team }}</b></li>
+                    <li class="col"><b>{{ player.Score }}</b></li>
+                  </ul>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="title-box title-box_height">
+            <ul class="title-box-ul_li row">
+              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="col">
+                  {{i+1}}
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="clearfix"></div>
@@ -827,24 +180,23 @@
         <b class="col">推荐人物</b>
       </div>
       <div class="title_tj">
-        <ul class="row" v-for="n in 2">
+        <ul class="row">
           <li class="col title_tj_img">
             <div class="title_tj_img_border">
-              <img :src="'static/qiu1.jpg'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
+              <img :src="'static/qiu0.png'" alt="">
+              <p>冯珊珊</p>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
             </div>
           </li>
           <li style="width: 10px"></li>
           <li class="col title_tj_img">
             <div class="title_tj_img_border">
               <img :src="'static/qiu1.jpg'" alt="">
-              <p>张欣</p>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一位刻苦努力锻炼 球技的选手 一位刻苦努力锻炼 球技的选手</b>
+              <p>李昊桐</p>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
             </div>
           </li>
         </ul>
-
       </div>
     </div>
   </div>
@@ -852,17 +204,115 @@
 
 <script>
 // import '../script/swiper.js'
+import '../script/swiper.min.js'
+import api from '../api'
 
 export default {
   name: 'Home',
   data () {
     return {
+      teams: {
+        page: 0,
+        size: 5,
+        list: []
+      },
+      players: {
+        page: 0,
+        size: 5,
+        index: -1,
+        list: []
+      },
+      scores: [
+        { title: '冠军', stroke: 68, putt: 2, par3: 3.1, par4: 4.3, par5: 4.8 },
+        { title: '季军', stroke: 69, putt: 2, par3: 3.5, par4: 4.2, par5: 5 },
+        { title: '亚军', stroke: 70, putt: 2.2, par3: 3.1, par4: 4, par5: 4.8 },
+        { title: 4, stroke: 71, putt: 2, par3: 2.9, par4: 3.9, par5: 4.7 },
+        { title: 5, stroke: 72, putt: 2, par3: 2.7, par4: 3.8, par5: 4.5 }
+      ],
+      ranking: {
+        index: 0,
+        list: [
+          {
+            category: '最好成绩',
+            title: ['名次', '姓名', '球队', '杆数'],
+            list: [
+              { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 69 },
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 71 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 70 }
+            ]
+          },
+          {
+            category: '差点排名',
+            title: ['名次', '姓名', '球队', '差点'],
+            list: [
+              { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 7.1 },
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 7.5 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 7.9 }
+            ]
+          },
+          {
+            category: '平均成绩',
+            title: ['名次', '姓名', '球队', '杆数'],
+            list: [
+              { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 69 },
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 71 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 70 }
+            ]
+          },
+          {
+            category: '小鸟数',
+            title: ['名次', '姓名', '球队', '数量'],
+            list: [
+              { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 20 },
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 10 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 15 }
+            ]
+          },
+          {
+            category: '老鹰数',
+            title: ['名次', '姓名', '球队', '数量'],
+            list: [
+              { Number: 1, Name: '扫荡腿', Team: '优仕队', Score: 20 },
+              { Number: 2, Name: 'Afei', Team: '复旦队', Score: 10 },
+              { Number: 3, Name: '蔡苏刚', Team: '鹰之队', Score: 15 }
+            ]
+          }
+        ]
+      }
+    }
+  },
+
+  computed: {
+    activePlayer () {
+      return this.index >= 0 ? this.players.list[this.index] : null
     }
   },
 
   methods: {
-    urlFrame () {
-      this.$router.push({ path: '/team' })
+    async loadData () {
+      try {
+        let result = await api.listTeam('home', this.teams.page, this.teams.size)
+        console.debug(`%o`, result)
+        this.teams.list = result || []
+        result = await api.listPlayer('home', this.teams.page, this.teams.size)
+        console.debug(`%o`, result)
+        if (result && result.length > 0) {
+          this.players.list = result || []
+          this.players.index = 0
+        }
+        else {
+          this.players.list = []
+          this.players.index = -1
+        }
+      }
+      catch (e) {
+        console.error(e)
+      }
+    },
+
+    urlFrame (team) {
+      console.debug(`%o`, team)
+      this.$router.push({ path: `/team/${team.Id}` })
     },
 
     closeFrame () {
@@ -870,34 +320,22 @@ export default {
     }
   },
 
+  created () {
+    this.loadData()
+  },
+
   mounted () {
-/* eslint-disable  */
-    var nav=document.getElementById("nav");
-    var navLength=nav.children.length;
-    var offsetWidth =document.getElementById('offsetWidth').offsetWidth;
-    nav.style.width=navLength*(offsetWidth+5)+10+'px';
+  },
 
-    /*SGCU系列赛排名*/
-    var paginationOnclick =document.getElementById('pagination').getElementsByTagName("span");
-    var onclickOpacity =document.getElementById('opacity').children;
-    for(var i= 0;i<paginationOnclick.length;i++){
-      paginationOnclick[i].onclick = function () {
-        for(var i = 0;i<paginationOnclick.length;i++){
-          if(paginationOnclick[i]==this){
-            paginationOnclick[i].className='swiper-pagination-bullet-active';
-            onclickOpacity[i].className='opacity';
-          }else{
-            paginationOnclick[i].className='';
-            onclickOpacity[i].className='swiper-slide_opacity';
-          }
-        }
-      }
+  updated () {
+    console.debug(`${this.name}.updated`)
+    let nav = document.getElementById('nav')
+    let navLength = nav.children.length
+    let e = document.getElementById('offsetWidth')
+    if (e) {
+      let offsetWidth = e.offsetWidth
+      nav.style.width = navLength * (offsetWidth + 5) + 10 + 'px'
     }
-   
-
-
-
-/* eslint-enable */
   }
 }
 </script>
@@ -905,5 +343,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '../css/reset.css';
-@import '../css/index.css';
 </style>
