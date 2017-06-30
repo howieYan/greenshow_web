@@ -57,7 +57,7 @@
       </ul>
       <ul class="row">
         <li class="">其他信息</li>
-        <li class="col" v-html="event.Description"></li>
+        <li class="col"v-html=" event.Description "></li>
       </ul>
     </div>
     <div class="button0">
@@ -67,11 +67,10 @@
       <b>已报名/{{ event.PlayerCount }}人</b>
     </div>
     <div class="apply"  >
-      <ul class="row" >
-      <li class="col" v-for="record in event.Players">
-        <p><img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
-        </p>
-        <b>{{ record.Name }}</b>
+      <ul class="" >
+      <li class="widthHeight" v-for="record in event.Players">
+        <img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
+        <div>{{ record.Name }}</div>
       </li>
       </ul>
     </div>
