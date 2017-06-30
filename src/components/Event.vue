@@ -44,68 +44,35 @@
     </div>
     <div class="bgColor">
       <ul class="row">
-      <li class="">
-        活动名称
-      </li>
-      <li class="col">
-        优仕队5月例赛
-      </li>
+        <li class="">活动名称</li>
+        <li class="col">{{ event.Name }}</li>
       </ul>
       <ul class="row">
-      <li class="">
-        开球时间
-      </li>
-      <li class="col">
-        2017.05.30 <b>10:00</b>
-      </li>
+        <li class="">开球时间</li>
+        <li class="col">{{ formatTime(event.StartDate) }}</li>
       </ul>
       <ul class="row">
-      <li class="">
-        活动地点
-      </li>
-      <li class="col">
-        汤臣高尔夫俱乐部
-      </li>
+        <li class="">活动地点</li>
+        <li class="col">{{ event.Address }}</li>
+      </ul>
+      <ul class="row">
+        <li class="">其他信息</li>
+        <li class="col" v-html="event.Description"></li>
       </ul>
     </div>
-    <div class="width">
-      <ul class="row">
-      <li class="">
-        其他信息
-      </li>
-      <div class="col color_2d2d2d">
-        <p class="color_2d2d2d">
-        击球费用：￥1200元（含午餐） 签到时间：9:00，开球仪式：9:40，请大家准时 在1号T台集合进行开球仪式。
-        </p>
-        <p>
-        着装要求：绿色队服
-        </p>
-        <p>
-        晚宴地点：农家菜
-        </p>
-      </div>
-      </ul>
-    </div>
-    <div class="button">
+    <div class="button0">
       点击报名
     </div>
     <div class="padding_t">
-      <b>已报名/10人</b>
+      <b>已报名/{{ event.PlayerCount }}人</b>
     </div>
     <div class="apply"  >
       <ul class="row" >
-      <li class="col" v-for="n in 4">
-        <p><img :src="'static/apply_1.png'" alt="">
+      <li class="col" v-for="record in event.Players">
+        <p><img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
         </p>
-        <b>远行</b>
+        <b>{{ record.Name }}</b>
       </li>
-      </ul>
-       <ul class="row">
-          <li class="col" v-for="n in 4">
-              <p><img :src="'static/apply_1.png'" alt="">
-              </p>
-              <b>远行</b>
-          </li>
       </ul>
     </div>
     </div>
@@ -113,18 +80,11 @@
     <div class="text_header">
       <div class="header0">
       <ul class="row">
-        <li class="">
-        <b style="padding-left:10px;">报名人数：</b>
-        <b>20人</b>
+        <li class="col" v-for="first in packet">
+        <b style="padding-left:10px;">{{ first.aplystring }}</b>
+        <b>{{ first.string }}</b>
         </li>
-        <li class="col">
-        <b>球队人数：</b>
-        <b>20人</b>
-        </li>
-        <li class="text_r">
-        <b>嘉宾：</b>
-        <b>20人</b>
-        </li>
+
       </ul>
       </div>
       <div class="module padding_t10">
@@ -141,10 +101,10 @@
           10:00
           </div>
         </li>
-        <li class="col" v-for="n in 4">
+        <li class="col" v-for="first in aplyname">
           <p><img :src="'static/apply_1.png'" alt="">
           </p>
-          <b>远行</b>
+          <b>{{ first.name }}</b>
           <b class="border"></b>
         </li>
         </ul>
@@ -164,10 +124,10 @@
           10:00
           </div>
         </li>
-        <li class="col" v-for="n in 4">
+        <li class="col" v-for="first in aplyname">
           <p><img :src="'static/apply_1.png'" alt="">
           </p>
-          <b>远行</b>
+          <b>{{ first.name }}</b>
           <b class="border"></b>
         </li>
         </ul>
@@ -178,50 +138,19 @@
     <div id="nav3" class="nav">
     <div class="title">
       <ul class="row">
-      <li class="col">
-        排名
+      <li class="col" v-for="title in ranking.list[0].title">
+        {{ title }}
       </li>
-      <li class="col">
-        姓名
-      </li>
-      <li class="col">
-        距标准杆
-      </li>
-      <li class="col">
-        已完成
-      </li>
-      <li class="col">
-        前9
-      </li>
-      <li class="col">
-        后9
-      </li>
-      <li class="col">
-        总杆
-      </li>
+
       </ul>
-      <ul class="row" v-for="n in 10">
-      <li class="col">
-        1
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col red">
-        -3
-      </li>
-      <li class="col">
-        F
-      </li>
-      <li class="col">
-        34
-      </li>
-      <li class="col">
-        35
-      </li>
-      <li class="col">
-        69
-      </li>
+      <ul class="row" v-for="player in ranking.list[0].list">
+      <li class="col">{{ player.Number }}</li>
+      <li class="col">{{ player.Name }}</li>
+      <li class="col" style="color:red;">{{ player.Measure }}</li>
+      <li class="col">{{ player.Done }}</li>
+      <li class="col">{{ player.Before }}</li>
+      <li class="col">{{ player.Reak }}</li>
+      <li class="col">{{ player.Gross }}</li>
       </ul>
 
     </div>
@@ -229,38 +158,16 @@
     <div id="nav4" class="nav">
     <div class="title">
       <ul class="row">
-      <li class="col">
-        排名
-      </li>
-      <li class="col">
-        姓名
-      </li>
-      <li class="col">
-        差点
-      </li>
-      <li class="col">
-        总杆
-      </li>
-      <li class="col">
-        净杆
+      <li class="col" v-for="title in ranking.list[1].title">
+        {{ title }}
       </li>
       </ul>
-      <ul class="row" v-for="n in 10">
-      <li class="col">
-        1
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col red">
-        -3
-      </li>
-      <li class="col">
-        69
-      </li>
-      <li class="col">
-        68.6
-      </li>
+      <ul class="row" v-for="player in ranking.list[1].list">
+      <li class="col">{{ player.Number }}</li>
+      <li class="col">{{ player.Name }}</li>
+      <li class="col red">{{ player.Measure }}</li>
+      <li class="col">{{ player.Gross }}</li>
+      <li class="col">{{ player.Tee }}</li>
       </ul>
 
     </div>
@@ -269,32 +176,20 @@
     <div id="nav5" class="nav">
     <div class="title">
       <ul class="row">
-      <li class="col">
-        奖项名称
-      </li>
-      <li class="col">
-        获奖人
-      </li>
-      <li class="col">
-        奖品
+      <li class="col" v-for="title in ranking.list[2].title">
+        {{ title }}
       </li>
       </ul>
-      <ul class="row" v-for="n in 10">
-      <li class="col">
-        总冠
-      </li>
-      <li class="col">
-        陈坚
-      </li>
-      <li class="col red">
-        1#木
-      </li>
+      <ul class="row" v-for="player in ranking.list[2].list">
+      <li class="col">{{ player.Didnt }}</li>
+      <li class="col">{{ player.Name }}</li>
+      <li class="col red">{{ player.Award }}</li>
       </ul>
     </div>
     </div>
     <div id="nav6" class="nav">
     <div class="slider" id="slider">
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 10">
+      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 5">
       <img :src="'static/bg_nav_6.png'">
       <p>
         <b class="font_size_weight">TO:</b>
@@ -323,16 +218,90 @@
 </template>
 
 <script>
+import api from '../api'
+import * as lib from '../lib'
 import '../script/swiper.min.js'
 
 export default {
   name: 'Event',
   data () {
     return {
+      name: 'EventV',
+      event: {},
+      aplyname: [
+        { name: '远行0' },
+        { name: '远行1' },
+        { name: '远行2' },
+        { name: '远行3' }
+      ],
+      packet: [
+        { aplystring: '报名人数：', string: '20人' },
+        { aplystring: '球队人数：', string: '20人' },
+        { aplystring: '嘉宾:', string: '20人' }
+      ],
+      ranking: {
+        index: 0,
+        list: [
+          {
+            title: ['排名', '姓名', '距标准杆', '已完成', '前9', '后9', '总杆'],
+            list: [
+              { Number: 1, Name: '陈坚', Measure: -3, Done: 'F', Before: 34, Reak: 35, Gross: 69 },
+              { Number: 2, Name: '陈坚', Measure: -3, Done: 'F', Before: 34, Reak: 35, Gross: 69 },
+              { Number: 3, Name: '陈坚', Measure: -3, Done: 'F', Before: 34, Reak: 35, Gross: 69 },
+              { Number: 4, Name: '陈坚', Measure: -3, Done: 'F', Before: 34, Reak: 35, Gross: 69 },
+              { Number: 5, Name: '陈坚', Measure: -3, Done: 'F', Before: 34, Reak: 35, Gross: 69 }
+            ]
+          },
+          {
+            title: ['排名', '姓名', '差点', '总杆', '净杆'],
+            list: [
+              { Number: 1, Name: '陈坚', Measure: -3, Gross: '69', Tee: 68.6 },
+              { Number: 2, Name: '陈坚', Measure: -3, Gross: '69', Tee: 68.6 },
+              { Number: 3, Name: '陈坚', Measure: -3, Gross: '69', Tee: 68.6 },
+              { Number: 4, Name: '陈坚', Measure: -3, Gross: '69', Tee: 68.6 },
+              { Number: 5, Name: '陈坚', Measure: -3, Gross: '69', Tee: 68.6 }
+            ]
+          },
+          {
+            title: ['奖项名称', '获奖人', '奖品'],
+            list: [
+              { Didnt: '总冠', Name: '陈坚', Award: '1#木' },
+              { Didnt: '总冠', Name: '陈坚', Award: '1#木' },
+              { Didnt: '总冠', Name: '陈坚', Award: '1#木' },
+              { Didnt: '总冠', Name: '陈坚', Award: '1#木' },
+              { Didnt: '总冠', Name: '陈坚', Award: '1#木' }
+            ]
+          }
+        ]
+      }
     }
   },
 
+  computed: {
+    id () {
+      return this.$route.params.id
+    }
+  },
+
+  created () {
+    this.loadData()
+  },
+
   methods: {
+    formatTime: lib.formatTime,
+
+    async loadData () {
+      try {
+        // this.team = this.blank
+        let result = await api.getEvent(this.id, 'all')
+        console.debug(`%o`, result)
+        this.event = api.isValid(result) ? result.data : {}
+      }
+      catch (e) {
+        console.error(e)
+      }
+    },
+
     closeFrame () {
       this.$router.go(-1)
     }
@@ -344,17 +313,18 @@ export default {
     var arrli=document.getElementById("active").getElementsByTagName("li");
     var arrdiv=document.getElementById("nav_1").children;
     for(var i=0;i<arrli.length;i++){
-      arrli[i].onclick =   function () {
-        for(var i=0;i<arrli.length;i++){
-          if(arrli[i]==this){
-            arrli[i].className="cur";
-            arrdiv[i].className="selected";
-          }else {
-            arrli[i].className="";
-            arrdiv[i].className="";
-          }
-
+      arrli[i].onclick=li_mouseenter;
+    }
+    function li_mouseenter() {
+      for(var i=0;i<arrli.length;i++){
+        if(arrli[i]==this){
+          arrli[i].className="cur";
+          arrdiv[i].className="selected";
+        }else {
+          arrli[i].className="";
+          arrdiv[i].className="";
         }
+
       }
     }
 /* eslint-enable  */
