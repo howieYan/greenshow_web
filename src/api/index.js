@@ -2,6 +2,8 @@
  * All Remote access APIs go here.
  */
 import axios from 'axios'
+import * as lib from '../lib'
+
 /**
  * axios configurations.
  */
@@ -9,9 +11,14 @@ axios.defaults.timeout = 10000  // timeout in 10 seconds.
 axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://wx.golfgreenshow.com' : 'http://devwx.golfgreenshow.com'
 // axios.defaults.baseURL = 'http://wx.gs.co'
 
-const debugApi = process.env.NODE_ENV === 'development'
-
 export default {
+  token: null,
+
+  setToken (token) {
+    lib.debugApi && console.debug(`Set new token=${token}`)
+    this.token = token
+  },
+
   /**
    * Check whether specified response is valid and contains data.
    */
@@ -20,6 +27,9 @@ export default {
   },
 
   send (method, uri, data = null, token = null) {
+    if (token === null) {
+      token = this.token
+    }
     return new Promise((resolve, reject) => {
       try {
         axios({
@@ -32,7 +42,7 @@ export default {
           // withCredentials: true
         })
         .then(response => {
-          debugApi && console.debug(response ? JSON.stringify(response, null, '\t') : `${method} ${uri}, ` + (data ? JSON.stringify(data, null, '\t') : ''))
+          lib.debugApi && console.debug(response ? JSON.stringify(response, null, '\t') : `${method} ${uri}, ` + (data ? JSON.stringify(data, null, '\t') : ''))
           if (response && response.data) {
             resolve(response.data)
           }
