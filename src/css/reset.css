@@ -45,14 +45,14 @@ html {
 }
 @media all and (min-height: 300px)and (max-height:321px) {
     header>ul>li.textCenter1{
-        height: 64px;
+        height:92px;
         line-height: 78px;
         text-align: center;
         color: #fff;
         font-size:16px;
     }
     #swipe{
-        padding-top: 64px;
+        padding-top: 92px;
     }
     .header {
         width: 100%;
@@ -71,20 +71,20 @@ html {
         padding-right: 10px;
     }
     #nav_1{
-        padding-top: 100px;
+        padding-top: 128px;
     }
 }
 
 @media all and (min-height: 560px)and (max-height:660px) {
     header>ul>li.textCenter1{
-        height: 64px;
+        height: 92px;
         line-height: 78px;
         text-align: center;
         color: #fff;
         font-size:16px;
     }
     #swipe{
-        padding-top: 64px;
+        padding-top: 92px;
     }
     .header {
         width: 100%;
@@ -103,19 +103,19 @@ html {
         padding-right: 10px;
     }
     #nav_1{
-        padding-top: 100px;
+        padding-top: 128px;
     }
 }
 @media all and (min-height: 661px)and (max-height:700px) {
     header>ul>li.textCenter1{
-        height: 64px;
+        height: 92px;
         line-height: 78px;
         text-align: center;
         color: #fff;
         font-size:16px;
     }
     #swipe{
-        padding-top: 64px;
+        padding-top: 92px;
     }
     .header {
         width: 100%;
@@ -134,19 +134,19 @@ html {
         padding-right: 10px;
     }
     #nav_1{
-        padding-top: 100px;
+        padding-top: 128px;
     }
 }
 @media all and (min-height: 701px)and (max-height:750px) {
     header>ul>li.textCenter1{
-        height: 64px;
+        height: 92px;
         line-height: 78px;
         text-align: center;
         color: #fff;
         font-size:16px;
     }
     #swipe{
-        padding-top: 64px;
+        padding-top: 92px;
     }
     .header {
         width: 100%;
@@ -165,7 +165,7 @@ html {
         padding-right: 10px;
     }
     #nav_1{
-        padding-top: 100px;
+        padding-top: 128px;
     }
 }
 /* css common */
