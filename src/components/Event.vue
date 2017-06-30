@@ -323,8 +323,14 @@ export default {
           arrli[i].className="";
           arrdiv[i].className="";
         }
-
       }
+    }
+    var url =window.location.href;
+    var urlapp ='http://devwx.golfgreenshow.com/#/event/98dcf7d7-e782-4842-bad6-8bee6c9ccb6f?token=5178c7eb-9420-4cbc-9528-1bd6bc96649c';
+    if(url ==urlapp){
+        document.getElementById('back').style.opacity=0;
+    }else{
+        document.getElementById('back').style.opacity=1;
     }
 /* eslint-enable  */
   }
