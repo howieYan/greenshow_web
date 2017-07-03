@@ -187,30 +187,20 @@
     </div>
     </div>
     <div id="nav6" class="nav">
-    <div class="slider" id="slider">
-      <div class="slide" style="transform: translateX(0px) rotateZ(0deg) translateY(30px) translateZ(-150px); transition: 0.102564s cubic-bezier(0, 1.95, 0.49, 0.73); opacity: 1;" v-for="n in 5">
-      <img :src="'static/bg_nav_6.png'">
-      <p>
-        <b class="font_size_weight">TO:</b>
-        <b class="font_size_weight_b">SOMEONE</b>
-      </p>
-      <P class="font_size_12">留白</P>
-      <p class="font_size_12">用白色明信片</p>
-      <p class="font_size_12">框住每一个偶遇</p>
-      <div class="row margin_Top10">
-        <ul class="border_width">
-        <li><b>May,</b><b>25</b></li>
-        <li><b>2015</b></li>
-        <li><b>+</b></li>
-        </ul>
-        <ul class="col line_height_bottom">
-        <li><b>by:</b><b>SOMEONE</b></li>
-        </ul>
+      <div class="swiper-container" style="width: 100%;text-align: center;height: 450px;">
+          <div class="swiper-wrapper" style="width: 100%;text-align: center;height: 450px;">
+              <div class="swiper-slide " style="width: 260px;height: 450px;">
+                  <div class="padding10">
+                    <img :src="'static/bg_nav_6.png'" alt="">
+                  </div>
+              </div>
+              <div class="swiper-slide " style="width: 260px;height: 450px;">
+                <div class="padding10">
+                  <img :src="'static/bg_nav_6.png'" alt="">
+                </div>
+              </div>
+          </div>
       </div>
-      </div>
-
-      </div>
-    </div>
     </div>
   </div>
   </div>
@@ -219,8 +209,8 @@
 <script>
 import api from '../api'
 import * as lib from '../lib'
-import '../script/swiper.min.js'
-
+import '../script/swiper.js'
+import '../script/choumei.js'
 export default {
   name: 'Event',
   data () {
@@ -339,5 +329,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '../css/reset.css';
-@import '../css/image.css';
 </style>
