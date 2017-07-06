@@ -93,6 +93,7 @@ export default {
   /**
    * 查询球队信息
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/TeamX/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   *
    */
   getTeam (id, option = '') {
     return this.send('get', `/api/TeamX/${id}?option=${option}`)
