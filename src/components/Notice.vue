@@ -10,93 +10,17 @@
         </ul>
     </div>
     <div class="padding_t64_height">
-        <ul class="row height50">
+        <ul class="row height50" v-for="n in 6">
             <li class="border_radius line_height_center">
                 <b></b>
             </li>
             <li class="col">
                 6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
             </li>
-            <li class="">
+            <li class="" v-if="">
                 <img :src="'/static/signup_image.png'" alt="">
             </li>
         </ul>
-        <ul class="row height50">
-            <li class="border_radius line_height_center">
-                <b></b>
-            </li>
-            <li class="col">
-                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
-            </li>
-            <li class="">
-                <img :src="'/static/signup_image.png'" alt="">
-            </li>
-        </ul>
-        <ul class="row height50">
-            <li class="border_radius line_height_center">
-                <b></b>
-            </li>
-            <li class="col">
-                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
-            </li>
-            <li class="">
-                <img :src="'/static/signup_image.png'" alt="">
-            </li>
-        </ul>
-        <ul class="row height50">
-            <li class="border_radius line_height_center">
-                <b></b>
-            </li>
-            <li class="col">
-                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
-            </li>
-            <li class="">
-                <img :src="'/static/signup_image.png'" alt="">
-            </li>
-        </ul>
-        <ul class="row height50">
-            <li class="border_radius line_height_center">
-                <b></b>
-            </li>
-            <li class="col">
-                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
-            </li>
-            <li class="">
-                <img :src="'/static/signup_image.png'" alt="">
-            </li>
-        </ul>
-        <ul class="row height50">
-            <li class="border_radius line_height_center">
-                <b></b>
-            </li>
-            <li class="col">
-                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
-            </li>
-            <li class="">
-                <img :src="'/static/signup_image.png'" alt="">
-            </li>
-        </ul>
-        <ul class="row height50">
-            <li class="border_radius line_height_center">
-                <b></b>
-            </li>
-            <li class="col">
-                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
-            </li>
-            <li class="">
-            </li>
-        </ul>
-        <ul class="row height50">
-            <li class="border_radius line_height_center">
-                <b></b>
-            </li>
-            <li class="col">
-                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
-            </li>
-            <li class="">
-            </li>
-        </ul>
-
     </div>
 </div>
 </template>

@@ -10,9 +10,9 @@
       </ul>
   </div>
   <div class="padding_t64_height" id="body">
-      <div class="width_150px" v-for="n in 8">
+      <div class="width_150px" v-for="titleList in title">
           <img :src="'/static/automobile.png'" alt="">
-          <p>2017年6月例赛</p>
+          <p>{{ titleList.titleN }}</p>
       </div>
   </div>
 </div>
@@ -35,7 +35,15 @@ export default {
         page: 0,
         size: 5,
         list: []
-      }
+      },
+      title: [
+        { titleN: '2017年4月例赛' },
+        { titleN: '2017年5月例赛' },
+        { titleN: '2017年6月例赛' },
+        { titleN: '2017年7月例赛' },
+        { titleN: '2017年8月例赛' },
+        { titleN: '2017年9月例赛' }
+      ]
     }
   },
 

@@ -10,73 +10,27 @@
       </ul>
   </div>
   <div class="padding_t64_height background_color">
-      <div class="background_color">
+        <div class="background_color">
           <div class="width_image_width100 width_image_width100_image">
               <img class="" :src="'/static/automobile.png'" alt="">
               <div class="bg_rahmen0">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
+                  <p class="width_b" v-for="first in honorBg">
+                      {{ first.name }}
                   </p>
               </div>
           </div>
           <div class="width_image_width100 width_image_width100_image">
               <img class="" :src="'/static/automobile.png'" alt="">
               <div class="bg_rahmen1">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen0">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen1">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
+                  <p class="width_b" v-for="first in honorBg">
+                      {{ first.name }}
                   </p>
               </div>
           </div>
           <div class="width_image_width100 width_image_width100_image">
               <div class="bg_rahmen3">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
+                 <p class="width_b" v-for="first in honorBg">
+                      {{ first.name }}
                   </p>
               </div>
           </div>
@@ -102,7 +56,12 @@ export default {
         page: 0,
         size: 5,
         list: []
-      }
+      },
+      honorBg: [
+        { name: '2016年SGCU' },
+        { name: '冠军' },
+        { name: 'B组总杆' }
+      ]
     }
   },
 

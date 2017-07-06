@@ -21,10 +21,7 @@
                   <li class="col">
                       <div class="module_box">
                           2017年4月，远行当选优仕队队长
-                          <div class="triangle_border_left">
-
-                          </div>
-
+                          <div class="triangle_border_left"></div>
                       </div>
                   </li>
               </ul>
@@ -38,10 +35,7 @@
                   <li class="col">
                       <div class="module_box">
                           2017年1月队委成员名单更新
-                          <div class="triangle_border_left">
-
-                          </div>
-
+                          <div class="triangle_border_left"></div>
                       </div>
                   </li>
               </ul>
@@ -55,10 +49,7 @@
                   <li class="col">
                       <div class="module_box">
                           2016年1月优仕队连续6年获得康桥 亲水湾赞助
-                          <div class="triangle_border_left">
-
-                          </div>
-
+                          <div class="triangle_border_left"></div>
                       </div>
                   </li>
               </ul>
@@ -72,10 +63,7 @@
                   <li class="col">
                       <div class="module_box">
                           2017年1月队委成员名单更新
-                          <div class="triangle_border_left">
-
-                          </div>
-
+                          <div class="triangle_border_left"></div>
                       </div>
                   </li>
               </ul>

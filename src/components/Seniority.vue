@@ -10,23 +10,17 @@
 	    </ul>
 	</div>
 	<div class="padding_t64">
-	    <ul class="row height_40_border_top_bottom background_color_odd_event">
-	        <li class="col">排名</li>
-	        <li class="col">姓名</li>
-	        <li class="">距标准杆</li>
-	        <li class="">已完成</li>
-	        <li class="col">前9</li>
-	        <li class="col">后9</li>
-	        <li class="col">总杆</li>
+	    <ul class="row height_40_border_top_bottom background_color_odd_event" >
+	        <li class="col" v-for="title in ranking.list[0].title">{{ title }}</li>
 	    </ul>
-	    <ul class="row height_40_border0" v-for="n in 5">
-	        <li class="col">1</li>
-	        <li class="col">许韫</li>
-	        <li class="col" style="color: red;">-3</li>
-	        <li class="col" style="">F</li>
-	        <li class="col">34</li>
-	        <li class="col">35</li>
-	        <li class="col">69</li>
+	    <ul class="row height_40_border0" v-for="grade in ranking.list[0].linst">
+	        <li class="col">{{ grade.Number }}</li>
+	        <li class="col">{{ grade.Name }}</li>
+	        <li class="col" style="color: red;">{{ grade.Measure }}</li>
+	        <li class="col" style="">{{ grade.Done }}</li>
+	        <li class="col">{{ grade.Before }}</li>
+	        <li class="col">{{ grade.Reak }}</li>
+	        <li class="col">{{ grade.Gross }}</li>
 	    </ul>
 	</div>
 </div>
@@ -49,6 +43,23 @@ export default {
         page: 0,
         size: 5,
         list: []
+      },
+      ranking: {
+        index: 0,
+        list: [
+          {
+            title: ['排名', '姓名', '距标准杆', '已完成', '前9', '后9', '总杆'],
+            linst: [
+                { Number: 1, Name: '许韫', Measure: -3, Done: 'F', Before: 34, Reak: 35, Gross: 69 },
+                { Number: 2, Name: '张三', Measure: -3, Done: 'F', Before: 32, Reak: 34, Gross: 67 },
+                { Number: 3, Name: '许韫', Measure: -3, Done: 'F', Before: 25, Reak: 33, Gross: 65 },
+                { Number: 4, Name: '许韫', Measure: -3, Done: 'F', Before: 22, Reak: 32, Gross: 64 },
+                { Number: 5, Name: '许韫', Measure: -3, Done: 'F', Before: 20, Reak: 31, Gross: 62 },
+                { Number: 6, Name: '许韫', Measure: -3, Done: 'F', Before: 19, Reak: 30, Gross: 60 },
+                { Number: 7, Name: '许韫', Measure: -3, Done: 'F', Before: 15, Reak: 29, Gross: 58 }
+            ]
+          }
+        ]
       }
     }
   },

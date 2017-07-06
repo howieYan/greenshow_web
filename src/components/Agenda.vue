@@ -11,7 +11,7 @@
 		    </ul>
 		</div>
 		<div class="padding_t64_height">
-		    <div class="line_height60_bottom1">
+		    <div class="line_height60_bottom1" v-for="n in 3">
 		        <ul class="row">
 		            <li class="col padding_left20px">2017年6月例赛</li>
 		            <li class="padding_right20px">美兰湖</li>
@@ -26,48 +26,10 @@
 		            <li class="">
 		                13:30开球
 		            </li>
-		            <li class="right_image_padding10">
+		            <li class="right_image_padding10" v-if="">
 		                <img :src="'/static/signup_image.png'" alt="">
-		            </li>
-		        </ul>
-		    </div>
-		    <div class="line_height60_bottom1">
-		        <ul class="row">
-		            <li class="col padding_left20px">2017年6月例赛</li>
-		            <li class="padding_right20px">美兰湖</li>
-		        </ul>
-		        <ul class="padding_left20px padding_right20px_li">
-		            <li class="">
-		                5月23日
-		            </li>
-		            <li class="">
-		                周三
-		            </li>
-		            <li class="">
-		                13:30开球
-		            </li>
-		            <li class="right_image_padding10">
-		                <img :src="'/static/signup_image1.png'" alt="">
-		            </li>
-		        </ul>
-		    </div>
-		    <div class="line_height60_bottom1">
-		        <ul class="row">
-		            <li class="col padding_left20px">2017年6月例赛</li>
-		            <li class="padding_right20px">美兰湖</li>
-		        </ul>
-		        <ul class="padding_left20px padding_right20px_li">
-		            <li class="">
-		                5月23日
-		            </li>
-		            <li class="">
-		                周三
-		            </li>
-		            <li class="">
-		                13:30开球
-		            </li>
-		            <li class="right_image_padding10">
-		                <img :src="'/static/signup_image2.png'" alt="">
+		                <!--<img :src="'/static/signup_image1.png'" alt="">
+		                <img :src="'/static/signup_image2.png'" alt="">-->
 		            </li>
 		        </ul>
 		    </div>

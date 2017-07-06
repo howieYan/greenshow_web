@@ -44,6 +44,52 @@ html {
     overflow-y: scroll;
 }
 
+#position_abs{
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    background: rgba(0,0,0,0.5);;
+    color: #555;
+    left: 0;
+    z-index: 10000;
+    height: 100%;
+    display: none;
+}
+#col3>b{
+    background: url(/static/bg_jiantou1.png)no-repeat 0 -10px;
+    width: 12px;
+    height: 8px;
+    display: -webkit-box;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    background-size: 100%;
+    margin-right: 10px;
+}
+.cur>b{
+    background: url(/static/bg_jiantou1.png)no-repeat 0 0px!important;
+    width: 10px!important;
+    height: 7px!important;
+    display: -webkit-box!important;
+    position: absolute!important;
+    top: 14px!important;
+    right: 0!important;
+    background-size: 100%!important;
+}
+#position_abs>div{
+    width: 100%;
+    height:40px;
+    line-height: 36px;
+    background: #fff;
+    padding-left: 10px;
+    border-bottom: 1px solid #eee;
+}
+.bg_color_3daba6{
+    color:#3daba6;
+}
+.active_div{
+    display: none!important;
+}
 /* 本例子css -------------------------------------- */
 .focus{ width:320px; height:280px;  margin:0 auto; position:relative; overflow:hidden;   }
 .focus .hd{ width:100%; height:11px;  position:absolute; z-index:1; bottom:0px; text-align:center;  }
@@ -1783,7 +1829,6 @@ p {
     background-color: #fff;
 }
 #iscroll {
-    overflow: hidden;
     position: relative;
     height: 38px;
     text-align: center;
@@ -2119,6 +2164,7 @@ div.module > div.text_center > ul > li.width_40 > div.three {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
+    position: relative;
 }
 #col4 {
     -webkit-box-flex: 1;
