@@ -23,37 +23,37 @@
     <div class="clearfix"></div>
     <div class="section_title">
       <ul class="row">
-        <li class="col">
+        <li class="col" @click="noticeFrame">
           <img :src="'static/notice.png'" alt="">
           <div>公告</div>
         </li>
-        <li class="col">
+        <li class="col" @click="agendaFrame">
           <img :src="'static/schedule.png'" alt="">
           <div>赛程</div>
         </li>
-        <li class="col">
+        <li class="col" @click="statuteFrame">
           <img :src="'static/regulations.png'" alt="">
           <div>章程</div>
         </li>
-        <li class="col">
+        <li class="col" @click="playerFrame">
           <img :src="'static/player.png'" alt="">
           <div>球员</div>
         </li>
       </ul>
       <ul class="row">
-        <li class="col">
+        <li class="col" @click="seniorityFrame">
           <img :src="'static/ranking.png'" alt="">
           <div>排行</div>
         </li>
-        <li class="col">
+        <li class="col" @click="historyFrame">
           <img :src="'static/history.png'" alt="">
           <div>历史</div>
         </li>
-        <li class="col">
+        <li class="col" @click="honorFrame">
           <img :src="'static/honor.png'" alt="">
           <div>荣誉</div>
         </li>
-        <li class="col">
+        <li class="col" @click="photoFrame">
           <img :src="'static/photoalbum.png'" alt="">
           <div>相册</div>
         </li>
@@ -132,7 +132,30 @@ export default {
       console.debug(`${this.Name}.click to open: %o`, event)
       this.$router.push({ path: `/event/${event.Id}` })
     },
-
+    noticeFrame (event) {
+      this.$router.push({ path: `/Notice/` })
+    },
+    agendaFrame (event) {
+      this.$router.push({ path: `/Agenda/` })
+    },
+    statuteFrame (event) {
+      this.$router.push({ path: `/Statute/` })
+    },
+    playerFrame (event) {
+      this.$router.push({ path: `/Player/` })
+    },
+    seniorityFrame (event) {
+      this.$router.push({ path: `/Seniority/` })
+    },
+    historyFrame (event) {
+      this.$router.push({ path: `/History/` })
+    },
+    honorFrame (event) {
+      this.$router.push({ path: `/Honor/` })
+    },
+    photoFrame (event) {
+      this.$router.push({ path: `/Photo/` })
+    },
     closeFrame () {
       this.$router.go(-1)
     }

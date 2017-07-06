@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>
+    <header class="header">
       <ul class="row">
         <li class="back2" @click="closeFrame"></li>
         <li class="col textCenter1">

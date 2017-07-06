@@ -4,10 +4,21 @@ import Event from '@/components/Event'
 import Home from '@/components/Home'
 import Team from '@/components/Team'
 import TeamInfo from '@/components/TeamInfo'
+import Notice from '@/components/Notice'
+import Agenda from '@/components/Agenda'
+import Statute from '@/components/Statute'
+import Player from '@/components/Player'
+import Seniority from '@/components/Seniority'
+import History from '@/components/History'
+import Honor from '@/components/Honor'
+import Photo from '@/components/Photo'
+
+import * as lib from '../lib'
+import api from '../api'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
       path: '/',
@@ -33,6 +44,59 @@ export default new Router({
       path: '/teaminfo',
       name: 'TeamInfo',
       component: TeamInfo
+    },
+    {
+      path: '/notice',
+      name: 'Notice',
+      component: Notice
+    },
+    {
+      path: '/Agenda',
+      name: 'Agenda',
+      component: Agenda
+    },
+    {
+      path: '/Statute',
+      name: 'Statute',
+      component: Statute
+    },
+    {
+      path: '/Player',
+      name: 'Player',
+      component: Player
+    },
+    {
+      path: '/Seniority',
+      name: 'Seniority',
+      component: Seniority
+    },
+    {
+      path: '/History',
+      name: 'History',
+      component: History
+    },
+    {
+      path: '/Honor',
+      name: 'Honor',
+      component: Honor
+    },
+    {
+      path: '/Photo',
+      name: 'Photo',
+      component: Photo
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  lib.debug && console.debug(`OPEN: ${from.name}(${from.path}) -> ${to.name}(${to.path}) %o`, to)
+  console.time('route')
+
+  if (to.query && to.query.token) {
+    api.setToken(to.query.token)
+  }
+
+  next()
+})
+
+export default router
