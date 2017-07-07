@@ -2,7 +2,7 @@
   <div>
     <div class="header" id="header">
     <ul class="row">
-    <li class="back1" tapmode="hover" @click="closeFrame"></li>
+    <li v-bind:style="{ opacity: inApp ? '0' : '1' }" class="back1" tapmode="hover" @click="closeFrame"></li>
     <li class="col textCenter5">
       活动主页
     </li>
@@ -276,6 +276,10 @@ export default {
   computed: {
     id () {
       return this.$route.params.id
+    },
+
+    inApp () {
+      return !!this.$route.query.token
     }
   },
 
@@ -346,12 +350,6 @@ export default {
           arrdiv[i].className="";
         }
       }
-    }
-    var url =window.location.href;
-    if(url.indexOf("?")!=-1){
-        document.getElementById('back').style.opacity=0;
-    }else{
-        document.getElementById('back').style.opacity=1;
     }
 /* eslint-enable  */
   }

@@ -13,9 +13,12 @@ import History from '@/components/History'
 import Honor from '@/components/Honor'
 import Photo from '@/components/Photo'
 
+import * as lib from '../lib'
+import api from '../api'
+
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
       path: '/',
@@ -84,3 +87,16 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  lib.debug && console.debug(`OPEN: ${from.name}(${from.path}) -> ${to.name}(${to.path}) %o`, to)
+  console.time('route')
+
+  if (to.query && to.query.token) {
+    api.setToken(to.query.token)
+  }
+
+  next()
+})
+
+export default router
