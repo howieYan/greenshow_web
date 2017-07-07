@@ -153,10 +153,10 @@
                 </div>
                 <div class="nav_2">
                   <ul class="row" v-for="player in ranking.list[ranking.index].list">
-                    <li class="col"><b>{{ player.Number }}</b></li>
-                    <li class="col"><b>{{ player.Name }}</b></li>
-                    <li class="col"><b>{{ player.Team }}</b></li>
-                    <li class="col"><b>{{ player.Score }}</b></li>
+                    <li class="col"><b class="font_size_14px">{{ player.Number }}</b></li>
+                    <li class="col"><b class="font_size_14px">{{ player.Name }}</b></li>
+                    <li class="col"><b class="font_size_14px">{{ player.Team }}</b></li>
+                    <li class="col"><b class="font_size_14px">{{ player.Score }}</b></li>
                   </ul>
                 </div>
               </div>
