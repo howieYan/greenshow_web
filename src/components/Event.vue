@@ -299,7 +299,7 @@ export default {
         // this.team = this.blank
         let result = await api.getEvent(this.id, 'all')
         console.debug(`%o`, result)
-        this.event = api.isValid(result) ? result.data : {}
+        this.event = api.isValid(result) ? result.Data : {}
       }
       catch (e) {
         console.error(e)
