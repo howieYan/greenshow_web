@@ -42,7 +42,8 @@
         <div class="swipe-box_1">
           <div class="swipe-box_1_width" id="nav">
 
-            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame(record)" v-for="record in teams.list">
+            <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame(record)" v-for="record in
+            teams.list">
               <div>
                 <img :src="record.Logo" alt="">
                 <b class="b">{{record.Name}}</b>
@@ -164,7 +165,7 @@
           </div>
           <div class="title-box title-box_height">
             <ul class="title-box-ul_li row">
-              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="col">
+              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="">
                   {{i+1}}
               </li>
             </ul>
@@ -191,7 +192,7 @@
           <li style="width: 10px"></li>
           <li class="col title_tj_img">
             <div class="title_tj_img_border">
-              <img :src="'static/qiu1.jpg'" alt="">
+              <img :src="'static/qiu10.jpg'" alt="">
               <p>李昊桐</p>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
             </div>

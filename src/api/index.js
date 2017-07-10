@@ -79,7 +79,8 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Team' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listTeam (option, page = 0, size = 10) {
-    return this.send('get', `/api/Team?option=${option}&page=${page}&size=${size}`)
+    // return this.send('get', `/api/Team?option=${option}&page=${page}&size=${size}`)
+    return this.send('get', `/json/home.json`)
   },
 
   /**
