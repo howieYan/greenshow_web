@@ -214,6 +214,7 @@ export default {
   name: 'Home',
   data () {
     return {
+      name: 'HomeV',
       version: lib.version,
       debug: lib.debug,
 
@@ -299,11 +300,11 @@ export default {
       try {
         let result = await api.listTeam('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        this.teams.list = api.isValid(result) ? result.data : []
+        this.teams.list = api.isValid(result) ? result.Data : []
         result = await api.listPlayer('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        if (api.isValid(result) && result.data.length > 0) {
-          this.players.list = api.isValid(result) ? result.data : []
+        if (api.isValid(result) && result.Data.length > 0) {
+          this.players.list = api.isValid(result) ? result.Data : []
           this.players.index = 0
         }
         else {
