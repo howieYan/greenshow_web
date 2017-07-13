@@ -9,11 +9,11 @@
           <li class="right_width"></li>
       </ul>
   </div>
-  <div class="padding_t64_height background_color">
-      <div class="background_color">
-          <div class="width_image_width100 width_image_width100_image">
+  <div class="padding_t64_height background_color0">
+      <div class="background_color1">
+          <div class="width_image_width100 width_image_width100_image padding-top10px_bg" v-for="n in 5">
               <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen0">
+              <div class="bg_rahmen">
                   <p class="width_b">
                       2016年SGCU
                   </p>
@@ -25,49 +25,7 @@
                   </p>
               </div>
           </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen1">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen0">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen1">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
-          <div class="width_image_width100 width_image_width100_image">
+          <div class="width_image_width100 width_image_width100_image padding-top10px_bg">
               <div class="bg_rahmen3">
                   <p class="width_b">
                       2016年SGCU

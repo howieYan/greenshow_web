@@ -160,6 +160,10 @@ const respones = {
   'get /api/Event/A2C745D7-C812-45E3-A32F-F7F5BD885293': Event1,
   'get /api/Team': ListTeam,
   'get /api/Team/2B32D3B3-ED48-4006-B2D1-8022D20A3929': Team1,
+  'get /api/Team/BFA164FE-A17F-44AD-B7ED-68CDEDD6A6F8': Team1,
+  'get /api/Team/F617C12D-A1D6-4868-AC40-E007D6429B05': Team1,
+  'get /api/Team/1D100023-BD22-431D-BE2B-B1E68311318F': Team1,
+  'get /api/Team/31AC008F-BB1F-4A36-93ED-CFAE538DC5BC': Team1,
   'get /api/Player': ListPlayer,
   '': null  // DEBUG PURPOSE!
 }

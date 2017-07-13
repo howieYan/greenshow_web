@@ -23,8 +23,8 @@
           <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party</p>
         </div>
       </div>
-      <div class="title-box">
-        <ul class="title-box-ul">
+      <div class="title-box_activer ">
+        <ul class="title-box-ul ">
           <li class="active"></li>
           <li></li>
           <li></li>
@@ -82,7 +82,7 @@
                     </li>
                     <li class="col color_0a0b1b_b color_0a0b1b_b0">
                       <p>ＳＧＣＵ系列赛</p>
-                      <p>
+                      <p class="guanjun">
                          {{ scores[players.index].title }}
                       </p>
                       <div class="border_bottom"></div>
@@ -140,15 +140,15 @@
           <b class="col">排行榜(2017)</b>
         </div>
         <div id="swipelb" class="swipe">
-          <div class="swipe-wrap">
-            <div v-if="ranking.index >= 0" class="swipe-box">
+          <div class="swipe-wrap1">
+            <div v-if="ranking.index >= 0" class="swipe-box1">
               <div class="swiper-slide-header_ph">
                 <div class="bestResult">
                   <p>{{ ranking.list[ranking.index].category }}</p>
                 </div>
                 <div class="nav1">
                   <ul class="row">
-                    <li class="col" v-for="title in ranking.list[ranking.index].title"><b>{{ title }}</b></li>
+                    <li class="col" v-for="title in ranking.list[ranking.index].title"><b class="font_size_14px">{{ title }}</b></li>
                   </ul>
                 </div>
                 <div class="nav_2">
@@ -164,8 +164,8 @@
           </div>
           <div class="title-box title-box_height">
             <ul class="title-box-ul_li row">
-              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="col">
-                  {{i+1}}
+              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="">
+                  <b>{{i+1}}</b>
               </li>
             </ul>
           </div>
@@ -180,18 +180,17 @@
         <b class="col">推荐人物</b>
       </div>
       <div class="title_tj">
-        <ul class="row">
-          <li class="col title_tj_img">
-            <div class="title_tj_img_border">
+        <ul class="padding_left_ul10">
+          <li class=" title_tj_img ">
+            <div class="title_tj_img_border ">
               <img :src="'static/qiu0.png'" alt="">
               <p>冯珊珊</p>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
             </div>
           </li>
-          <li style="width: 10px"></li>
-          <li class="col title_tj_img">
-            <div class="title_tj_img_border">
-              <img :src="'static/qiu1.jpg'" alt="">
+          <li class=" title_tj_img ">
+            <div class="title_tj_img_border ">
+              <img :src="'static/qiu10.jpg'" alt="">
               <p>李昊桐</p>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
             </div>
@@ -200,7 +199,7 @@
       </div>
     </div>
 
-    <div v-if="debug" style="text-align: center;background: #f5f5f5;line-height:32px;">{{ version }}</div>
+    <div class="" v-if="debug" style="text-align: center;background: #f5f5f5;line-height:32px;">{{ version }}</div>
    </div>
 </template>
 

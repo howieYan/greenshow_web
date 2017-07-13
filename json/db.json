@@ -1,0 +1,30 @@
+{
+    "Code": 0, 
+    "Data": [
+        {
+            "Id": "2B32D3B3-ED48-4006-B2D1-8022D20A3929", 
+            "Name": "高尔夫", 
+            "Logo": "http://devesb.golfgreenshow.com/ingpal/Upload/TeamLogo/201703/03b029cbfc604e17bb924b289d1389d9.jpg"
+        }, 
+        {
+            "Id": "BFA164FE-A17F-44AD-B7ED-68CDEDD6A6F8", 
+            "Name": "和平鸽", 
+            "Logo": "http://devesb.golfgreenshow.com/ingpal/Upload/TeamLogo/201703/da1cd8a90b844e8095ff1e5b9c64ae91.jpg"
+        }, 
+        {
+            "Id": "F617C12D-A1D6-4868-AC40-E007D6429B05", 
+            "Name": "长青高球队V", 
+            "Logo": "http://devesb.golfgreenshow.com/ingpal/Upload/TeamLogo/201703/0d9cca9d6d9d425f84a2f91f546e290e.jpg"
+        }, 
+        {
+            "Id": "1D100023-BD22-431D-BE2B-B1E68311318F", 
+            "Name": "上海高尔夫", 
+            "Logo": "http://devesb.golfgreenshow.com/ingpal/Upload/TeamLogo/201703/68213a43ca08435b9969c235a18408bd.jpeg"
+        }, 
+        {
+            "Id": "31AC008F-BB1F-4A36-93ED-CFAE538DC5BC", 
+            "Name": "浦东高球队", 
+            "Logo": "http://devesb.golfgreenshow.com/ingpal/Upload/TeamLogo/201703/1ca36e6eb2e74c0f861a38432aacdd62.jpg"
+        }
+    ]
+}
