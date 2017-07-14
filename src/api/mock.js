@@ -160,6 +160,7 @@ const respones = {
   'get /api/Event/A2C745D7-C812-45E3-A32F-F7F5BD885293': Event1,
   'get /api/Team': ListTeam,
   'get /api/Team/2B32D3B3-ED48-4006-B2D1-8022D20A3929': Team1,
+  'get /api/Team/BFA164FE-A17F-44AD-B7ED-68CDEDD6A6F8': Team1,
   'get /api/Player': ListPlayer,
   '': null  // DEBUG PURPOSE!
 }

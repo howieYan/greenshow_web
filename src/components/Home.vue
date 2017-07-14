@@ -80,7 +80,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b color_0a0b1b_b0">
+                    <li class="col color_0a0b1b_b color_0a0b1b_b5">
                       <p>ＳＧＣＵ系列赛</p>
                       <p>
                          {{ scores[players.index].title }}
@@ -140,7 +140,7 @@
           <b class="col">排行榜(2017)</b>
         </div>
         <div id="swipelb" class="swipe">
-          <div class="swipe-wrap">
+          <div class="swipe-wrap0">
             <div v-if="ranking.index >= 0" class="swipe-box">
               <div class="swiper-slide-header_ph">
                 <div class="bestResult">
@@ -164,8 +164,8 @@
           </div>
           <div class="title-box title-box_height">
             <ul class="title-box-ul_li row">
-              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="col">
-                  {{i+1}}
+              <li @click="ranking.index = i" v-bind:class="{ active: i === ranking.index }" v-for="(n, i) in ranking.list.length" class="">
+                  <b>{{i+1}}</b>
               </li>
             </ul>
           </div>
@@ -179,17 +179,16 @@
         <b class=""></b>
         <b class="col">推荐人物</b>
       </div>
-      <div class="title_tj">
-        <ul class="row">
-          <li class="col title_tj_img">
+      <div class="title_tj clearfixboth">
+        <ul class="">
+          <li class="title_tj_img">
             <div class="title_tj_img_border">
               <img :src="'static/qiu0.png'" alt="">
               <p>冯珊珊</p>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
             </div>
           </li>
-          <li style="width: 10px"></li>
-          <li class="col title_tj_img">
+          <li class=" title_tj_img">
             <div class="title_tj_img_border">
               <img :src="'static/qiu1.jpg'" alt="">
               <p>李昊桐</p>
