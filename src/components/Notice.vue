@@ -10,17 +10,93 @@
         </ul>
     </div>
     <div class="padding_t64_height">
-        <ul class="row height50" v-for="n in 6">
+        <ul class="row height50">
             <li class="border_radius line_height_center">
                 <b></b>
             </li>
             <li class="col">
                 6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
             </li>
-            <li class="" v-if="">
+            <li class="">
                 <img :src="'/static/signup_image.png'" alt="">
             </li>
         </ul>
+        <ul class="row height50">
+            <li class="border_radius line_height_center">
+                <b></b>
+            </li>
+            <li class="col">
+                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
+            </li>
+            <li class="">
+                <img :src="'/static/signup_image.png'" alt="">
+            </li>
+        </ul>
+        <ul class="row height50">
+            <li class="border_radius line_height_center">
+                <b></b>
+            </li>
+            <li class="col">
+                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
+            </li>
+            <li class="">
+                <img :src="'/static/signup_image.png'" alt="">
+            </li>
+        </ul>
+        <ul class="row height50">
+            <li class="border_radius line_height_center">
+                <b></b>
+            </li>
+            <li class="col">
+                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
+            </li>
+            <li class="">
+                <img :src="'/static/signup_image.png'" alt="">
+            </li>
+        </ul>
+        <ul class="row height50">
+            <li class="border_radius line_height_center">
+                <b></b>
+            </li>
+            <li class="col">
+                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
+            </li>
+            <li class="">
+                <img :src="'/static/signup_image.png'" alt="">
+            </li>
+        </ul>
+        <ul class="row height50">
+            <li class="border_radius line_height_center">
+                <b></b>
+            </li>
+            <li class="col">
+                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
+            </li>
+            <li class="">
+                <img :src="'/static/signup_image.png'" alt="">
+            </li>
+        </ul>
+        <ul class="row height50">
+            <li class="border_radius line_height_center">
+                <b></b>
+            </li>
+            <li class="col">
+                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
+            </li>
+            <li class="">
+            </li>
+        </ul>
+        <ul class="row height50">
+            <li class="border_radius line_height_center">
+                <b></b>
+            </li>
+            <li class="col">
+                6月例赛出游季，6月21-22日龙王溪6月例赛出游季，6月21-22日龙王溪
+            </li>
+            <li class="">
+            </li>
+        </ul>
+
     </div>
 </div>
 </template>
@@ -63,11 +139,11 @@ export default {
         this.team = this.blank
         let result = await api.getTeam(this.id, 'summary')
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.data : this.blank
+        this.team = api.isValid(result) ? result.Data : this.blank
 
         result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
         console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.data : []
+        this.events.list = api.isValid(result) ? result.Data : []
       }
       catch (e) {
         console.error(e)

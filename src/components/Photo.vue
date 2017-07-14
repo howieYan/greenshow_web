@@ -10,9 +10,9 @@
       </ul>
   </div>
   <div class="padding_t64_height" id="body">
-      <div class="width_150px" v-for="titleList in title">
+      <div class="width_150px" v-for="n in 8">
           <img :src="'/static/automobile.png'" alt="">
-          <p>{{ titleList.titleN }}</p>
+          <p>2017年6月例赛</p>
       </div>
   </div>
 </div>
@@ -35,15 +35,7 @@ export default {
         page: 0,
         size: 5,
         list: []
-      },
-      title: [
-        { titleN: '2017年4月例赛' },
-        { titleN: '2017年5月例赛' },
-        { titleN: '2017年6月例赛' },
-        { titleN: '2017年7月例赛' },
-        { titleN: '2017年8月例赛' },
-        { titleN: '2017年9月例赛' }
-      ]
+      }
     }
   },
 
@@ -63,11 +55,11 @@ export default {
         this.team = this.blank
         let result = await api.getTeam(this.id, 'summary')
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.data : this.blank
+        this.team = api.isValid(result) ? result.Data : this.blank
 
         result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
         console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.data : []
+        this.events.list = api.isValid(result) ? result.Data : []
       }
       catch (e) {
         console.error(e)

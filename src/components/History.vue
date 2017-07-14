@@ -21,7 +21,10 @@
                   <li class="col">
                       <div class="module_box">
                           2017年4月，远行当选优仕队队长
-                          <div class="triangle_border_left"></div>
+                          <div class="triangle_border_left">
+
+                          </div>
+
                       </div>
                   </li>
               </ul>
@@ -35,7 +38,10 @@
                   <li class="col">
                       <div class="module_box">
                           2017年1月队委成员名单更新
-                          <div class="triangle_border_left"></div>
+                          <div class="triangle_border_left">
+
+                          </div>
+
                       </div>
                   </li>
               </ul>
@@ -49,7 +55,10 @@
                   <li class="col">
                       <div class="module_box">
                           2016年1月优仕队连续6年获得康桥 亲水湾赞助
-                          <div class="triangle_border_left"></div>
+                          <div class="triangle_border_left">
+
+                          </div>
+
                       </div>
                   </li>
               </ul>
@@ -63,7 +72,10 @@
                   <li class="col">
                       <div class="module_box">
                           2017年1月队委成员名单更新
-                          <div class="triangle_border_left"></div>
+                          <div class="triangle_border_left">
+
+                          </div>
+
                       </div>
                   </li>
               </ul>
@@ -110,11 +122,11 @@ export default {
         this.team = this.blank
         let result = await api.getTeam(this.id, 'summary')
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.data : this.blank
+        this.team = api.isValid(result) ? result.Data : this.blank
 
         result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
         console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.data : []
+        this.events.list = api.isValid(result) ? result.Data : []
       }
       catch (e) {
         console.error(e)

@@ -10,27 +10,32 @@
       </ul>
   </div>
   <div class="padding_t64_height background_color">
-        <div class="background_color">
-          <div class="width_image_width100 width_image_width100_image">
+      <div class="background_color  colunm">
+          <div class="width_image_width100 width_image_width100_image"  v-for="n in 7">
               <img class="" :src="'/static/automobile.png'" alt="">
               <div class="bg_rahmen0">
-                  <p class="width_b" v-for="first in honorBg">
-                      {{ first.name }}
+                  <p class="width_b">
+                      2016年SGCU
+                  </p>
+                  <p class="width_b">
+                      冠军
+                  </p>
+                  <p class="width_b">
+                      B组总杆
                   </p>
               </div>
           </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen1">
-                  <p class="width_b" v-for="first in honorBg">
-                      {{ first.name }}
-                  </p>
-              </div>
-          </div>
+          
           <div class="width_image_width100 width_image_width100_image">
               <div class="bg_rahmen3">
-                 <p class="width_b" v-for="first in honorBg">
-                      {{ first.name }}
+                  <p class="width_b">
+                      2016年SGCU
+                  </p>
+                  <p class="width_b">
+                      冠军
+                  </p>
+                  <p class="width_b">
+                      B组总杆
                   </p>
               </div>
           </div>
@@ -56,12 +61,7 @@ export default {
         page: 0,
         size: 5,
         list: []
-      },
-      honorBg: [
-        { name: '2016年SGCU' },
-        { name: '冠军' },
-        { name: 'B组总杆' }
-      ]
+      }
     }
   },
 
@@ -81,11 +81,11 @@ export default {
         this.team = this.blank
         let result = await api.getTeam(this.id, 'summary')
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.data : this.blank
+        this.team = api.isValid(result) ? result.Data : this.blank
 
         result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
         console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.data : []
+        this.events.list = api.isValid(result) ? result.Data : []
       }
       catch (e) {
         console.error(e)

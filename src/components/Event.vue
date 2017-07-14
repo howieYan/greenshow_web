@@ -21,7 +21,13 @@
         分组
         </li>
         <li tapmode="hover" onclick="selectTag('nav3',this)" class="" id="col3">
-          成绩<b></b>
+        总杆排名
+        </li>
+        <li tapmode="hover" onclick="selectTag('nav4',this)" class="" id="col4">
+        净杆排名
+        </li>
+        <li tapmode="hover" onclick="selectTag('nav5',this)" class="" id="col5">
+        获取结果
         </li>
         <li tapmode="hover" onclick="selectTag('nav6',this)" class="" id="col6">
         图片
@@ -31,183 +37,187 @@
     </div>
     </div>
   </div>
-    <div class="position_abs" id="position_abs">
-      <div tapmode="hover" onclick="selectTag('nav3',this)"  class="bg_color_3daba6">总杆排名</div>
-      <div tapmode="hover" onclick="selectTag('nav4',this)"  class="">净杆排名</div>
-      <div tapmode="hover" onclick="selectTag('nav5',this)"  class="">获取结果</div>
+  <div id="nav_1">
+    <div id="nav1" class="nav selected">
+    <div class="height">
+      活动信息
     </div>
-    <div id="nav_1">
-        <div id="nav1" class="nav selected">
-            <div class="height">
-              活动信息
-            </div>
-            <div class="bgColor">
-              <ul class="row">
-                <li class="">活动名称</li>
-                <li class="col">{{ event.Name }}</li>
-              </ul>
-              <ul class="row">
-                <li class="">开球时间</li>
-                <li class="col">{{ formatTime(event.StartDate) }}</li>
-              </ul>
-              <ul class="row">
-                <li class="">活动地点</li>
-                <li class="col">{{ event.Address }}</li>
-              </ul>
-              <ul class="row">
-                <li class="">其他信息</li>
-                <li class="col"v-html=" event.Description "></li>
-              </ul>
-            </div>
-            <div class="button0">
-              点击报名
-            </div>
-            <div class="padding_t">
-              <b>已报名/{{ event.PlayerCount }}人</b>
-            </div>
-            <div class="apply"  >
-              <ul class="" >
-                <li class="widthHeight" v-for="record in event.Players">
-                  <img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
-                  <div>{{ record.Name }}</div>
-                </li>
-              </ul>
-            </div>
-        </div>
-        <div id="nav2" class="nav">
-          <div class="text_header">
-          <div class="header0">
-          <ul class="row">
-            <li class="col" v-for="first in packet">
-            <b style="padding-left:10px;">{{ first.aplystring }}</b>
-            <b>{{ first.string }}</b>
-            </li>
+    <div class="bgColor">
+      <ul class="row">
+        <li class="">活动名称</li>
+        <li class="col">{{ event.Name }}</li>
+      </ul>
+      <ul class="row">
+        <li class="">开球时间</li>
+        <li class="col">{{ formatTime(event.StartDate) }}</li>
+      </ul>
+      <ul class="row">
+        <li class="">活动地点</li>
+        <li class="col">{{ event.Address }}</li>
+      </ul>
+      <ul class="row">
+        <li class="">其他信息</li>
+        <li class="col"v-html=" event.Description "></li>
+      </ul>
+    </div>
+    <div class="button0">
+      点击报名
+    </div>
+    <div class="padding_t">
+      <b>已报名/{{ event.PlayerCount }}人</b>
+    </div>
+    <div class="apply"  >
+      <ul class="" >
+      <li class="widthHeight" v-for="record in event.Players">
+        <img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
+        <div>{{ record.Name }}</div>
+      </li>
+      </ul>
+    </div>
+    </div>
+    <div id="nav2" class="nav">
+    <div class="text_header">
+      <div class="header0">
+      <ul class="row">
+        <li class="col" v-for="first in packet">
+        <b style="padding-left:10px;">{{ first.aplystring }}</b>
+        <b>{{ first.string }}</b>
+        </li>
 
-          </ul>
+      </ul>
+      </div>
+      <div class="module padding_t10">
+      <div class="text_center">
+        <ul class="row">
+        <li class="width_40">
+          <div class="one">
+          第一组
           </div>
-          <div class="module padding_t10">
-          <div class="text_center">
-            <ul class="row">
-            <li class="width_40">
-              <div class="one">
-              第一组
-              </div>
-              <div class="two">
-              1号洞
-              </div>
-              <div class="three">
-              10:00
-              </div>
-            </li>
-            <li class="col" v-for="first in aplyname">
-              <p><img :src="'static/apply_1.png'" alt="">
-              </p>
-              <b>{{ first.name }}</b>
-              <b class="border"></b>
-            </li>
-            </ul>
+          <div class="two">
+          1号洞
           </div>
+          <div class="three">
+          10:00
           </div>
-          <div class="module">
-          <div class="text_center">
-            <ul class="row">
-            <li class="width_40">
-              <div class="one">
-              第二组
-              </div>
-              <div class="two">
-              1号洞
-              </div>
-              <div class="three">
-              10:00
-              </div>
-            </li>
-            <li class="col" v-for="first in aplyname">
-              <p><img :src="'static/apply_1.png'" alt="">
-              </p>
-              <b>{{ first.name }}</b>
-              <b class="border"></b>
-            </li>
-            </ul>
+        </li>
+        <li class="col" v-for="first in aplyname">
+          <p><img :src="'static/apply_1.png'" alt="">
+          </p>
+          <b>{{ first.name }}</b>
+          <b class="border"></b>
+        </li>
+        </ul>
+      </div>
+      </div>
+      <div class="module">
+      <div class="text_center">
+        <ul class="row">
+        <li class="width_40">
+          <div class="one">
+          第二组
           </div>
+          <div class="two">
+          1号洞
           </div>
-        </div>
-        <div id="nav6" class="nav">
-          <div class="pages" id="pages">
-              <div class="page page1" style="transform: translate3d(0px, 0px, 0px);" v-for="n in 4">
-                  <div class="slideCss">
-                      <img :src="'static/bg_nav_6.png'">
-                      <p>
-                          <b class="font_size_weight">TO:</b>
-                          <b class="font_size_weight_b">SOMEONE</b>
-                      </p>
-                      <p class="font_size_12">留白</p>
-                      <p class="font_size_12">用白色明信片</p>
-                      <p class="font_size_12">框住每一个偶遇</p>
-                      <div class="row margin_Top10">
-                          <ul class="border_width">
-                              <li><b>May,</b><b>25</b></li>
-                              <li><b>2015</b></li>
-                              <li><b>+</b></li>
-                          </ul>
-                          <ul class="col line_height_bottom">
-                              <li><b>by:</b><b>SOMEONE</b></li>
-                          </ul>
-                      </div>
+          <div class="three">
+          10:00
+          </div>
+        </li>
+        <li class="col" v-for="first in aplyname">
+          <p><img :src="'static/apply_1.png'" alt="">
+          </p>
+          <b>{{ first.name }}</b>
+          <b class="border"></b>
+        </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+    </div>
+    <div id="nav3" class="nav">
+    <div class="title">
+      <ul class="row">
+      <li class="col" v-for="title in ranking.list[0].title">
+        {{ title }}
+      </li>
+
+      </ul>
+      <ul class="row" v-for="player in ranking.list[0].list">
+      <li class="col">{{ player.Number }}</li>
+      <li class="col">{{ player.Name }}</li>
+      <li class="col" style="color:red;">{{ player.Measure }}</li>
+      <li class="col">{{ player.Done }}</li>
+      <li class="col">{{ player.Before }}</li>
+      <li class="col">{{ player.Reak }}</li>
+      <li class="col">{{ player.Gross }}</li>
+      </ul>
+
+    </div>
+    </div>
+    <div id="nav4" class="nav">
+    <div class="title">
+      <ul class="row">
+      <li class="col" v-for="title in ranking.list[1].title">
+        {{ title }}
+      </li>
+      </ul>
+      <ul class="row" v-for="player in ranking.list[1].list">
+      <li class="col">{{ player.Number }}</li>
+      <li class="col">{{ player.Name }}</li>
+      <li class="col red">{{ player.Measure }}</li>
+      <li class="col">{{ player.Gross }}</li>
+      <li class="col">{{ player.Tee }}</li>
+      </ul>
+
+    </div>
+    </header>
+    </div>
+    <div id="nav5" class="nav">
+    <div class="title">
+      <ul class="row">
+      <li class="col" v-for="title in ranking.list[2].title">
+        {{ title }}
+      </li>
+      </ul>
+      <ul class="row" v-for="player in ranking.list[2].list">
+      <li class="col">{{ player.Didnt }}</li>
+      <li class="col">{{ player.Name }}</li>
+      <li class="col red">{{ player.Award }}</li>
+      </ul>
+    </div>
+    </div>
+    <div id="nav6" class="nav">
+        <article class="htmleaf-container">
+          <div class="demo">
+            <div class="demo__content">
+            <div class="demo__card-cont">
+              <div class="demo__card" v-for="n in 5">
+                <div class="slideCss">
+                  <img :src="'/static/bg_nav_6.png'">
+                  <p>
+                    <b class="font_size_weight">TO:</b>
+                    <b class="font_size_weight_b">SOMEONE</b>
+                  </p>
+                  <p class="font_size_12">留白</p>
+                  <p class="font_size_12">用白色明信片</p>
+                  <p class="font_size_12">框住每一个偶遇</p>
+                  <div class="row margin_Top10">
+                    <ul class="border_width">
+                      <li><b>May,</b><b>25</b></li>
+                      <li><b>2015</b></li>
+                      <li><b>+</b></li>
+                    </ul>
+                    <ul class="col line_height_bottom">
+                      <li><b>by:</b><b>SOMEONE</b></li>
+                    </ul>
                   </div>
+                </div>
               </div>
             </div>
-        </div>
+            </div>
+          </div>
+        </article>
     </div>
-    <div id="chengji">
-        <div id="nav3" class="nav">
-          <div class="title">
-            <ul class="row">
-              <li class="col" v-for="title in ranking.list[0].title">
-                {{ title }}
-              </li>
-            </ul>
-            <ul class="row" v-for="player in ranking.list[0].list">
-              <li class="col">{{ player.Number }}</li>
-              <li class="col">{{ player.Name }}</li>
-              <li class="col" style="color:red;">{{ player.Measure }}</li>
-              <li class="col">{{ player.Done }}</li>
-              <li class="col">{{ player.Before }}</li>
-              <li class="col">{{ player.Reak }}</li>
-              <li class="col">{{ player.Gross }}</li>
-            </ul>
-          </div>
-        </div>
-        <div id="nav4" class="nav">
-          <div class="title">
-            <ul class="row">
-              <li class="col" v-for="title in ranking.list[1].title">
-                {{ title }}
-              </li>
-            </ul>
-            <ul class="row" v-for="player in ranking.list[1].list">
-              <li class="col">{{ player.Number }}</li>
-              <li class="col">{{ player.Name }}</li>
-              <li class="col red">{{ player.Measure }}</li>
-              <li class="col">{{ player.Gross }}</li>
-              <li class="col">{{ player.Tee }}</li>
-            </ul>
-          </div>
-        </div>
-        <div id="nav5" class="nav">
-          <div class="title">
-            <ul class="row">
-              <li class="col" v-for="title in ranking.list[2].title">
-                {{ title }}
-              </li>
-            </ul>
-            <ul class="row" v-for="player in ranking.list[2].list">
-              <li class="col">{{ player.Didnt }}</li>
-              <li class="col">{{ player.Name }}</li>
-              <li class="col red">{{ player.Award }}</li>
-            </ul>
-          </div>
-        </div>
     </div>
   </div>
   </div>
@@ -295,7 +305,7 @@ export default {
         // this.team = this.blank
         let result = await api.getEvent(this.id, 'all')
         console.debug(`%o`, result)
-        this.event = api.isValid(result) ? result.data : {}
+        this.event = api.isValid(result) ? result.Data : {}
       }
       catch (e) {
         console.error(e)
@@ -309,27 +319,6 @@ export default {
 
   mounted () {
 /* eslint-disable  */
-    var position_abs=document.getElementById("position_abs");
-
-
-    var position_absclick=document.getElementById("position_abs").getElementsByTagName("div");
-    var position_absnav=document.getElementById("chengji").children;
-    for(var i=0;i<position_absclick.length;i++){
-        position_absclick[i].onclick=position_absclickho;
-    }
-    function position_absclickho() {
-        for(var i=0;i<position_absnav.length;i++){
-            if(position_absclick[i]==this){
-                position_absclick[i].className="bg_color_3daba6";
-                position_absnav[i].className="";
-                position_absnav[i].className="selected";
-            }else{
-                position_absclick[i].className="";
-                position_absnav[i].className="";
-            }
-        }
-    }
-
     var arrli=document.getElementById("active").getElementsByTagName("li");
     var arrdiv=document.getElementById("nav_1").children;
     for(var i=0;i<arrli.length;i++){
@@ -338,11 +327,6 @@ export default {
     function li_mouseenter() {
       for(var i=0;i<arrli.length;i++){
         if(arrli[i]==this){
-          if(i==2){
-            position_abs.className="selected";
-          }else{
-            position_abs.className="";
-          }
           arrli[i].className="cur";
           arrdiv[i].className="selected";
         }else {

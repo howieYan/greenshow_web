@@ -3,6 +3,7 @@
  */
 import axios from 'axios'
 import * as lib from '../lib'
+import mock from './mock' // TODO: Remove this when build production release.
 
 /**
  * axios configurations.
@@ -23,7 +24,7 @@ export default {
    * Check whether specified response is valid and contains data.
    */
   isValid (result) {
-    return result && typeof (result.ret) !== 'undefined' && result.ret === 0
+    return result && typeof (result.Code) !== 'undefined' && result.Code === 0
   },
 
   send (method, uri, data = null, token = null) {
@@ -32,28 +33,39 @@ export default {
     }
     return new Promise((resolve, reject) => {
       try {
-        axios({
-          method: method,
-          url: uri,
-          data: data,
-          headers: {
-            Token: token
-          }
-          // withCredentials: true
-        })
-        .then(response => {
-          lib.debugApi && console.debug(response ? JSON.stringify(response, null, '\t') : `${method} ${uri}, ` + (data ? JSON.stringify(data, null, '\t') : ''))
-          if (response && response.data) {
-            resolve(response.data)
+        if (lib.mock) {
+          let response = mock.response(method, uri, data)
+          if (response && response.Data) {
+            resolve(response)
           }
           else {
-            reject(new Error('通讯失败，请检查网络或稍后重试。'))
+            reject(new Error('Mock failed!'))
           }
-        })
-        .catch((error) => {
-          console.error(error)
-          reject(new Error('通讯失败，请检查网络或稍后重试。'))
-        })
+        }
+        else {
+          axios({
+            method: method,
+            url: uri,
+            data: data,
+            headers: {
+              Token: token
+            }
+            // withCredentials: true
+          })
+          .then(response => {
+            lib.debugApi && console.debug(response ? JSON.stringify(response, null, '\t') : `${method} ${uri}, ` + (data ? JSON.stringify(data, null, '\t') : ''))
+            if (response && response.data) {
+              resolve(response.data)
+            }
+            else {
+              reject(new Error('通讯失败，请检查网络或稍后重试。'))
+            }
+          })
+          .catch((error) => {
+            console.error(error)
+            reject(new Error('通讯异常，请检查网络或稍后重试。'))
+          })
+        }
       }
       catch (e) {
         console.error(`Exception: ${e}`)
@@ -79,8 +91,7 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Team' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listTeam (option, page = 0, size = 10) {
-    // return this.send('get', `/api/Team?option=${option}&page=${page}&size=${size}`)
-    return this.send('get', `/json/home.json`)
+    return this.send('get', `/api/Team?option=${option}&page=${page}&size=${size}`)
   },
 
   /**
