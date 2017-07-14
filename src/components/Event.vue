@@ -187,31 +187,36 @@
     </div>
     </div>
     <div id="nav6" class="nav">
-      <div class="pages" id="pages">
-          <div class="page page1" style="transform: translate3d(0px, 0px, 0px);" v-for="n in 4">
-              <div class="slideCss">
-                  <img :src="'static/bg_nav_6.png'">
+        <article class="htmleaf-container">
+          <div class="demo">
+            <div class="demo__content">
+            <div class="demo__card-cont">
+              <div class="demo__card" v-for="n in 5">
+                <div class="slideCss">
+                  <img :src="'/static/bg_nav_6.png'">
                   <p>
-                      <b class="font_size_weight">TO:</b>
-                      <b class="font_size_weight_b">SOMEONE</b>
+                    <b class="font_size_weight">TO:</b>
+                    <b class="font_size_weight_b">SOMEONE</b>
                   </p>
                   <p class="font_size_12">留白</p>
                   <p class="font_size_12">用白色明信片</p>
                   <p class="font_size_12">框住每一个偶遇</p>
                   <div class="row margin_Top10">
-                      <ul class="border_width">
-                          <li><b>May,</b><b>25</b></li>
-                          <li><b>2015</b></li>
-                          <li><b>+</b></li>
-                      </ul>
-                      <ul class="col line_height_bottom">
-                          <li><b>by:</b><b>SOMEONE</b></li>
-                      </ul>
+                    <ul class="border_width">
+                      <li><b>May,</b><b>25</b></li>
+                      <li><b>2015</b></li>
+                      <li><b>+</b></li>
+                    </ul>
+                    <ul class="col line_height_bottom">
+                      <li><b>by:</b><b>SOMEONE</b></li>
+                    </ul>
                   </div>
+                </div>
               </div>
+            </div>
+            </div>
           </div>
-          </div>
-    </div>
+        </article>
     </div>
   </div>
   </div>
