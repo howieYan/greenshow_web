@@ -218,6 +218,7 @@
           </div>
         </article>
     </div>
+    </div>
   </div>
   </div>
   </div>
@@ -305,7 +306,7 @@ export default {
         // this.team = this.blank
         let result = await api.getEvent(this.id, 'all')
         console.debug(`%o`, result)
-        this.event = api.isValid(result) ? result.data : {}
+        this.event = api.isValid(result) ? result.Data : {}
       }
       catch (e) {
         console.error(e)
@@ -342,5 +343,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
