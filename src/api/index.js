@@ -15,27 +15,35 @@ axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://wx.go
 export default {
   token: null,
 
+  getToken () {
+    if (this.token === null) {
+      this.token = localStorage.getItem('token')
+      console.debug(`Loaded token: ${this.token}`)
+    }
+  },
+
   setToken (token) {
     lib.debugApi && console.debug(`Set new token=${token}`)
     this.token = token
+    localStorage.setItem('token', this.token)
   },
 
   /**
    * Check whether specified response is valid and contains data.
    */
   isValid (result) {
-    return result && typeof (result.Code) !== 'undefined' && result.Code === 0
+    return result && typeof (result.code) !== 'undefined' && result.code === 800
   },
 
   send (method, uri, data = null, token = null) {
     if (token === null) {
-      token = this.token
+      token = this.getToken()
     }
     return new Promise((resolve, reject) => {
       try {
         if (lib.mock) {
           let response = mock.response(method, uri, data)
-          if (response && response.Data) {
+          if (response && response.data) {
             resolve(response)
           }
           else {
@@ -83,7 +91,7 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Event?id=172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listEvent (id, option, page = 0, size = 10) {
-    return this.send('get', `/api/Event?id=${id}&option=${option}&page=${page}&size=${size}`)
+    return this.send('get', `/api5/Event?id=${id}&option=${option}&page=${page}&size=${size}`)
   },
 
   /**
@@ -91,7 +99,7 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Team' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listTeam (option, page = 0, size = 10) {
-    return this.send('get', `/api/Team?option=${option}&page=${page}&size=${size}`)
+    return this.send('get', `/api5/Team?option=${option}&page=${page}&size=${size}`)
   },
 
   /**
@@ -99,7 +107,23 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listPlayer (option, page = 0, size = 10) {
-    return this.send('get', `/api/Player?option=${option}&page=${page}&size=${size}`)
+    return this.send('get', `/api5/Player?option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
+   * Login
+   * curl -X POST "http://devwx.golfgreenshow.com/api5/User/Login" -d "phone=13585562369&code=111111"
+   */
+  login (phone, code) {
+    return this.send('post', `/api5/User/Login`, { phone: phone, code: code })
+  },
+
+  /**
+   * Login
+   * curl -X POST "http://devwx.golfgreenshow.com/api5/User/Sms" -d "phone=13585562369"
+   */
+  sms (phone) {
+    return this.send('post', `/api5/User/Sms`, { phone: phone })
   },
 
   /**
@@ -108,7 +132,7 @@ export default {
    *
    */
   getTeam (id, option = '') {
-    return this.send('get', `/api/Team/${id}?option=${option}`)
+    return this.send('get', `/api5/Team/${id}?option=${option}`)
   },
 
   /**
@@ -116,6 +140,6 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Event/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   getEvent (id, option = '') {
-    return this.send('get', `/api/Event/${id}?option=${option}`)
+    return this.send('get', `/api5/Event/${id}?option=${option}`)
   }
 }
