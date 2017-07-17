@@ -1,19 +1,25 @@
 <template>
 <div>
-  <div class="header" id="header">
-      <ul class="row">
-          <li class="back1" tapmode="hover" @click="closeFrame"></li>
-          <li class="col textCenter5">
-              相册
-          </li>
-          <li class="right_width"></li>
-      </ul>
+  <div class="logo_icon">
+      <img src="'/static/favicon.ico'" alt="">
+      <p class="logo_text_center">高领秀</p>
   </div>
-  <div class="padding_t64_height" id="body">
-      <div class="width_150px" v-for="n in 8">
-          <img :src="'/static/automobile.png'" alt="">
-          <p>2017年6月例赛</p>
-      </div>
+  <div class="input">
+      <p class="height_50px_input"><input type="text" translate="no" placeholder="输入邀请码"></p>
+      <p class="height_50px_input"><button class="button_yao">邀请码登录</button></p>
+  </div>
+  <div>
+      <p style="width: 100%;text-align: center">或者</p>
+      <p class="height_50px_input"><input type="text" translate="no" placeholder="手机号码"></p>
+      <p class="height_50px_input">
+          <input type="text" translate="no" placeholder="动态密码">
+          <b class="position_input">获取动态密码</b>
+      </p>
+      <p class="height_50px_input"><button class="button_deng">登录</button></p>
+  </div>
+  <div class="weChat">
+      <p><img src="'/static/weChat.png'" alt=""></p>
+      <b>微信快捷登录</b>
   </div>
 </div>
 </template>
