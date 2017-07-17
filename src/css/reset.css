@@ -3473,12 +3473,6 @@ section>ul.signup_text>li:nth-of-type(2) {
     }
 
 }
-/*event图片*/
-*, *:before, *:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 html, body {
     font-size: 62.5%;
