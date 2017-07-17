@@ -12,6 +12,7 @@ import Seniority from '@/components/Seniority'
 import History from '@/components/History'
 import Honor from '@/components/Honor'
 import Photo from '@/components/Photo'
+import Logo from '@/components/Logo'
 
 import * as lib from '../lib'
 import api from '../api'
@@ -84,6 +85,11 @@ let router = new Router({
       path: '/Photo',
       name: 'Photo',
       component: Photo
+    }, 
+    {
+      path: '/Logo',
+      name: 'Logo',
+      component: Logo
     }
   ]
 })
