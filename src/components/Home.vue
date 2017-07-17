@@ -23,8 +23,8 @@
           <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party</p>
         </div>
       </div>
-      <div class="title-box">
-        <ul class="title-box-ul">
+      <div class="title-box_ul6_li title-box">
+        <ul class="title-box-ul title-box-ul6">
           <li class="active"></li>
           <li></li>
           <li></li>

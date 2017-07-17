@@ -13,8 +13,8 @@
 	    <ul class="row height_40_border_top_bottom background_color_odd_event">
 	        <li class="col">排名</li>
 	        <li class="col">姓名</li>
-	        <li class="">距标准杆</li>
-	        <li class="">已完成</li>
+	        <li class=""style="width:13%;padding-right:10px;">距标准杆</li>
+	        <li class=""style="width:13%;padding-left:10px;">已完成</li>
 	        <li class="col">前9</li>
 	        <li class="col">后9</li>
 	        <li class="col">总杆</li>
