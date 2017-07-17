@@ -24,7 +24,7 @@ export default {
    * Check whether specified response is valid and contains data.
    */
   isValid (result) {
-    return result && typeof (result.Code) !== 'undefined' && result.Code === 0
+    return result && typeof (result.code) !== 'undefined' && result.code === 800
   },
 
   send (method, uri, data = null, token = null) {
@@ -35,7 +35,7 @@ export default {
       try {
         if (lib.mock) {
           let response = mock.response(method, uri, data)
-          if (response && response.Data) {
+          if (response && response.data) {
             resolve(response)
           }
           else {
@@ -83,7 +83,7 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Event?id=172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listEvent (id, option, page = 0, size = 10) {
-    return this.send('get', `/api/Event?id=${id}&option=${option}&page=${page}&size=${size}`)
+    return this.send('get', `/api5/Event?id=${id}&option=${option}&page=${page}&size=${size}`)
   },
 
   /**
@@ -91,7 +91,7 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Team' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listTeam (option, page = 0, size = 10) {
-    return this.send('get', `/api/Team?option=${option}&page=${page}&size=${size}`)
+    return this.send('get', `/api5/Team?option=${option}&page=${page}&size=${size}`)
   },
 
   /**
@@ -99,7 +99,7 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listPlayer (option, page = 0, size = 10) {
-    return this.send('get', `/api/Player?option=${option}&page=${page}&size=${size}`)
+    return this.send('get', `/api5/Player?option=${option}&page=${page}&size=${size}`)
   },
 
   /**
@@ -108,7 +108,7 @@ export default {
    *
    */
   getTeam (id, option = '') {
-    return this.send('get', `/api/Team/${id}?option=${option}`)
+    return this.send('get', `/api5/Team/${id}?option=${option}`)
   },
 
   /**
@@ -116,6 +116,6 @@ export default {
    * curl  -X GET 'http://devwx.golfgreenshow.com/api/Event/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   getEvent (id, option = '') {
-    return this.send('get', `/api/Event/${id}?option=${option}`)
+    return this.send('get', `/api5/Event/${id}?option=${option}`)
   }
 }

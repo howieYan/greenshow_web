@@ -45,32 +45,32 @@
     <div class="bgColor">
       <ul class="row">
         <li class="">活动名称</li>
-        <li class="col">{{ event.Name }}</li>
+        <li class="col">{{ event.name }}</li>
       </ul>
       <ul class="row">
         <li class="">开球时间</li>
-        <li class="col">{{ formatTime(event.StartDate) }}</li>
+        <li class="col">{{ formatTs(event.startDate, 'YYYY-MM-DD') }}</li>
       </ul>
       <ul class="row">
         <li class="">活动地点</li>
-        <li class="col">{{ event.Address }}</li>
+        <li class="col">{{ event.place }}</li>
       </ul>
       <ul class="row">
         <li class="">其他信息</li>
-        <li class="col"v-html=" event.Description "></li>
+        <li class="col" v-html=" event.summary "></li>
       </ul>
     </div>
     <div class="button0">
       点击报名
     </div>
     <div class="padding_t">
-      <b>已报名/{{ event.PlayerCount }}人</b>
+      <b>已报名/{{ event.enterCount }}人</b>
     </div>
     <div class="apply"  >
       <ul class="" >
-      <li class="widthHeight" v-for="record in event.Players">
-        <img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
-        <div>{{ record.Name }}</div>
+      <li class="widthHeight" v-for="record in event.players">
+        <img :src="record.avatar ? record.avatar : 'static/apply_1.png'" alt="">
+        <div>{{ record.name }}</div>
       </li>
       </ul>
     </div>
@@ -297,14 +297,14 @@ export default {
   },
 
   methods: {
-    formatTime: lib.formatTime,
+    formatTs: lib.formatTs,
 
     async loadData () {
       try {
         // this.team = this.blank
         let result = await api.getEvent(this.id, 'all')
         console.debug(`%o`, result)
-        this.event = api.isValid(result) ? result.Data : {}
+        this.event = api.isValid(result) ? result.data : {}
       }
       catch (e) {
         console.error(e)
