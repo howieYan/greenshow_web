@@ -23,8 +23,8 @@
           <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party</p>
         </div>
       </div>
-      <div class="title-box">
-        <ul class="title-box-ul">
+      <div class="title-box_ul6_li title-box">
+        <ul class="title-box-ul title-box-ul6">
           <li class="active"></li>
           <li></li>
           <li></li>
@@ -44,8 +44,8 @@
 
             <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame(record)" v-for="record in teams.list">
               <div>
-                <img :src="record.Logo" alt="">
-                <b class="b">{{record.Name}}</b>
+                <img :src="record.logo" alt="">
+                <b class="b">{{record.name}}</b>
               </div>
             </div>
 
@@ -73,8 +73,8 @@
                   <ul class="row">
                     <li class="col padding_left" id="padding_left">
                       <div class="width_image">
-                        <img :src="players.list[players.index].Avatar" alt="" id="Image">
-                        <p class="texe_image_title_all">{{ players.list[players.index].Name }}</p>
+                        <img :src="players.list[players.index].avatar" alt="" id="Image">
+                        <p class="texe_image_title_all">{{ players.list[players.index].name }}</p>
                         <div class="bg_logo" id="bg_logo">
                           <img :src="'static/logo.png'" alt="">
                         </div>
@@ -299,11 +299,11 @@ export default {
       try {
         let result = await api.listTeam('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        this.teams.list = api.isValid(result) ? result.Data : []
+        this.teams.list = api.isValid(result) ? result.data : []
         result = await api.listPlayer('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        if (api.isValid(result) && result.Data.length > 0) {
-          this.players.list = api.isValid(result) ? result.Data : []
+        if (api.isValid(result) && result.data && result.data.length > 0) {
+          this.players.list = api.isValid(result) ? result.data : []
           this.players.index = 0
         }
         else {
@@ -318,7 +318,7 @@ export default {
 
     urlFrame (team) {
       console.debug(`Click to open: %o`, team)
-      this.$router.push({ path: `/team/${team.Id}` })
+      this.$router.push({ path: `/team/${team.id}` })
     },
 
     closeFrame () {

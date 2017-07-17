@@ -10,8 +10,8 @@
       </ul>
   </div>
   <div class="padding_t64_height background_color">
-      <div class="background_color">
-          <div class="width_image_width100 width_image_width100_image">
+      <div class="background_color  colunm">
+          <div class="width_image_width100 width_image_width100_image"  v-for="n in 7">
               <img class="" :src="'/static/automobile.png'" alt="">
               <div class="bg_rahmen0">
                   <p class="width_b">
@@ -25,48 +25,7 @@
                   </p>
               </div>
           </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen1">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen0">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
-          <div class="width_image_width100 width_image_width100_image">
-              <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen1">
-                  <p class="width_b">
-                      2016年SGCU
-                  </p>
-                  <p class="width_b">
-                      冠军
-                  </p>
-                  <p class="width_b">
-                      B组总杆
-                  </p>
-              </div>
-          </div>
+          
           <div class="width_image_width100 width_image_width100_image">
               <div class="bg_rahmen3">
                   <p class="width_b">
@@ -143,6 +102,6 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
 

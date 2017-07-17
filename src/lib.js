@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-export const VERSION_MAJOR = 0
+export const VERSION_MAJOR = 1
 export const VERSION_MINOR = 0
 export const VERSION_REVISION = 0
 export const VERSION_RELEASE = 1
@@ -31,3 +31,17 @@ export function formatTime (str, format = 'YYYY-MM-DD HH:mm') {
   // debug && console.debug(`${str} => ${retVal}(${time.format()})`)
   return retVal
 }
+
+/**
+ * Convert unix timestamp to formatted datetime string.
+ * @param  {[type]}  ts     [description]
+ * @param  {Boolean} second [description]
+ * @return {[type]}         [description]
+ */
+export function formatTs (ts, format = 'YYYY-MM-DD HH:mm') {
+  let time = moment.unix(ts)
+  let retVal = time.format(format)
+  // debug && console.debug(`${ts} => ${retVal}(${time.format()})`)
+  return retVal
+}
+
