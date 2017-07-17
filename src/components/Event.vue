@@ -60,7 +60,7 @@
         <li class="col" v-html=" event.summary "></li>
       </ul>
     </div>
-    <div class="button0">
+    <div class="button0" @click="clickEnter">
       点击报名
     </div>
     <div class="padding_t">
@@ -316,6 +316,11 @@ export default {
 
     closeFrame () {
       this.$router.go(-1)
+    },
+
+    clickEnter () {
+      console.log(`${this.name}.clickEnter`)
+      this.$router.replace({path: '/login', query: { redirect: this.$router.currentRoute.fullPath }})
     }
   },
 
