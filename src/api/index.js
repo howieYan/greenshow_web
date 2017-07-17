@@ -15,9 +15,17 @@ axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://wx.go
 export default {
   token: null,
 
+  getToken () {
+    if (this.token === null) {
+      this.token = localStorage.getItem('token')
+      console.debug(`Loaded token: ${this.token}`)
+    }
+  },
+
   setToken (token) {
     lib.debugApi && console.debug(`Set new token=${token}`)
     this.token = token
+    localStorage.setItem('token', this.token)
   },
 
   /**
@@ -29,7 +37,7 @@ export default {
 
   send (method, uri, data = null, token = null) {
     if (token === null) {
-      token = this.token
+      token = this.getToken()
     }
     return new Promise((resolve, reject) => {
       try {
@@ -100,6 +108,22 @@ export default {
    */
   listPlayer (option, page = 0, size = 10) {
     return this.send('get', `/api5/Player?option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
+   * Login
+   * curl -X POST "http://devwx.golfgreenshow.com/api5/User/Login" -d "phone=13585562369&code=111111"
+   */
+  login (phone, code) {
+    return this.send('post', `/api5/User/Login`, { phone: phone, code: code })
+  },
+
+  /**
+   * Login
+   * curl -X POST "http://devwx.golfgreenshow.com/api5/User/Sms" -d "phone=13585562369"
+   */
+  sms (phone) {
+    return this.send('post', `/api5/User/Sms`, { phone: phone })
   },
 
   /**
