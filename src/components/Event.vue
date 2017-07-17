@@ -190,6 +190,7 @@
         <article class="htmleaf-container">
           <div class="demo">
             <div class="demo__content">
+
             <div class="demo__card-cont">
               <div class="demo__card" v-for="n in 5">
                 <div class="slideCss">
@@ -210,10 +211,12 @@
                     <ul class="col line_height_bottom">
                       <li><b>by:</b><b>SOMEONE</b></li>
                     </ul>
+
                   </div>
                 </div>
               </div>
             </div>
+
             </div>
           </div>
         </article>
