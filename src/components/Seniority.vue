@@ -13,8 +13,8 @@
 	    <ul class="row height_40_border_top_bottom background_color_odd_event">
 	        <li class="col">排名</li>
 	        <li class="col">姓名</li>
-	        <li class="">距标准杆</li>
-	        <li class="">已完成</li>
+	        <li class=""style="width:13%;padding-right:10px;">距标准杆</li>
+	        <li class=""style="width:13%;padding-left:10px;">已完成</li>
 	        <li class="col">前9</li>
 	        <li class="col">后9</li>
 	        <li class="col">总杆</li>
@@ -69,11 +69,11 @@ export default {
         this.team = this.blank
         let result = await api.getTeam(this.id, 'summary')
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.data : this.blank
+        this.team = api.isValid(result) ? result.Data : this.blank
 
         result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
         console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.data : []
+        this.events.list = api.isValid(result) ? result.Data : []
       }
       catch (e) {
         console.error(e)
@@ -90,6 +90,6 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
 
