@@ -335,18 +335,11 @@ export default {
 
   updated () {
     console.debug(`${this.name}.updated`)
-    let nav = document.getElementById('nav')
-    let navLength = nav.children.length
-    let e = document.getElementById('offsetWidth')
-    if (e) {
-      let offsetWidth = e.offsetWidth
-      nav.style.width = navLength * (offsetWidth + 5) + 10 + 'px'
-    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
