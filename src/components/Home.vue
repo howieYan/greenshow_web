@@ -8,7 +8,7 @@
         </li>
       </ul>
     </header>
-    <div id="swipe" class="swipe">
+    <div id="swipe" class="swipe" style="padding-top:50px;">
       <div class="swipe-wrap" id="swipe_banner">
         <div class="swipe-box">
           <img :src="'static/automobile0.jpg'" alt="">
