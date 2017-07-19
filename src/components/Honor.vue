@@ -6,10 +6,10 @@
           <li class="col textCenter5">
               荣誉
           </li>
-          <li class="right_width"></li>
+          <li class="right_width" style="width:67px;"></li>
       </ul>
   </div>
-  <div class="padding_t64_height background_color">
+  <div class="padding_t64_height background_color" style="padding-top:50px;">
       <div class="background_color  colunm">
           <div class="width_image_width100 width_image_width100_image"  v-for="n in 7">
               <img class="" :src="'/static/automobile.png'" alt="">
