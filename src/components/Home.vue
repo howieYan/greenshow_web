@@ -8,7 +8,7 @@
         </li>
       </ul>
     </header>
-    <div id="swipe" class="swipe">
+    <div id="swipe" class="swipe" style="padding-top:50px;">
       <div class="swipe-wrap" id="swipe_banner">
         <div class="swipe-box">
           <img :src="'static/automobile0.jpg'" alt="">
@@ -331,17 +331,6 @@ export default {
   },
 
   mounted () {
-  },
-
-  updated () {
-    console.debug(`${this.name}.updated`)
-    let nav = document.getElementById('nav')
-    let navLength = nav.children.length
-    let e = document.getElementById('offsetWidth')
-    if (e) {
-      let offsetWidth = e.offsetWidth
-      nav.style.width = navLength * (offsetWidth + 5) + 10 + 'px'
-    }
   }
 }
 </script>

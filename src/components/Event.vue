@@ -37,7 +37,7 @@
     </div>
     </div>
   </div>
-  <div id="nav_1">
+  <div id="nav_1" style="padding-top:88px;">
     <div id="nav1" class="nav selected">
     <div class="height">
       活动信息
