@@ -6,10 +6,10 @@
             <li class="col textCenter5">
                 章程
             </li>
-            <li class="right_width"></li>
+            <li class="right_width" style="width:67px"></li>
         </ul>
     </div>
-    <div class="padding_t64_height text_center">
+    <div class="padding_t64_height text_center" style="padding-top:50px;">
         <h3>优仕队章程</h3>
         <section class="section_color_373737">
             <p style="font-size: 14px;">第一章 &nbsp;&nbsp;总则</p>

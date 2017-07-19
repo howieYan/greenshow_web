@@ -9,10 +9,14 @@
         <input type="text" translate="no" placeholder="手机号码" v-model.trim="phone">
       </p>
       <p class="height_50px_input">
-          <input type="text" translate="no" placeholder="动态密码"  v-model.trim="code">
-          <b class="position_input" @click="clickSms">获取动态密码</b>
+          <input type="text" translate="no" placeholder=""  v-model.trim="code">
+          <b class="position_input" @click="clickSms(this)" v-if="code ==''"  value="点击发送验证码" >获取动态密码</b>
+          <b class="position_input" @click="clickTime(code)" v-slse>{{ text }}</b>
       </p>
-      <p class="height_50px_input"><button class="button_deng" @click="clickLogin">登录</button></p>
+      <p class="height_50px_input">
+          <button class="button_deng" @click="clickLogin" v-if="phone!=''">登录</button>
+          <button class="button" v-else>登录</button>
+      </p>
   </div>
   <div class="weChat" @click="clickWechat">
       <p><img src="/static/weChat.png" alt=""></p>
@@ -29,9 +33,10 @@ export default {
   data () {
     return {
       name: 'LoginV',
-      phone: lib.debugView ? '13585562369' : '',
+      phone: lib.debugView ? '18616398546' : '',
       code: lib.debugView ? '111111' : '',
-      enable: true
+      enable: true,
+      isActive: false
     }
   },
 
@@ -71,7 +76,6 @@ export default {
         }
       }
     },
-
     clickLogin () {
       lib.debugView && console.debug(`${this.name}.clickLogin`)
       if (this.enable) {
@@ -85,7 +89,6 @@ export default {
       }
     }
   },
-
   mounted () {
   }
 }
