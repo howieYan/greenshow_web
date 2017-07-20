@@ -6,7 +6,7 @@
     <li class="col textCenter5">
       活动主页
     </li>
-    <li class="share">
+    <li class="share" @click="noticeFrame">
       分享
     </li>
     </ul>
@@ -313,7 +313,9 @@ export default {
         console.error(e)
       }
     },
-
+    noticeFrame (event) {
+      this.$router.push({ path: `/Share/` })
+    },
     closeFrame () {
       this.$router.go(-1)
     },
