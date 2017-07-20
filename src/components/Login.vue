@@ -10,8 +10,13 @@
       </p>
       <p class="height_50px_input">
           <input type="text" translate="no" placeholder=""  v-model.trim="code">
+<<<<<<< HEAD
           <b class="position_input" @click="clickSms(this)" v-if="code ==''"  value="点击发送验证码" >获取动态密码</b>
           <b class="position_input" @click="clickTime(code)" v-slse>{{ text }}</b>
+=======
+          <b class="position_input" @click="clickSms(this)" v-if="enable">获取动态密码</b>
+          <b class="position_input" v-else>{{ seconds }} 秒</b>
+>>>>>>> yanhao
       </p>
       <p class="height_50px_input">
           <button class="button_deng" @click="clickLogin" v-if="phone!=''">登录</button>
@@ -36,7 +41,15 @@ export default {
       phone: lib.debugView ? '18616398546' : '',
       code: lib.debugView ? '111111' : '',
       enable: true,
+<<<<<<< HEAD
       isActive: false
+=======
+      isActive: false,
+      period: 60,
+      timeId: 0,
+      lastTime: 0,
+      seconds: this.period
+>>>>>>> yanhao
     }
   },
 
@@ -48,6 +61,14 @@ export default {
   },
 
   created () {
+  },
+
+  beforeDestroy () {
+    lib.debugView && console.debug(`${this.name}.beforeDestroy.`)
+    if (this.timerId > 0) {
+      window.clearInterval(this.timerId)
+      this.timerId = 0
+    }
   },
 
   methods: {
@@ -67,12 +88,28 @@ export default {
 
     clickSms () {
       lib.debugView && console.debug(`${this.name}.clickSms`)
+      let self = this
       if (this.enable) {
+        this.enable = false
         try {
-          api.sms(this.phone).then((result) => {
-          })
+          self.seconds = self.period
+          self.lastTime = Math.floor(new Date().getTime() / 1000)
+          // api.sms(this.phone).then((result) => { })
+          this.timerId = window.setInterval(function () {
+            let now = Math.floor(new Date().getTime() / 1000)
+            if (self.lastTime + self.period < now) {  // Timeout.
+              window.clearInterval(self.timerId)
+              self.timerId = 0
+              self.enable = true
+            }
+            else {
+              lib.debugView && console.debug(`${this.name}.clickSms: count down, ${self.lastTime} ${now}`)
+            }
+            self.seconds = self.period - (now - self.lastTime)
+          }, 1000)
         }
         catch (e) {
+          console.error(e)
         }
       }
     },

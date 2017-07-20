@@ -6,7 +6,11 @@
     <li class="col textCenter5">
       活动主页
     </li>
+<<<<<<< HEAD
     <li class="share" @click="noticeFrame">
+=======
+    <li class="share" @click="shareFrame">
+>>>>>>> yanhao
       分享
     </li>
     </ul>
@@ -323,6 +327,9 @@ export default {
     clickEnter () {
       console.log(`${this.name}.clickEnter`)
       this.$router.replace({path: '/login', query: { redirect: this.$router.currentRoute.fullPath }})
+    },
+    shareFrame (event) {
+      this.$router.push({ path: `/Share/` })
     }
   },
 
