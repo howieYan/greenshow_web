@@ -10,17 +10,8 @@
       </p>
       <p class="height_50px_input">
           <input type="text" translate="no" placeholder=""  v-model.trim="code">
-<<<<<<< HEAD
-          <b class="position_input" @click="clickSms(this)" v-if="code===''">获取动态密码</b>
-=======
-<<<<<<< HEAD
-          <b class="position_input" @click="clickSms(this)" v-if="code ==''"  value="点击发送验证码" >获取动态密码</b>
-          <b class="position_input" @click="clickTime(code)" v-slse>{{ text }}</b>
-=======
           <b class="position_input" @click="clickSms(this)" v-if="enable">获取动态密码</b>
->>>>>>> 01b8febc8fb520beaf6fb3005c2f1255413292e4
           <b class="position_input" v-else>{{ seconds }} 秒</b>
->>>>>>> yanhao
       </p>
       <p class="height_50px_input">
           <button class="button_deng" @click="clickLogin" v-if="phone!=''">登录</button>
@@ -45,15 +36,11 @@ export default {
       phone: lib.debugView ? '18616398546' : '',
       code: lib.debugView ? '111111' : '',
       enable: true,
-<<<<<<< HEAD
-      isActive: false
-=======
       isActive: false,
       period: 60,
       timeId: 0,
       lastTime: 0,
       seconds: this.period
->>>>>>> yanhao
     }
   },
 
