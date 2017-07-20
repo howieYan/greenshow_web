@@ -1,15 +1,15 @@
 <template>
 <div>
-	 <div class="header" id="header">
+	<div class="header" id="header">
         <ul class="row">
             <li class="back1" tapmode="hover" @click="closeFrame"></li>
             <li class="col textCenter5">
                 公告
             </li>
-            <li class="right_width"></li>
+            <li class="right_width" style="width:67px;"></li>
         </ul>
     </div>
-    <div class="padding_t64_height">
+    <div class="padding_t64_height" style="padding-top:50px;">
         <ul class="row height50">
             <li class="border_radius line_height_center">
                 <b></b>
@@ -160,5 +160,5 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>

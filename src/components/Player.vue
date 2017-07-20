@@ -6,10 +6,10 @@
 	        <li class="col textCenter5">
 	            球员
 	        </li>
-	        <li class="right_width"></li>
+	        <li class="right_width" style="width:67px;"></li>
 	    </ul>
 	</div>
-	<div class="padding_t64_height">
+	<div class="padding_t64_height"style="padding-top:50px;">
 	    <div class="height_40_header">当前人数40人</div>
 	    <div class="height_60_border">
 	        <ul class="row">
@@ -133,6 +133,6 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
 

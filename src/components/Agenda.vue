@@ -7,10 +7,10 @@
 		        <li class="col textCenter5">
 		            赛程
 		        </li>
-		        <li class="right_width"></li>
+		        <li class="right_width" style="width:67px;"></li>
 		    </ul>
 		</div>
-		<div class="padding_t64_height">
+		<div class="padding_t64_height" style="padding-top:50px;">
 		    <div class="line_height60_bottom1">
 		        <ul class="row">
 		            <li class="col padding_left20px">2017年6月例赛</li>
@@ -134,6 +134,6 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
 

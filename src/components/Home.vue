@@ -8,7 +8,7 @@
         </li>
       </ul>
     </header>
-    <div id="swipe" class="swipe">
+    <div id="swipe" class="swipe" style="padding-top:50px;">
       <div class="swipe-wrap" id="swipe_banner">
         <div class="swipe-box">
           <img :src="'static/automobile0.jpg'" alt="">
@@ -23,8 +23,8 @@
           <p class="p">亲水湾一优仕队   六周年庆典，共享狂欢Party</p>
         </div>
       </div>
-      <div class="title-box_activer ">
-        <ul class="title-box-ul ">
+      <div class="title-box_ul6_li title-box">
+        <ul class="title-box-ul title-box-ul6">
           <li class="active"></li>
           <li></li>
           <li></li>
@@ -44,8 +44,8 @@
 
             <div class="swipe-box_1_width_fl" id="offsetWidth" @click="urlFrame(record)" v-for="record in teams.list">
               <div>
-                <img :src="record.Logo" alt="">
-                <b class="b">{{record.Name}}</b>
+                <img :src="record.logo" alt="">
+                <b class="b">{{record.name}}</b>
               </div>
             </div>
 
@@ -73,16 +73,16 @@
                   <ul class="row">
                     <li class="col padding_left" id="padding_left">
                       <div class="width_image">
-                        <img :src="players.list[players.index].Avatar" alt="" id="Image">
-                        <p class="texe_image_title_all">{{ players.list[players.index].Name }}</p>
+                        <img :src="players.list[players.index].avatar" alt="" id="Image">
+                        <p class="texe_image_title_all">{{ players.list[players.index].name }}</p>
                         <div class="bg_logo" id="bg_logo">
                           <img :src="'static/logo.png'" alt="">
                         </div>
                       </div>
                     </li>
-                    <li class="col color_0a0b1b_b color_0a0b1b_b0">
+                    <li class="col color_0a0b1b_b color_0a0b1b_b5">
                       <p>ＳＧＣＵ系列赛</p>
-                      <p class="guanjun">
+                      <p>
                          {{ scores[players.index].title }}
                       </p>
                       <div class="border_bottom"></div>
@@ -140,23 +140,23 @@
           <b class="col">排行榜(2017)</b>
         </div>
         <div id="swipelb" class="swipe">
-          <div class="swipe-wrap1">
-            <div v-if="ranking.index >= 0" class="swipe-box1">
+          <div class="swipe-wrap0">
+            <div v-if="ranking.index >= 0" class="swipe-box">
               <div class="swiper-slide-header_ph">
                 <div class="bestResult">
                   <p>{{ ranking.list[ranking.index].category }}</p>
                 </div>
                 <div class="nav1">
                   <ul class="row">
-                    <li class="col" v-for="title in ranking.list[ranking.index].title"><b class="font_size_14px">{{ title }}</b></li>
+                    <li class="col" v-for="title in ranking.list[ranking.index].title"><b>{{ title }}</b></li>
                   </ul>
                 </div>
                 <div class="nav_2">
                   <ul class="row" v-for="player in ranking.list[ranking.index].list">
-                    <li class="col"><b class="font_size_14px">{{ player.Number }}</b></li>
-                    <li class="col"><b class="font_size_14px">{{ player.Name }}</b></li>
-                    <li class="col"><b class="font_size_14px">{{ player.Team }}</b></li>
-                    <li class="col"><b class="font_size_14px">{{ player.Score }}</b></li>
+                    <li class="col"><b>{{ player.Number }}</b></li>
+                    <li class="col"><b>{{ player.Name }}</b></li>
+                    <li class="col"><b>{{ player.Team }}</b></li>
+                    <li class="col"><b>{{ player.Score }}</b></li>
                   </ul>
                 </div>
               </div>
@@ -179,18 +179,18 @@
         <b class=""></b>
         <b class="col">推荐人物</b>
       </div>
-      <div class="title_tj">
-        <ul class="padding_left_ul10">
-          <li class=" title_tj_img ">
-            <div class="title_tj_img_border ">
+      <div class="title_tj clearfixboth">
+        <ul class="">
+          <li class="title_tj_img">
+            <div class="title_tj_img_border">
               <img :src="'static/qiu0.png'" alt="">
               <p>冯珊珊</p>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国女子高尔夫球运动员。中国历史第一块奥运高尔夫球奖牌获得者  。2012年LPGA锦标赛（大满贯赛）冠军得主。</b>
             </div>
           </li>
-          <li class=" title_tj_img ">
-            <div class="title_tj_img_border ">
-              <img :src="'static/qiu10.jpg'" alt="">
+          <li class=" title_tj_img">
+            <div class="title_tj_img_border">
+              <img :src="'static/qiu1.jpg'" alt="">
               <p>李昊桐</p>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10岁开始学习高尔夫，2008年开始以业余球员的身份参加汇丰青少年公开赛各站赛事的比赛。在2009年全国业余高尔夫球希望赛上，年仅14岁的他在珠海金湾高尔夫球场连续三天领先</b>
             </div>
@@ -199,7 +199,7 @@
       </div>
     </div>
 
-    <div class="" v-if="debug" style="text-align: center;background: #f5f5f5;line-height:32px;">{{ version }}</div>
+    <div v-if="debug" style="text-align: center;background: #f5f5f5;line-height:32px;">{{ version }}</div>
    </div>
 </template>
 
@@ -299,11 +299,11 @@ export default {
       try {
         let result = await api.listTeam('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        this.teams.list = api.isValid(result) ? result.Data : []
+        this.teams.list = api.isValid(result) ? result.data : []
         result = await api.listPlayer('home', this.teams.page, this.teams.size)
         console.debug(`%o`, result)
-        if (api.isValid(result) && result.Data.length > 0) {
-          this.players.list = api.isValid(result) ? result.Data : []
+        if (api.isValid(result) && result.data && result.data.length > 0) {
+          this.players.list = api.isValid(result) ? result.data : []
           this.players.index = 0
         }
         else {
@@ -318,7 +318,7 @@ export default {
 
     urlFrame (team) {
       console.debug(`Click to open: %o`, team)
-      this.$router.push({ path: `/team/${team.Id}` })
+      this.$router.push({ path: `/team/${team.id}` })
     },
 
     closeFrame () {
@@ -331,22 +331,11 @@ export default {
   },
 
   mounted () {
-  },
-
-  updated () {
-    console.debug(`${this.name}.updated`)
-    let nav = document.getElementById('nav')
-    let navLength = nav.children.length
-    let e = document.getElementById('offsetWidth')
-    if (e) {
-      let offsetWidth = e.offsetWidth
-      nav.style.width = navLength * (offsetWidth + 5) + 10 + 'px'
-    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>

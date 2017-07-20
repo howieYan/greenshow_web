@@ -6,14 +6,14 @@
           <li class="col textCenter5">
               荣誉
           </li>
-          <li class="right_width"></li>
+          <li class="right_width" style="width:67px;"></li>
       </ul>
   </div>
-  <div class="padding_t64_height background_color0">
-      <div class="background_color1">
-          <div class="width_image_width100 width_image_width100_image padding-top10px_bg" v-for="n in 5">
+  <div class="padding_t64_height background_color" style="padding-top:50px;">
+      <div class="background_color  colunm">
+          <div class="width_image_width100 width_image_width100_image"  v-for="n in 7">
               <img class="" :src="'/static/automobile.png'" alt="">
-              <div class="bg_rahmen">
+              <div class="bg_rahmen0">
                   <p class="width_b">
                       2016年SGCU
                   </p>
@@ -25,7 +25,8 @@
                   </p>
               </div>
           </div>
-          <div class="width_image_width100 width_image_width100_image padding-top10px_bg">
+          
+          <div class="width_image_width100 width_image_width100_image">
               <div class="bg_rahmen3">
                   <p class="width_b">
                       2016年SGCU
@@ -101,6 +102,6 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
 

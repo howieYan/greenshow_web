@@ -6,10 +6,10 @@
           <li class="col textCenter5">
               相册
           </li>
-          <li class="right_width"></li>
+          <li class="right_width" style="width:67px;"></li>
       </ul>
   </div>
-  <div class="padding_t64_height" id="body">
+  <div class="padding_t64_height" id="body" style="padding-top:50px;">
       <div class="width_150px" v-for="n in 8">
           <img :src="'/static/automobile.png'" alt="">
           <p>2017年6月例赛</p>
@@ -76,6 +76,6 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
 

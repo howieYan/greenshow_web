@@ -67,9 +67,9 @@
       <ul class="row signup_text" @click="urlFrame(record)" v-for="record in events.list">
         <li class=""></li>
         <li class="col">
-          <div>{{ record.Name }}</div>
+          <div>{{ record.name }}</div>
         </li>
-        <li v-if="record.Status === 0" class="">
+        <li v-if="record.status === 0" class="">
           <img :src="'static/signup_image.png'" alt="">
         </li>
       </ul>
@@ -87,10 +87,10 @@ export default {
     return {
       name: 'TeamV',
       blank: {
-        Logo: '../static/img/logo.png',
-        Name: '',
-        AverageScore: '无',
-        MemberCount: 0
+        logo: '../static/img/logo.png',
+        name: '',
+        averageScore: '无',
+        playerCount: 0
       },
       team: null,
       events: {
@@ -117,11 +117,11 @@ export default {
         this.team = this.blank
         let result = await api.getTeam(this.id, 'summary')
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.Data : this.blank
+        this.team = api.isValid(result) ? result.data : this.blank
 
         result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
         console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.Data : []
+        this.events.list = api.isValid(result) ? result.data : []
       }
       catch (e) {
         console.error(e)
@@ -130,7 +130,7 @@ export default {
 
     urlFrame (event) {
       console.debug(`${this.Name}.click to open: %o`, event)
-      this.$router.push({ path: `/event/${event.Id}` })
+      this.$router.push({ path: `/event/${event.id}` })
     },
     noticeFrame (event) {
       this.$router.push({ path: `/Notice/` })
@@ -168,5 +168,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>

@@ -6,15 +6,15 @@
 	        <li class="col textCenter5">
 	            近一场排名
 	        </li>
-	        <li class="right_width"></li>
+	        <li class="right_width" style="width:67px;"></li>
 	    </ul>
 	</div>
-	<div class="padding_t64">
+	<div class="padding_t64" style="padding-top:50px;">
 	    <ul class="row height_40_border_top_bottom background_color_odd_event">
 	        <li class="col">排名</li>
 	        <li class="col">姓名</li>
-	        <li class="">距标准杆</li>
-	        <li class="">已完成</li>
+	        <li class=""style="width:13%;padding-right:10px;">距标准杆</li>
+	        <li class=""style="width:13%;padding-left:10px;">已完成</li>
 	        <li class="col">前9</li>
 	        <li class="col">后9</li>
 	        <li class="col">总杆</li>
@@ -90,6 +90,6 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
 

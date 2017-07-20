@@ -6,7 +6,11 @@
     <li class="col textCenter5">
       活动主页
     </li>
-    <li class="share">
+<<<<<<< HEAD
+    <li class="share" @click="noticeFrame">
+=======
+    <li class="share" @click="shareFrame">
+>>>>>>> yanhao
       分享
     </li>
     </ul>
@@ -37,7 +41,7 @@
     </div>
     </div>
   </div>
-  <div id="nav_1">
+  <div id="nav_1" style="padding-top:88px;">
     <div id="nav1" class="nav selected">
     <div class="height">
       活动信息
@@ -45,32 +49,32 @@
     <div class="bgColor">
       <ul class="row">
         <li class="">活动名称</li>
-        <li class="col">{{ event.Name }}</li>
+        <li class="col">{{ event.name }}</li>
       </ul>
       <ul class="row">
         <li class="">开球时间</li>
-        <li class="col">{{ formatTime(event.StartDate) }}</li>
+        <li class="col">{{ formatTs(event.startDate, 'YYYY-MM-DD') }}</li>
       </ul>
       <ul class="row">
         <li class="">活动地点</li>
-        <li class="col">{{ event.Address }}</li>
+        <li class="col">{{ event.place }}</li>
       </ul>
       <ul class="row">
         <li class="">其他信息</li>
-        <li class="col"v-html=" event.Description "></li>
+        <li class="col" v-html=" event.summary "></li>
       </ul>
     </div>
-    <div class="button0">
+    <div class="button0" @click="clickEnter">
       点击报名
     </div>
     <div class="padding_t">
-      <b>已报名/{{ event.PlayerCount }}人</b>
+      <b>已报名/{{ event.enterCount }}人</b>
     </div>
     <div class="apply"  >
       <ul class="" >
-      <li class="widthHeight" v-for="record in event.Players">
-        <img :src="record.Avatar ? record.Avatar : 'static/apply_1.png'" alt="">
-        <div>{{ record.Name }}</div>
+      <li class="widthHeight" v-for="record in event.players">
+        <img :src="record.avatar ? record.avatar : 'static/apply_1.png'" alt="">
+        <div>{{ record.name }}</div>
       </li>
       </ul>
     </div>
@@ -190,35 +194,37 @@
         <article class="htmleaf-container">
           <div class="demo">
             <div class="demo__content">
-              <div class="demo__card-cont">
-                <div class="demo__card" v-for="n in 5">
-                  <div class="slideCss">
-                    <img :src="'/static/bg_nav_6.png'">
-                    <p>
-                      <b class="font_size_weight">TO:</b>
-                      <b class="font_size_weight_b">SOMEONE</b>
-                    </p>
-                    <p class="font_size_12">留白</p>
-                    <p class="font_size_12">用白色明信片</p>
-                    <p class="font_size_12">框住每一个偶遇</p>
-                    <div class="row margin_Top10">
-                      <ul class="border_width">
-                        <li><b>May,</b><b>25</b></li>
-                        <li><b>2015</b></li>
-                        <li><b>+</b></li>
-                      </ul>
-                      <ul class="col line_height_bottom">
-                        <li><b>by:</b><b>SOMEONE</b></li>
-                      </ul>
-                    </div>
+
+            <div class="demo__card-cont">
+              <div class="demo__card" v-for="n in 5">
+                <div class="slideCss">
+                  <img :src="'/static/bg_nav_6.png'">
+                  <p>
+                    <b class="font_size_weight">TO:</b>
+                    <b class="font_size_weight_b">SOMEONE</b>
+                  </p>
+                  <p class="font_size_12">留白</p>
+                  <p class="font_size_12">用白色明信片</p>
+                  <p class="font_size_12">框住每一个偶遇</p>
+                  <div class="row margin_Top10">
+                    <ul class="border_width">
+                      <li><b>May,</b><b>25</b></li>
+                      <li><b>2015</b></li>
+                      <li><b>+</b></li>
+                    </ul>
+                    <ul class="col line_height_bottom">
+                      <li><b>by:</b><b>SOMEONE</b></li>
+                    </ul>
+
                   </div>
                 </div>
               </div>
             </div>
+
+            </div>
           </div>
         </article>
     </div>
-  </div>
   </div>
   </div>
 </template>
@@ -298,22 +304,32 @@ export default {
   },
 
   methods: {
-    formatTime: lib.formatTime,
+    formatTs: lib.formatTs,
 
     async loadData () {
       try {
         // this.team = this.blank
         let result = await api.getEvent(this.id, 'all')
         console.debug(`%o`, result)
-        this.event = api.isValid(result) ? result.Data : {}
+        this.event = api.isValid(result) ? result.data : {}
       }
       catch (e) {
         console.error(e)
       }
     },
-
+    noticeFrame (event) {
+      this.$router.push({ path: `/Share/` })
+    },
     closeFrame () {
       this.$router.go(-1)
+    },
+
+    clickEnter () {
+      console.log(`${this.name}.clickEnter`)
+      this.$router.replace({path: '/login', query: { redirect: this.$router.currentRoute.fullPath }})
+    },
+    shareFrame (event) {
+      this.$router.push({ path: `/Share/` })
     }
   },
 
@@ -342,5 +358,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../css/reset.css';
+@import '../css/resetd.css';
 </style>
