@@ -10,7 +10,7 @@
       </p>
       <p class="height_50px_input">
           <input type="text" translate="no" placeholder=""  v-model.trim="code">
-          <b class="position_input" @click="clickSms(this)" v-if="enable">获取动态密码</b>
+          <b class="position_input" @click="clickSms(this)" v-if="code===''">获取动态密码</b>
           <b class="position_input" v-else>{{ seconds }} 秒</b>
       </p>
       <p class="height_50px_input">
