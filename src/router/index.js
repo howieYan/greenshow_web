@@ -13,6 +13,7 @@ import History from '@/components/History'
 import Honor from '@/components/Honor'
 import Photo from '@/components/Photo'
 import Login from '@/components/Login'
+import Share from '@/components/Share'
 
 import * as lib from '../lib'
 import api from '../api'
@@ -90,6 +91,11 @@ let router = new Router({
       path: '/Login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/Share',
+      name: 'Share',
+      component: Share
     }
   ]
 })
