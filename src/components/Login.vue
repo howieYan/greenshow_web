@@ -85,7 +85,9 @@ export default {
         try {
           self.seconds = self.period
           self.lastTime = Math.floor(new Date().getTime() / 1000)
-          // api.sms(this.phone).then((result) => { })
+
+          api.sms(this.phone)
+
           this.timerId = window.setInterval(function () {
             let now = Math.floor(new Date().getTime() / 1000)
             if (self.lastTime + self.period < now) {  // Timeout.
@@ -109,8 +111,15 @@ export default {
       lib.debugView && console.debug(`${this.name}.clickLogin`)
       if (this.enable) {
         try {
-          api.login(this.phone, this.code).then((result) => {
-
+          api.login(this.phone, this.code)
+          .then((result) => {
+            if (api.isValid(result) && result.data && result.data.token) {
+              api.setToken(result.data.token)
+              this.$router.push({ path: this.$route.query.redirect })
+            }
+          })
+          .catch((error) => {
+            console.error(error)
           })
         }
         catch (e) {

@@ -11,7 +11,7 @@
 		    </ul>
 		</div>
 		<div class="padding_t64_height" style="padding-top:50px;">
-		    <div class="line_height60_bottom1" v-for="record in data">
+		    <div class="line_height60_bottom1" v-for="record in data" @click="clickEvent(record.id)">
 		        <ul class="row">
 		            <li class="col padding_left20px">{{ record.name }}</li>
 		            <li class="padding_right20px">{{ record.clubName }}</li>
@@ -92,6 +92,11 @@ export default {
 
     closeFrame () {
       this.$router.go(-1)
+    },
+
+    clickEvent (id) {
+      console.debug(`${this.name}.clickEvent: ${id}`)
+      this.$router.push({ path: `/event/${id}` })
     }
   },
 

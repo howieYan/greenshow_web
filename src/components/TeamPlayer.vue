@@ -39,7 +39,7 @@ export default {
       name: 'TeamPlayerV',
       pager: {
         page: 0,
-        size: 10
+        size: 1000
       },
       total: 0,
       data: null
