@@ -96,7 +96,7 @@ export default {
 
   /**
    * 查询活动列表
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api/Event?id=172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Event?id=172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listEvent (id, option, page = 0, size = 10) {
     return this.send('get', `/api5/Event?id=${id}&option=${option}&page=${page}&size=${size}`)
@@ -104,7 +104,7 @@ export default {
 
   /**
    * 查询球队列表
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api/Team' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Team' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listTeam (option, page = 0, size = 10) {
     return this.send('get', `/api5/Team?option=${option}&page=${page}&size=${size}`)
@@ -112,7 +112,7 @@ export default {
 
   /**
    * 查询球员列表
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listTeamPlayer (id, option = 'all', page = 0, size = 10) {
     return this.send('get', `/api5/TeamPlayer?id=${id}&option=${option}&page=${page}&size=${size}`)
@@ -120,7 +120,7 @@ export default {
 
   /**
    * 查询球员列表
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   listPlayer (option, page = 0, size = 10) {
     return this.send('get', `/api5/Player?option=${option}&page=${page}&size=${size}`)
@@ -144,7 +144,7 @@ export default {
 
   /**
    * 查询球队信息
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api/Team/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Team/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    *
    */
   getTeam (id, option = '') {
@@ -153,9 +153,17 @@ export default {
 
   /**
    * 查询活动信息
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api/Event/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Event/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
   getEvent (id, option = '') {
     return this.send('get', `/api5/Event/${id}?option=${option}`)
+  },
+
+  /**
+   * 查询活动信息
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Event/Enter' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   */
+  enter (id) {
+    return this.send('post', `/api5/Event/Enter`, { id: id })
   }
 }
