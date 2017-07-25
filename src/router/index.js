@@ -53,7 +53,7 @@ let router = new Router({
       component: Notice
     },
     {
-      path: '/Agenda',
+      path: '/agenda',
       name: 'Agenda',
       component: Agenda
     },

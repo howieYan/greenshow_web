@@ -13,6 +13,7 @@ axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://wx.go
 // axios.defaults.baseURL = 'http://wx.gs.co'
 
 export default {
+  ok: 800,
   token: null,
 
   getToken () {
@@ -39,7 +40,7 @@ export default {
    * Check whether specified response is valid and contains data.
    */
   isValid (result) {
-    return result && typeof (result.code) !== 'undefined' && result.code === 800
+    return result && typeof (result.code) !== 'undefined' && result.code === this.ok
   },
 
   send (method, uri, data = null, token = null) {

@@ -10,8 +10,8 @@
 	    </ul>
 	</div>
 	<div class="padding_t64_height"style="padding-top:50px;">
-	    <div class="height_40_header">当前人数 {{ data.total }} 人</div>
-	    <div class="height_60_border" v-for="record in data.list">
+	    <div class="height_40_header">当前人数 {{ total }} 人</div>
+	    <div class="height_60_border" v-for="record in data">
 	        <ul class="row">
 	            <li class="width_image_height">
 	                <img :src="record.avatar ? record.avatar : 'static/logo.png'" alt="">
@@ -37,10 +37,11 @@ export default {
   data () {
     return {
       name: 'TeamPlayerV',
-      blank: {
-        total: 0,
-        list: []
+      pager: {
+        page: 0,
+        size: 10
       },
+      total: 0,
       data: null
     }
   },
@@ -58,10 +59,12 @@ export default {
   methods: {
     async loadData () {
       try {
-        this.data = this.blank
-        let result = await api.listTeamPlayer(this.id)
+        this.total = 0
+        this.data = []
+        let result = await api.listTeamPlayer(this.id, 'all', this.pager.page, this.pager.size)
         console.debug(`%o`, result)
-        this.data = api.isValid(result) ? result.data : this.blank
+        this.total = api.isValid(result) && result.total ? result.total : 0
+        this.data = api.isValid(result) && result.data ? result.data : []
       }
       catch (e) {
         console.error(e)

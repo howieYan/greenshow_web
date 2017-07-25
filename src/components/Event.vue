@@ -321,8 +321,8 @@ export default {
     },
 
     clickEnter () {
-      console.log(`${this.name}.clickEnter: ${api.gettoken()}`)
-      if (api.gettoken()) {
+      console.log(`${this.name}.clickEnter: ${api.getToken()}`)
+      if (api.getToken()) {
       }
       else {
         this.$router.replace({path: '/login', query: { redirect: this.$router.currentRoute.fullPath }})

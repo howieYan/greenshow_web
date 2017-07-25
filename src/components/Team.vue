@@ -136,13 +136,13 @@ export default {
       this.$router.push({ path: `/Notice/` })
     },
     agendaFrame (event) {
-      this.$router.push({ path: `/Agenda/` })
+      this.$router.push({ path: `/agenda`, query: { id: this.id } })
     },
     statuteFrame (event) {
       this.$router.push({ path: `/Statute/` })
     },
     playerFrame (event) {
-      this.$router.push({ path: `/teamPlayer/`, query: { id: this.id } })
+      this.$router.push({ path: `/teamPlayer`, query: { id: this.id } })
     },
     seniorityFrame (event) {
       this.$router.push({ path: `/Seniority/` })

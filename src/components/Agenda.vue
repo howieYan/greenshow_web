@@ -11,63 +11,23 @@
 		    </ul>
 		</div>
 		<div class="padding_t64_height" style="padding-top:50px;">
-		    <div class="line_height60_bottom1">
+		    <div class="line_height60_bottom1" v-for="record in data">
 		        <ul class="row">
-		            <li class="col padding_left20px">2017年6月例赛</li>
-		            <li class="padding_right20px">美兰湖</li>
+		            <li class="col padding_left20px">{{ record.name }}</li>
+		            <li class="padding_right20px">{{ record.clubName }}</li>
 		        </ul>
 		        <ul class="padding_left20px padding_right20px_li">
 		            <li class="">
-		                5月23日
+		                {{ formatTs(record.startDate, 'YYYY年MM月DD日') }}
 		            </li>
 		            <li class="">
-		                周三
+                    {{ formatTs(record.startDate, 'ddd') }}
 		            </li>
 		            <li class="">
-		                13:30开球
+		                {{ formatTs(record.startDate, 'hh:mm') }} 开球
 		            </li>
 		            <li class="right_image_padding10">
-		                <img :src="'/static/signup_image.png'" alt="">
-		            </li>
-		        </ul>
-		    </div>
-		    <div class="line_height60_bottom1">
-		        <ul class="row">
-		            <li class="col padding_left20px">2017年6月例赛</li>
-		            <li class="padding_right20px">美兰湖</li>
-		        </ul>
-		        <ul class="padding_left20px padding_right20px_li">
-		            <li class="">
-		                5月23日
-		            </li>
-		            <li class="">
-		                周三
-		            </li>
-		            <li class="">
-		                13:30开球
-		            </li>
-		            <li class="right_image_padding10">
-		                <img :src="'/static/signup_image1.png'" alt="">
-		            </li>
-		        </ul>
-		    </div>
-		    <div class="line_height60_bottom1">
-		        <ul class="row">
-		            <li class="col padding_left20px">2017年6月例赛</li>
-		            <li class="padding_right20px">美兰湖</li>
-		        </ul>
-		        <ul class="padding_left20px padding_right20px_li">
-		            <li class="">
-		                5月23日
-		            </li>
-		            <li class="">
-		                周三
-		            </li>
-		            <li class="">
-		                13:30开球
-		            </li>
-		            <li class="right_image_padding10">
-		                <img :src="'/static/signup_image2.png'" alt="">
+		                <img :src="renderStatus(record.status)" alt="">
 		            </li>
 		        </ul>
 		    </div>
@@ -77,29 +37,25 @@
 </template>
 <script>
 import api from '../api'
+import * as lib from '../lib'
 
 export default {
-  name: 'Team',
+  name: 'Agenda',
   data () {
     return {
-      name: 'TeamV',
-      blank: {
-        Name: '',
-        AverageScore: '无',
-        MemberCount: 0
-      },
-      team: null,
-      events: {
+      name: 'AgendaV',
+      pager: {
         page: 0,
-        size: 5,
-        list: []
-      }
+        size: 10
+      },
+      total: 0,
+      data: null
     }
   },
 
   computed: {
     id () {
-      return this.$route.params.id
+      return this.$route.query.id
     }
   },
 
@@ -108,21 +64,32 @@ export default {
   },
 
   methods: {
+    formatTs: lib.formatTs,
+
+    renderStatus (status) {
+      switch (Number(status)) {
+        default:
+        case 0: return '/static/signup_image.png' // 0:报名中;
+        case 1: return '/static/signup_image1.png' // 1:进行中;
+        case 2: return '/static/signup_image2.png' // 2:已结束;
+        case 3: return '/static/signup_image3.png' // 3:已取消;
+      }
+    },
+
     async loadData () {
       try {
-        this.team = this.blank
-        let result = await api.getTeam(this.id, 'summary')
+        this.total = 0
+        this.data = []
+        let result = await api.listEvent(this.id, 'team', this.pager.page, this.pager.size)
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.Data : this.blank
-
-        result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
-        console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.Data : []
+        this.total = api.isValid(result) && result.total ? result.total : 0
+        this.data = api.isValid(result) && result.data ? result.data : []
       }
       catch (e) {
         console.error(e)
       }
     },
+
     closeFrame () {
       this.$router.go(-1)
     }

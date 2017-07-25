@@ -104,6 +104,7 @@ export default {
         }
       }
     },
+
     clickLogin () {
       lib.debugView && console.debug(`${this.name}.clickLogin`)
       if (this.enable) {
