@@ -331,6 +331,10 @@ export default {
   },
 
   mounted () {
+  },
+
+  updated () {
+    console.debug(`${this.name}.updated`)
   }
 }
 </script>

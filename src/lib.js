@@ -15,7 +15,7 @@ export const debugVuex = !!(process.env.NODE_ENV === 'development')
 
 export const debugView = !!(process.env.NODE_ENV === 'development')
 
-export const mock = true   // !!(process.env.NODE_ENV === 'development') // Use mock data, instead of sending request to server, in development mode.
+export const mock = false   // !!(process.env.NODE_ENV === 'development') // Use mock data, instead of sending request to server, in development mode.
 
 export const ready = false  // TODO: It's used to hide under-building features.
 

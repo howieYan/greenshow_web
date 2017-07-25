@@ -7,7 +7,7 @@ import TeamInfo from '@/components/TeamInfo'
 import Notice from '@/components/Notice'
 import Agenda from '@/components/Agenda'
 import Statute from '@/components/Statute'
-import Player from '@/components/Player'
+import TeamPlayer from '@/components/TeamPlayer'
 import Seniority from '@/components/Seniority'
 import History from '@/components/History'
 import Honor from '@/components/Honor'
@@ -53,7 +53,7 @@ let router = new Router({
       component: Notice
     },
     {
-      path: '/Agenda',
+      path: '/agenda',
       name: 'Agenda',
       component: Agenda
     },
@@ -63,9 +63,9 @@ let router = new Router({
       component: Statute
     },
     {
-      path: '/Player',
-      name: 'Player',
-      component: Player
+      path: '/teamPlayer',
+      name: 'TeamPlayer',
+      component: TeamPlayer
     },
     {
       path: '/Seniority',
