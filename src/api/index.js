@@ -18,13 +18,20 @@ export default {
   getToken () {
     if (this.token === null) {
       this.token = localStorage.getItem('token')
+      if (!this.token) {
+        this.token = ''
+      }
       console.debug(`Loaded token: ${this.token}`)
     }
+    return this.token
   },
 
   setToken (token) {
     lib.debugApi && console.debug(`Set new token=${token}`)
     this.token = token
+    if (!this.token) {
+      this.token = ''
+    }
     localStorage.setItem('token', this.token)
   },
 
@@ -100,6 +107,14 @@ export default {
    */
   listTeam (option, page = 0, size = 10) {
     return this.send('get', `/api5/Team?option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
+   * 查询球员列表
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   */
+  listTeamPlayer (id, option = 'all', page = 0, size = 10) {
+    return this.send('get', `/api5/TeamPlayer?id=${id}&option=${option}&page=${page}&size=${size}`)
   },
 
   /**

@@ -291,7 +291,7 @@ export default {
     },
 
     inApp () {
-      return !!this.$route.query.token
+      return false // !!this.$route.query.token
     }
   },
 
@@ -321,8 +321,12 @@ export default {
     },
 
     clickEnter () {
-      console.log(`${this.name}.clickEnter`)
-      this.$router.replace({path: '/login', query: { redirect: this.$router.currentRoute.fullPath }})
+      console.log(`${this.name}.clickEnter: ${api.gettoken()}`)
+      if (api.gettoken()) {
+      }
+      else {
+        this.$router.replace({path: '/login', query: { redirect: this.$router.currentRoute.fullPath }})
+      }
     },
     shareFrame (event) {
       this.$router.push({ path: `/Share/` })

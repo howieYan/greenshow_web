@@ -8,11 +8,11 @@
           <img :src="'static/logo_header.png'" alt="">
           <div class="row string padding_Top10">
             <div class="col">
-              <div>{{ team.AverageScore }}</div>
+              <div>{{ team.averageScore }}</div>
               <b>平均成绩</b>
             </div>
             <div class="col">
-              <div>{{ team.MemberCount }}</div>
+              <div>{{ team.memberCount }}</div>
               <b>球队人数</b>
             </div>
           </div>
@@ -37,7 +37,7 @@
         </li>
         <li class="col" @click="playerFrame">
           <img :src="'static/player.png'" alt="">
-          <div>球员</div>
+          <div>队员</div>
         </li>
       </ul>
       <ul class="row">
@@ -142,7 +142,7 @@ export default {
       this.$router.push({ path: `/Statute/` })
     },
     playerFrame (event) {
-      this.$router.push({ path: `/Player/` })
+      this.$router.push({ path: `/teamPlayer/`, query: { id: this.id } })
     },
     seniorityFrame (event) {
       this.$router.push({ path: `/Seniority/` })
