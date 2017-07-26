@@ -45,3 +45,13 @@ export function formatTs (ts, format = 'YYYY-MM-DD HH:mm') {
   return retVal
 }
 
+/**
+ * Check whether it is opened in Wechat App.
+ */
+export function isWechat () {
+  debug && console.debug(`isWechat %o`, navigator)
+  let lower = navigator.userAgent ? navigator.userAgent.toLowerCase() : ''
+  let array = lower.match(/MicroMessenger/i)
+  let result = array && array[0] ? array[0] : ''
+  return result === 'micromessenger'
+}

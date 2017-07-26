@@ -5,11 +5,13 @@ import Home from '@/components/Home'
 import Team from '@/components/Team'
 import TeamInfo from '@/components/TeamInfo'
 import Notice from '@/components/Notice'
+import Notices from '@/components/Notices'
 import Agenda from '@/components/Agenda'
 import Statute from '@/components/Statute'
 import TeamPlayer from '@/components/TeamPlayer'
 import Seniority from '@/components/Seniority'
 import History from '@/components/History'
+import Histories from '@/components/Histories'
 import Honor from '@/components/Honor'
 import Photo from '@/components/Photo'
 import Login from '@/components/Login'
@@ -49,6 +51,11 @@ let router = new Router({
     },
     {
       path: '/notice',
+      name: 'Notices',
+      component: Notices
+    },
+    {
+      path: '/notice/:id',
       name: 'Notice',
       component: Notice
     },
@@ -73,18 +80,23 @@ let router = new Router({
       component: Seniority
     },
     {
-      path: '/History',
+      path: '/history',
+      name: 'Histories',
+      component: Histories
+    },
+    {
+      path: '/history/:id',
       name: 'History',
       component: History
     },
     {
-      path: '/Honor',
-      name: 'Honor',
+      path: '/honor',
+      name: 'Honors',
       component: Honor
     },
     {
-      path: '/Photo',
-      name: 'Photo',
+      path: '/photo',
+      name: 'Photos',
       component: Photo
     },
     {

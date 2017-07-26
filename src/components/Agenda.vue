@@ -69,10 +69,10 @@ export default {
     renderStatus (status) {
       switch (Number(status)) {
         default:
-        case 0: return '/static/signup_image.png' // 0:报名中;
-        case 1: return '/static/signup_image1.png' // 1:进行中;
-        case 2: return '/static/signup_image2.png' // 2:已结束;
+        case 1: return '/static/signup_image.png' // 1:已发布，报名中;
+        case 2: return '/static/signup_image1.png' // 2:进行中;
         case 3: return '/static/signup_image3.png' // 3:已取消;
+        case 4: return '/static/signup_image2.png' // 4:已结束;
       }
     },
 

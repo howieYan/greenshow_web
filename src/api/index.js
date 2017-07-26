@@ -4,6 +4,7 @@
 import axios from 'axios'
 import * as lib from '../lib'
 import mock from './mock' // TODO: Remove this when build production release.
+import Router from '../router'
 
 /**
  * axios configurations.
@@ -43,6 +44,38 @@ export default {
     return result && typeof (result.code) !== 'undefined' && result.code === this.ok
   },
 
+  /**
+   * Authorized with wechat.
+   */
+  loginWithWechat () {
+    let appid = 'wx4ede82d46b4d6b2b'
+    let urlback = encodeURIComponent('http://wx.golfgreenshow.com/api/User/WechatH5')
+    let state = encodeURIComponent(Router.currentRoute.fullPath)
+    let url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${urlback}&response_type=code&scope=snsapi_userinfo&state=${state}#wechat_redirect`
+    window.location.href = url
+  },
+
+  /**
+   * Login with GreenShow account.
+   */
+  loginWithAccount () {
+    Router.replace({
+      path: '/login',
+      query: { redirect: Router.currentRoute.fullPath }
+    })
+  },
+
+  /**
+   * There's no access code, or it's expired.
+   */
+  relogin () {
+    lib.debugApi && console.debug(`Relogin`)
+    let self = this
+    setTimeout(function () {
+      lib.isWechat() ? self.loginWithWechat() : self.loginWithAccount()
+    }, 500)
+  },
+
   send (method, uri, data = null, token = null) {
     if (token === null) {
       token = this.getToken()
@@ -71,7 +104,12 @@ export default {
           .then(response => {
             lib.debugApi && console.debug(response ? JSON.stringify(response, null, '\t') : `${method} ${uri}, ` + (data ? JSON.stringify(data, null, '\t') : ''))
             if (response && response.data) {
-              resolve(response.data)
+              if (response.data.code === -1) {
+                this.relogin()
+              }
+              else {
+                resolve(response.data)
+              }
             }
             else {
               reject(new Error('通讯失败，请检查网络或稍后重试。'))
@@ -100,6 +138,20 @@ export default {
    */
   listEvent (id, option, page = 0, size = 10) {
     return this.send('get', `/api5/Event?id=${id}&option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
+   * 查询球队历史列表
+   */
+  listHistory (id, option, page = 0, size = 10) {
+    return this.send('get', `/api5/History?id=${id}&option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
+   * 查询新闻公告列表
+   */
+  listNews (id, option, page = 0, size = 10) {
+    return this.send('get', `/api5/News?id=${id}&option=${option}&page=${page}&size=${size}`)
   },
 
   /**
@@ -143,20 +195,34 @@ export default {
   },
 
   /**
+   * 查询活动信息
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Event/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   */
+  getEvent (id, option = '') {
+    return this.send('get', `/api5/Event/${id}?option=${option}`)
+  },
+
+  /**
+   * 查询球队历史记录
+   */
+  getHistory (id, option = '') {
+    return this.send('get', `/api5/History/${id}?option=${option}`)
+  },
+
+  /**
+   * 查询新闻公告记录
+   */
+  getNews (id, option = '') {
+    return this.send('get', `/api5/News/${id}?option=${option}`)
+  },
+
+  /**
    * 查询球队信息
    * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Team/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    *
    */
   getTeam (id, option = '') {
     return this.send('get', `/api5/Team/${id}?option=${option}`)
-  },
-
-  /**
-   * 查询活动信息
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Event/172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
-   */
-  getEvent (id, option = '') {
-    return this.send('get', `/api5/Event/${id}?option=${option}`)
   },
 
   /**

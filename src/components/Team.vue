@@ -133,7 +133,7 @@ export default {
       this.$router.push({ path: `/event/${event.id}` })
     },
     noticeFrame (event) {
-      this.$router.push({ path: `/Notice/` })
+      this.$router.push({ path: `/notice`, query: { id: this.id } })
     },
     agendaFrame (event) {
       this.$router.push({ path: `/agenda`, query: { id: this.id } })
@@ -148,13 +148,13 @@ export default {
       this.$router.push({ path: `/Seniority/` })
     },
     historyFrame (event) {
-      this.$router.push({ path: `/History/` })
+      this.$router.push({ path: `/history`, query: { id: this.id } })
     },
     honorFrame (event) {
-      this.$router.push({ path: `/Honor/` })
+      this.$router.push({ path: `/honor`, query: { id: this.id } })
     },
     photoFrame (event) {
-      this.$router.push({ path: `/Photo/` })
+      this.$router.push({ path: `/photo`, query: { id: this.id } })
     },
     closeFrame () {
       this.$router.go(-1)

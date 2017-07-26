@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       name: 'LoginV',
-      phone: lib.debugView ? '18616398546' : '',
+      phone: lib.debugView ? '17092539254' : '',
       code: lib.debugView ? '111111' : '',
       enable: true,
       isActive: false,
@@ -68,13 +68,7 @@ export default {
     },
 
     clickWechat () {
-      let redirect = this.$route.query.redirect
-      lib.debugView && console.log(`${this.name}.clickWechat: ${redirect}`)
-      let appid = 'wx4ede82d46b4d6b2b'
-      let urlback = encodeURIComponent('http://wx.golfgreenshow.com/api5/User/WechatH5')
-      let state = encodeURIComponent(redirect)
-      let url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${urlback}&response_type=code&scope=snsapi_userinfo&state=${state}#wechat_redirect`
-      window.location.href = url
+      api.loginWithWechat()
     },
 
     clickSms () {
@@ -115,7 +109,7 @@ export default {
           .then((result) => {
             if (api.isValid(result) && result.data && result.data.token) {
               api.setToken(result.data.token)
-              this.$router.push({ path: this.$route.query.redirect })
+              this.$router.replace(this.$route.query.redirect)
             }
           })
           .catch((error) => {
