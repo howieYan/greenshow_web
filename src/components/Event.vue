@@ -228,8 +228,7 @@
 <script>
 import api from '../api'
 import * as lib from '../lib'
-import '../script/swiper.js'
-import '../script/swiper.min.js'
+
 export default {
   name: 'Event',
   data () {

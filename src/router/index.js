@@ -1,13 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-<<<<<<< HEAD
 import Index from '@/components/Index'
-// import HistoryForm from '@/components/HistoryForm'
-=======
 import Event from '@/components/Event'
 import Home from '@/components/Home'
 import Team from '@/components/Team'
-import TeamInfo from '@/components/TeamInfo'
 import Notice from '@/components/Notice'
 import Notices from '@/components/Notices'
 import Agenda from '@/components/Agenda'
@@ -22,7 +18,6 @@ import Photo from '@/components/Photo'
 import Photos from '@/components/Photos'
 import Login from '@/components/Login'
 import Share from '@/components/Share'
->>>>>>> develop
 
 import * as lib from '../lib'
 import api from '../api'
@@ -37,11 +32,6 @@ let router = new Router({
       component: Index
     },
     {
-<<<<<<< HEAD
-      path: '/Index',
-      name: 'Index',
-      component: Index
-=======
       path: '/home',
       name: 'HomeX',
       component: Home
@@ -55,11 +45,6 @@ let router = new Router({
       path: '/team/:id',
       name: 'Team',
       component: Team
-    },
-    {
-      path: '/teaminfo',
-      name: 'TeamInfo',
-      component: TeamInfo
     },
     {
       path: '/notice',
@@ -130,7 +115,6 @@ let router = new Router({
       path: '/Share',
       name: 'Share',
       component: Share
->>>>>>> develop
     }
     // {
     //   path: '/HistoryForm',
