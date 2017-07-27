@@ -10,9 +10,9 @@
       </ul>
   </div>
   <div class="padding_t64_height" id="body" style="padding-top:50px;">
-      <div class="width_150px" v-for="record in data">
+      <div class="width_150px" v-for="record in data" @click="clickOpen(record.id)">
           <img :src="record.pic ? record.pic : '/static/automobile.png'" alt="">
-          <p>{{ record.description }}</p>
+          <p>{{ record.title }}</p>
       </div>
   </div>
 </div>
@@ -21,10 +21,10 @@
 import api from '../api'
 
 export default {
-  name: 'Photo',
+  name: 'Photos',
   data () {
     return {
-      name: 'PhotoV',
+      name: 'PhotosV',
       pager: {
         page: 0,
         size: 10
@@ -36,7 +36,7 @@ export default {
 
   computed: {
     id () {
-      return this.$route.params.id
+      return this.$route.query.id
     }
   },
 
@@ -49,7 +49,7 @@ export default {
       try {
         this.total = 0
         this.data = []
-        let result = await api.listPhoto(this.id, 'album', this.pager.page, this.pager.size)
+        let result = await api.listAlbum(this.id, 'team', this.pager.page, this.pager.size)
         console.debug(`%o`, result)
         this.total = api.isValid(result) && result.total ? result.total : 0
         this.data = api.isValid(result) && result.data ? result.data : []
@@ -58,8 +58,14 @@ export default {
         console.error(e)
       }
     },
+
     closeFrame () {
       this.$router.go(-1)
+    },
+
+    clickOpen (id) {
+      console.debug(`${this.name}.clickOpen: ${id}`)
+      this.$router.push({ path: `/photo/${id}` })
     }
   },
 

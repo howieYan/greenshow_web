@@ -133,6 +133,13 @@ export default {
   },
 
   /**
+   * 查询相册列表
+   */
+  listAlbum (id, option, page = 0, size = 10) {
+    return this.send('get', `/api5/Album?id=${id}&option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
    * 查询活动列表
    * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Event?id=172701a1-8457-4df1-891c-4fa1c78ef883' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
@@ -162,6 +169,21 @@ export default {
   },
 
   /**
+   * 查询相片列表
+   */
+  listPhoto (id, option, page = 0, size = 10) {
+    return this.send('get', `/api5/Photo?id=${id}&option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
+   * 查询球员列表
+   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
+   */
+  listPlayer (option, page = 0, size = 10) {
+    return this.send('get', `/api5/Player?option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
    * 查询球队列表
    * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Team' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
@@ -178,14 +200,6 @@ export default {
   },
 
   /**
-   * 查询球员列表
-   * curl  -X GET 'http://devwx.golfgreenshow.com/api5/PlayerX' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
-   */
-  listPlayer (option, page = 0, size = 10) {
-    return this.send('get', `/api5/Player?option=${option}&page=${page}&size=${size}`)
-  },
-
-  /**
    * Login
    * curl -X POST "http://devwx.golfgreenshow.com/api5/User/Login" -d "phone=13585562369&code=111111"
    */
@@ -199,6 +213,13 @@ export default {
    */
   sms (phone) {
     return this.send('post', `/api5/User/Sms`, { phone: phone })
+  },
+
+  /**
+   * 查询相册记录
+   */
+  getAlbum (id, option = '') {
+    return this.send('get', `/api5/Album/${id}?option=${option}`)
   },
 
   /**
@@ -228,6 +249,13 @@ export default {
    */
   getNews (id, option = '') {
     return this.send('get', `/api5/News/${id}?option=${option}`)
+  },
+
+  /**
+   * 查询相片记录
+   */
+  getPhoto (id, option = '') {
+    return this.send('get', `/api5/Photo/${id}?option=${option}`)
   },
 
   /**

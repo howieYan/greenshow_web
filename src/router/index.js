@@ -15,6 +15,7 @@ import Histories from '@/components/Histories'
 import Honor from '@/components/Honor'
 import Honors from '@/components/Honors'
 import Photo from '@/components/Photo'
+import Photos from '@/components/Photos'
 import Login from '@/components/Login'
 import Share from '@/components/Share'
 
@@ -103,6 +104,11 @@ let router = new Router({
     {
       path: '/photo',
       name: 'Photos',
+      component: Photos
+    },
+    {
+      path: '/photo/:id',
+      name: 'Photo',
       component: Photo
     },
     {
