@@ -15,7 +15,7 @@ export const debugVuex = !!(process.env.NODE_ENV === 'development')
 
 export const debugView = !!(process.env.NODE_ENV === 'development')
 
-export const mock = true   // !!(process.env.NODE_ENV === 'development') // Use mock data, instead of sending request to server, in development mode.
+export const mock = false   // !!(process.env.NODE_ENV === 'development') // Use mock data, instead of sending request to server, in development mode.
 
 export const ready = false  // TODO: It's used to hide under-building features.
 
@@ -45,3 +45,13 @@ export function formatTs (ts, format = 'YYYY-MM-DD HH:mm') {
   return retVal
 }
 
+/**
+ * Check whether it is opened in Wechat App.
+ */
+export function isWechat () {
+  debug && console.debug(`isWechat %o`, navigator)
+  let lower = navigator.userAgent ? navigator.userAgent.toLowerCase() : ''
+  let array = lower.match(/MicroMessenger/i)
+  let result = array && array[0] ? array[0] : ''
+  return result === 'micromessenger'
+}
