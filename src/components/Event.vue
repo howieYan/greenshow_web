@@ -60,11 +60,11 @@
         <li class="col" v-html=" event.summary "></li>
       </ul>
     </div>
-    <div class="button0" @click="clickEnter">
-      点击报名
+    <div v-show="Number(event.status) === 1" class="button0" @click="clickEnter">
+      {{ Number(event.isEntered) === 1 ? '取消报名' : '点击报名' }}
     </div>
     <div class="padding_t">
-      <b>已报名/{{ event.enterCount }}人</b>
+      <b>已报名 {{ event.enterCount }} 人</b>
     </div>
     <div class="apply"  >
       <ul class="" >
@@ -323,7 +323,7 @@ export default {
     clickEnter () {
       console.log(`${this.name}.clickEnter: ${api.getToken()}, ${this.id}`)
       if (api.getToken()) {
-        api.enter(this.id).then((result) => {
+        api.enter(this.id, Number(this.event.isEntered) === 0).then((result) => {
           api.isValid(result) && this.loadData()
         })
       }

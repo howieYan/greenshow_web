@@ -271,7 +271,7 @@ export default {
    * 查询活动信息
    * curl  -X GET 'http://devwx.golfgreenshow.com/api5/Event/Enter' --header 'AccessCode:ccfb8baa-40ce-4989-b7b0-2abcab956405'
    */
-  enter (id) {
-    return this.send('post', `/api5/Event/Enter`, { id: id })
+  enter (id, option = true) {
+    return this.send('post', `/api5/Event/Enter`, { id: id, option: option })
   }
 }

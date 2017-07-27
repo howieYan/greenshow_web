@@ -13,20 +13,20 @@
 	    <ul class="row height_40_border_top_bottom background_color_odd_event">
 	        <li class="col">排名</li>
 	        <li class="col">姓名</li>
-	        <li class=""style="width:13%;padding-right:10px;">距标准杆</li>
+	        <li class=""style="width:13%;padding-right:10px;">杆差</li>
 	        <li class=""style="width:13%;padding-left:10px;">已完成</li>
 	        <li class="col">前9</li>
 	        <li class="col">后9</li>
 	        <li class="col">总杆</li>
 	    </ul>
-	    <ul class="row height_40_border0" v-for="n in 5">
-	        <li class="col">1</li>
-	        <li class="col">许韫</li>
-	        <li class="col" style="color: red;">-3</li>
-	        <li class="col" style="">F</li>
-	        <li class="col">34</li>
-	        <li class="col">35</li>
-	        <li class="col">69</li>
+	    <ul class="row height_40_border0" v-for="(record, i) in data">
+	        <li class="col">{{ i + 1 }}</li>
+	        <li class="col">{{ record.name }}</li>
+	        <li class="col" style="color: red;">{{ record.currentRoundToPar }}</li>
+	        <li class="col" style="">{{ record.thru !== 18 ? record.thru : 'F' }}</li>
+	        <li class="col">{{ record.outScore }}</li>
+	        <li class="col">{{ record.inScore }}</li>
+	        <li class="col">{{ record.grossStroke }}</li>
 	    </ul>
 	</div>
 </div>
@@ -35,21 +35,16 @@
 import api from '../api'
 
 export default {
-  name: 'Team',
+  name: 'Seniority',
   data () {
     return {
-      name: 'TeamV',
-      blank: {
-        Name: '',
-        AverageScore: '无',
-        MemberCount: 0
-      },
-      team: null,
-      events: {
+      name: 'SeniorityV',
+      pager: {
         page: 0,
-        size: 5,
-        list: []
-      }
+        size: 10
+      },
+      total: 0,
+      data: null
     }
   },
 
@@ -66,14 +61,12 @@ export default {
   methods: {
     async loadData () {
       try {
-        this.team = this.blank
-        let result = await api.getTeam(this.id, 'summary')
+        this.total = 0
+        this.data = []
+        let result = null // await api.listPlayer(this.id, 'team', this.pager.page, this.pager.size)
         console.debug(`%o`, result)
-        this.team = api.isValid(result) ? result.Data : this.blank
-
-        result = await api.listEvent(this.id, 'team', this.events.page, this.events.size)
-        console.debug(`%o`, result)
-        this.events.list = api.isValid(result) ? result.Data : []
+        this.total = api.isValid(result) && result.total ? result.total : 0
+        this.data = api.isValid(result) && result.data ? result.data : []
       }
       catch (e) {
         console.error(e)
