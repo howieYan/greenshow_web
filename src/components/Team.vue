@@ -140,7 +140,7 @@ export default {
       this.$router.push({ path: `/agenda`, query: { id: this.id } })
     },
     statuteFrame (event) {
-      this.$router.push({ path: `/Statute/` })
+      this.$router.push({ path: `/statute/${this.id}` })
     },
     playerFrame (event) {
       this.$router.push({ path: `/teamPlayer`, query: { id: this.id } })

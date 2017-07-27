@@ -67,7 +67,7 @@ let router = new Router({
       component: Agenda
     },
     {
-      path: '/Statute',
+      path: '/statute/:id',
       name: 'Statute',
       component: Statute
     },
