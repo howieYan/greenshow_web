@@ -6,6 +6,7 @@
         <li class="back" @click="closeFrame"></li>
         <li class="textCenter textCenter0 col">
           <img :src="'static/logo_header.png'" alt="">
+          <div style="color: white;">{{ team.purpose }}</div>
           <div class="row string padding_Top10">
             <div class="col">
               <div>{{ team.averageScore }}</div>

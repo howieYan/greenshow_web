@@ -148,6 +148,13 @@ export default {
   },
 
   /**
+   * 查询球队荣誉列表
+   */
+  listHonor (id, option, page = 0, size = 10) {
+    return this.send('get', `/api5/Honor?id=${id}&option=${option}&page=${page}&size=${size}`)
+  },
+
+  /**
    * 查询新闻公告列表
    */
   listNews (id, option, page = 0, size = 10) {
@@ -207,6 +214,13 @@ export default {
    */
   getHistory (id, option = '') {
     return this.send('get', `/api5/History/${id}?option=${option}`)
+  },
+
+  /**
+   * 查询球队荣誉记录
+   */
+  getHonor (id, option = '') {
+    return this.send('get', `/api5/Honor/${id}?option=${option}`)
   },
 
   /**

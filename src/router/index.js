@@ -13,6 +13,7 @@ import Seniority from '@/components/Seniority'
 import History from '@/components/History'
 import Histories from '@/components/Histories'
 import Honor from '@/components/Honor'
+import Honors from '@/components/Honors'
 import Photo from '@/components/Photo'
 import Login from '@/components/Login'
 import Share from '@/components/Share'
@@ -92,6 +93,11 @@ let router = new Router({
     {
       path: '/honor',
       name: 'Honors',
+      component: Honors
+    },
+    {
+      path: '/honor/:id',
+      name: 'Honor',
       component: Honor
     },
     {
